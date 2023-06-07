@@ -1,4 +1,5 @@
 # contain all the routes
+import secrets
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from website.models.users import User
@@ -57,6 +58,31 @@ def query():
 @views.route("/dev")
 def dev():
     return render_template("dev.html", current_user=current_user)
+
+
+def api_key():
+    api_key = secrets.token_hex(16)
+    return api_key
+
+@views.route("/generate-api-key")
+def generate_api_key():
+    if request.method == "GET":
+        user = User.query.filter_by(email=current_user.email).first()
+        user.generate_api_key()
+        try:
+            user.save()
+            flash( "Your api key is {}".format(user.api_key), category="success")
+            flash("API Key generated successfully", category="success")
+            return redirect(url_for("views.dev"))
+        except:
+            flash("API Key generation failed", category="danger")
+            return redirect(url_for("views.dev"))
+    else:
+        flash("You're not authorized to do this", category="danger")
+        return redirect(url_for("views.dev"))
+
+
+
 
 
 

@@ -10,6 +10,7 @@ from website.config.config import config_dict
 from website.models.users import User
 from website.models.data import Region, State, Lga, Area
 from flask_migrate import Migrate
+from flask_login import LoginManager
 # from flask_caching import Cache
 # from flask_limiter import Limiter
 # from flask_limiter.util import get_remote_address
@@ -76,12 +77,22 @@ def create_app(config=config_dict['dev']):
     def make_shell_context():
         return {
             'db': db,
-            # 'User': User,
-            # 'Region': Region,
-            # 'State': State,
-            # 'Lga': Lga,
-            # 'Area': Area
+            'User': User,
+            'Region': Region,
+            'State': State,
+            'Lga': Lga,
+            'Area': Area
         }
+    
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(user_id)
+    
+
 
 
 
