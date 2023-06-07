@@ -33,7 +33,7 @@ def index():
 #         return render_template("index.html", lgas=lgas)
 
 @views.route("/q", methods=['GET', 'POST'])
-def q():
+def query():
     if request.method == 'POST':
         q = request.form.get('q')
         if q:
