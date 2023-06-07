@@ -46,7 +46,7 @@ def query():
                     Region.name.ilike(f'%{q}%')  # Include region name in the search
                 )
             ).all()
-            return render_template("index.html", results=results)
+            return render_template("search.html", results=results)
         else:
             return redirect(url_for('views.index'))
     else:

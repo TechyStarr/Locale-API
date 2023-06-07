@@ -7,5 +7,33 @@
 <h1>Welcome to the Developers section</h1>
 
 
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Search</h2>
+            <form method="GET", action="{{url_for('views.query')}}">
+                <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter your search query" aria-label="Search Query" aria-describedby="search-button">
+                        <button class="btn btn-primary" type="submit" id="search-button">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Search</h2>
+            <form method="GET", action="{{url_for('views.query')}}">
+                <div class="input-group mb-3">
+                        <button class="btn btn-primary" type="submit" id="search-button">Generate Api key</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
 
 {% endblock %}
