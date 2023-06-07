@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+    <h1>Search</h1>
+    <form action="{{ url_for('q') }}" method="GET">
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+    
+    <h2>Search Results</h2>
+    <ul>
+        {% for result in results %}
+        <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %} 
+{% block content %}
+<form method="POST" action="{{url_for('Users.login')}}">
+	<br>
+	<h1 class="reg"> Welcome Back, buddy!</h1>
+	<div class="form-group">
+		<fieldset>
+			<label for="email"> Email:</label>
+			<input type="text" name="email" id="email" class="form-control" placeholder="Enter your Email address" required>
+		</fieldset>
+		<br>
+		<fieldset>
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password"
+				required>
+		</fieldset>
+		<br>
+		<fieldset align="center">
+			<button type="submit" id="button" class="button">Submit</button>
+		</fieldset>
+	</div>
+</form>
+{% endblock %}
