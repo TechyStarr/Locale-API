@@ -53,15 +53,14 @@ def create_app(config=config_dict['dev']):
 
     migrate = Migrate(app, db)
 
-    # authorizations = {
-    #     "Bearer Auth": {
-    #     "type": "apikey",
-    #     "in": "header",
-    #     "name": "Authorization", 
-    #     "description": "Add a JWT token to the header with ** Bearer &lt;JWT&gt; ** token to authorize user "
-    #     }
-    # }
-
+    authorizations = {
+        "Bearer Auth": {
+            "type": "apikey",
+            "in": "header",
+            "name": "Authorization", 
+            "description": "Add a JWT token to the header with ** Bearer &lt;JWT&gt; ** token to authorize user "
+        }
+    }
 
 
     
@@ -70,12 +69,19 @@ def create_app(config=config_dict['dev']):
     app.register_blueprint(auth, url_prefix='')
 
     api = Api(app,
-    doc="/docs",
-    title="Locale API", 
-    description="Find whatever you're looking for using Locale",
-    # authorization = authorizations,
-    # security = "Bearer Auth"
+        doc="/docs",
+        title="Locale API", 
+        description="Find whatever you're looking for using Locale",
+        authorization = authorizations,
+        security = "Bearer Auth"
 )
+
+
+
+
+
+
+    
 
     # register namespaces for api
     api.add_namespace(auth_namespace, path='/user')
@@ -100,7 +106,7 @@ def create_app(config=config_dict['dev']):
         }
     
     login_manager = LoginManager()
-    login_manager.login_view = 'auth.login'
+    login_manager.login_view = 'Users.login'
     login_manager.init_app(app)
 
     @login_manager.user_loader

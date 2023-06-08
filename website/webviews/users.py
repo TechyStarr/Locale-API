@@ -1,16 +1,36 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash, jsonify
+from flask import Flask, Blueprint, render_template, redirect, url_for, request, flash, jsonify
 # from flask_smorest import Blueprint, abort
 from website.models.users import User
 from website.utils.utils import db
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from flask_caching import Cache
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 auth = Blueprint("Users", __name__)
+
+app = Flask(__name__)
+
+
+# cache response for 60 seconds
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+
+# rate limit of 100 requests per minute
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour"],
+    storage_uri="memory://",
+    )
+
+
 
 
 # signup route
 @auth.route('/signup', methods = ['GET', 'POST'])
+@cache.cached(timeout=60) # Cache the response for 60 seconds
+
 def register():
 	if request.method == 'POST':
 		username = request.form.get('username')
@@ -46,6 +66,7 @@ def register():
 
 
 @auth.route("/login", methods=['GET', 'POST'])
+@cache.cached(timeout=60) # Cache the response for 60 seconds
 def login():
     if request.method == 'POST':
         email = request.form.get("email")
@@ -68,6 +89,7 @@ def login():
 
 
 @auth.route("/contact", methods=['GET', 'POST'])
+@cache.cached(timeout=60) # Cache the response for 60 seconds
 def contact():
     if request.method == 'POST':
             flash('We appreciate the feedback, be on the lookout for our response', category='success')
@@ -75,6 +97,8 @@ def contact():
 
 
 @auth.route('/logout')
+@login_required
+@cache.cached(timeout=60) # Cache the response for 60 seconds
 def logout():
 	logout_user()
 	flash('Logout successful')
