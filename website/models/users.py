@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
         self.id = id
         self.username = username
         self.email = email
+        self.is_authenticated = True
  
 
 

@@ -27,7 +27,7 @@ limiter = Limiter(
 
 
 
-view_namespace = Namespace('view', description = 'Search related operations')
+view_namespace = Namespace('View', description = 'View related operations')
 
 lga_model = view_namespace.model(
     'lga', {

@@ -12,7 +12,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
 
-auth_namespace = Namespace('auth', description='Authentication Endpoints')
+auth_namespace = Namespace('Auth', description='Authentication Endpoints')
 
 app = Flask(__name__)
 

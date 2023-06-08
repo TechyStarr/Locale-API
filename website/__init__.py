@@ -85,7 +85,7 @@ def create_app(config=config_dict['dev']):
 
     # register namespaces for api
     api.add_namespace(auth_namespace, path='/user')
-    api.add_namespace(view_namespace, path='/search')
+    api.add_namespace(view_namespace, path='/view')
     api.add_namespace(search_ns, path='/query')
 
 
@@ -111,7 +111,12 @@ def create_app(config=config_dict['dev']):
 
     @login_manager.user_loader
     def load_user(user_id):
-        return User.query.get(user_id)
+        user_data = User.query.get(user_id)
+        if user_data:
+            user = User(user_data.id, user_data.email, user_data.password)
+            user.is_authenticated = True
+            return user
+        return None
     
 
 

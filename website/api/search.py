@@ -10,7 +10,7 @@ from .serializers import serialized_state, serialized_lga, serialized_region
 # from .. import cache
 
 
-search_ns = Namespace('query', description='Search operations')
+search_ns = Namespace('Query', description='Search operations')
 
 state_model = search_ns.model(
     'State', {
