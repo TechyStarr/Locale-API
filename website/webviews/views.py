@@ -33,7 +33,7 @@ limiter = Limiter(
 @limiter.limit("100 per minute")
 def index():
     # regions = Region.query.all()
-    return render_template("index.html")
+    return render_template("index.html", current_user=current_user)
 
 
 
@@ -76,7 +76,7 @@ def api_key():
 def generate_api_key():
     if request.method == "GET":
         user = User.query.filter_by(email=current_user.email).first()
-        user.generate_api_key()
+        user.api_key()
         try:
             user.save()
             flash( "Your api key is {}".format(user.api_key), category="success")
