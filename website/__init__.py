@@ -14,21 +14,12 @@ from flask_login import LoginManager
 from flask_caching import Cache
 
 
-# from flask_limiter import Limiter
-# from flask_limiter.util import get_remote_address
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 from flask_jwt_extended import JWTManager
 
 
 
-
-
-
-
-# config = {
-#     "DEBUG": True,          # some Flask specific configs
-#     "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
-#     "CACHE_DEFAULT_TIMEOUT": 300
-# }
 
 
 
@@ -44,14 +35,16 @@ def create_app(config=config_dict['dev']):
     app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
 
     cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+    cache.init_app(app)
 
 
-    # limiter = Limiter(app, key_func=get_remote_address)
-
-    # @limiter.limit("100/minute")  # Rate li
-
-
-    
+    limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour"],
+    storage_uri="memory://",
+    )
+    limiter.init_app(app) # initialize limiter with app instance to enable rate limiting
 
 
     db.init_app(app)

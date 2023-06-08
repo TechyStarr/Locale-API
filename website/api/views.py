@@ -6,16 +6,24 @@ from http import HTTPStatus
 from website.models.data import Region, State, Lga, City, Area, load_dataset
 # from website import create_app
 from flask_caching import Cache
-# from flask_limiter import Limiter
-# from flask_limiter.util import get_remote_address
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 
 
 app = Flask(__name__)
 
+# cache response for 60 seconds
 cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
-# limiter = Limiter(app, key_func=get_remote_address)
+# rate limit of 100 requests per minute
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour"],
+    storage_uri="memory://",
+    )
+
 
 
 
@@ -69,6 +77,8 @@ region_model= view_namespace.model(
 @view_namespace.route('/load-dataset')
 class LoadDatasetResource(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+
     def post(self):
         if Region.query.first() or State.query.first() or Lga.query.first():
             abort (400, 'Dataset already loaded')
@@ -79,6 +89,8 @@ class LoadDatasetResource(Resource):
 @view_namespace.route('/read-dataset')
 class readData(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+
     def get(self):
         # load_dataset()
         f = open('website/models/dataset.json')
@@ -93,7 +105,7 @@ class readData(Resource):
 @view_namespace.route('/regions')
 class RetrieveRegion(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    # @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+    @limiter.limit("1/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @view_namespace.marshal_with(region_model, as_list=True)
     @view_namespace.doc(
         description='Get all Regions',
@@ -109,6 +121,7 @@ class RetrieveRegion(Resource):
 @view_namespace.route('/create')
 class CreateRegions(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 
     @view_namespace.expect(region_model)
     @view_namespace.marshal_with(region_model)
@@ -132,6 +145,7 @@ class CreateRegions(Resource):
 @view_namespace.route('/update-region/<string:region_id>')
 class UpdateRegion(Resource): 
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @view_namespace.marshal_with(region_model)
     @view_namespace.doc(
         description='Get a Region by ID',
@@ -148,6 +162,8 @@ class UpdateRegion(Resource):
 @view_namespace.route('/regions/<string:region_id>/states')
 class RetrieveStatesUnderRegion(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+
     @view_namespace.marshal_with(state_model, as_list=True)
     @view_namespace.doc(
         description='Get all States under a Region',
@@ -168,6 +184,8 @@ class RetrieveStatesUnderRegion(Resource):
 @view_namespace.route('/states')
 class SearchResource(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+
     @view_namespace.marshal_with(state_model, as_list=True)
     @view_namespace.doc(
         description='Get all States',
@@ -184,6 +202,8 @@ class SearchResource(Resource):
 @view_namespace.route('/lgas')
 class RetrieveResource(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+
     @view_namespace.marshal_with(lga_model, as_list=True)
     @view_namespace.doc(
         description='Get all lgas',
@@ -197,6 +217,8 @@ class RetrieveResource(Resource):
 @view_namespace.route('/lgas/<string:lga_id>')
 class Retrieve(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+
     @view_namespace.marshal_with(lga_model)
     def get(self, lga_id):
         lga = Lga.query.filter_by(id=lga_id).first()
