@@ -11,7 +11,9 @@ from website.models.users import User
 from website.models.data import Region, State, Lga, Area
 from flask_migrate import Migrate
 from flask_login import LoginManager
-# from flask_caching import Cache
+from flask_caching import Cache
+
+
 # from flask_limiter import Limiter
 # from flask_limiter.util import get_remote_address
 from flask_jwt_extended import JWTManager
@@ -19,17 +21,37 @@ from flask_jwt_extended import JWTManager
 
 
 
+
+
+
+# config = {
+#     "DEBUG": True,          # some Flask specific configs
+#     "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
+#     "CACHE_DEFAULT_TIMEOUT": 300
+# }
+
+
+
+
 def create_app(config=config_dict['dev']):
     app = Flask(__name__)
-    # cache = Cache(app)
+
+    
+    app.config.from_object(config) # config object from config.py file in config folder
+    app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
+    app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
+    app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)
+    app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
+
+    cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+
 
     # limiter = Limiter(app, key_func=get_remote_address)
 
     # @limiter.limit("100/minute")  # Rate li
 
 
-    app.config.from_object(config)
-    app.config['CACHE_TYPE'] = 'simple'
+    
 
 
     db.init_app(app)
@@ -52,7 +74,7 @@ def create_app(config=config_dict['dev']):
     
     # register blueprints for web views
     app.register_blueprint(views, url_prefix='')
-    app.register_blueprint(auth, url_prefix='/auth')
+    app.register_blueprint(auth, url_prefix='')
 
     api = Api(app,
     doc="/docs",
@@ -92,9 +114,6 @@ def create_app(config=config_dict['dev']):
     def load_user(user_id):
         return User.query.get(user_id)
     
-
-
-
 
 
     return app

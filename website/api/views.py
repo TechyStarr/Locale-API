@@ -1,18 +1,19 @@
-import json
 from flask import Flask, request
 from flask_restx import Api, Resource, fields, Namespace, abort
 from website.utils.utils import db
 from website.models.users import User
 from http import HTTPStatus
 from website.models.data import Region, State, Lga, City, Area, load_dataset
-# from .. import cache
-# from flask_caching import Cache
+# from website import create_app
+from flask_caching import Cache
 # from flask_limiter import Limiter
 # from flask_limiter.util import get_remote_address
 
 
 
-# cache = Cache(app)
+app = Flask(__name__)
+
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 # limiter = Limiter(app, key_func=get_remote_address)
 
@@ -67,6 +68,7 @@ region_model= view_namespace.model(
 
 @view_namespace.route('/load-dataset')
 class LoadDatasetResource(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def post(self):
         if Region.query.first() or State.query.first() or Lga.query.first():
             abort (400, 'Dataset already loaded')
@@ -76,6 +78,7 @@ class LoadDatasetResource(Resource):
 
 @view_namespace.route('/read-dataset')
 class readData(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         # load_dataset()
         f = open('website/models/dataset.json')
@@ -88,9 +91,9 @@ class readData(Resource):
 
 # Regions
 @view_namespace.route('/regions')
-# @cache.cached(timeout=60)  # Cache the response for 60 seconds
-# @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 class RetrieveRegion(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    # @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @view_namespace.marshal_with(region_model, as_list=True)
     @view_namespace.doc(
         description='Get all Regions',
@@ -105,6 +108,8 @@ class RetrieveRegion(Resource):
 
 @view_namespace.route('/create')
 class CreateRegions(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+
     @view_namespace.expect(region_model)
     @view_namespace.marshal_with(region_model)
     @view_namespace.doc(
@@ -126,6 +131,7 @@ class CreateRegions(Resource):
 
 @view_namespace.route('/update-region/<string:region_id>')
 class UpdateRegion(Resource): 
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @view_namespace.marshal_with(region_model)
     @view_namespace.doc(
         description='Get a Region by ID',
@@ -141,6 +147,7 @@ class UpdateRegion(Resource):
 # retrieve data under a region
 @view_namespace.route('/regions/<string:region_id>/states')
 class RetrieveStatesUnderRegion(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @view_namespace.marshal_with(state_model, as_list=True)
     @view_namespace.doc(
         description='Get all States under a Region',
@@ -160,6 +167,7 @@ class RetrieveStatesUnderRegion(Resource):
 # States
 @view_namespace.route('/states')
 class SearchResource(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @view_namespace.marshal_with(state_model, as_list=True)
     @view_namespace.doc(
         description='Get all States',
@@ -170,9 +178,12 @@ class SearchResource(Resource):
         return states, HTTPStatus.OK
     
 
+
+
 # LGA
 @view_namespace.route('/lgas')
 class RetrieveResource(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @view_namespace.marshal_with(lga_model, as_list=True)
     @view_namespace.doc(
         description='Get all lgas',
@@ -185,6 +196,7 @@ class RetrieveResource(Resource):
 
 @view_namespace.route('/lgas/<string:lga_id>')
 class Retrieve(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @view_namespace.marshal_with(lga_model)
     def get(self, lga_id):
         lga = Lga.query.filter_by(id=lga_id).first()
@@ -208,11 +220,3 @@ class Retrieve(Resource):
         lga.population = data['population']
         lga.headquarters = data['headquarters']
         return lga, HTTPStatus.OK
-
-
-
-
-
-
-
-

@@ -11,10 +11,6 @@ from website.models.data import Region, State, Lga
 views = Blueprint("views", __name__)
 
 
-# @views.route("/")
-# def index():
-
-#     return render_template("index.html", current_user=current_user)
 
 
 @views.route("/")
@@ -23,15 +19,7 @@ def index():
     return render_template("index.html")
 
 
-# @views.route("/q", methods=['GET', 'POST'])
-# def q():
-#     if request.method == 'POST':
-#         q = request.form.get('q')
-#         if q:
-#             lgas = Lga.query.filter(Lga.name.contains(q)).all()
-#         else:
-#             lgas = Lga.query.all()
-#         return render_template("index.html", lgas=lgas)
+
 
 @views.route("/q", methods=['GET', 'POST'])
 def query():
@@ -56,7 +44,9 @@ def query():
 
 
 @views.route("/dev")
+@login_required
 def dev():
+
     return render_template("dev.html", current_user=current_user)
 
 
@@ -64,7 +54,9 @@ def api_key():
     api_key = secrets.token_hex(16)
     return api_key
 
+
 @views.route("/generate-api-key")
+@login_required
 def generate_api_key():
     if request.method == "GET":
         user = User.query.filter_by(email=current_user.email).first()
@@ -80,95 +72,3 @@ def generate_api_key():
     else:
         flash("You're not authorized to do this", category="danger")
         return redirect(url_for("views.dev"))
-
-
-
-
-
-
-
-
-
-
-# @views.route("/q", methods=['GET', 'POST'])
-# def q():
-#     keyword = request.args.get('keyword')
-#     if keyword:
-#         results = State.query.join(Region).filter(
-#             db.or_(
-#                 State.name.ilike(f'%{keyword}%'),
-#                 State.capital.ilike(f'%{keyword}%'),
-#                 # State.lgas.ilike(f'%{keyword}%'),
-#                 Lga.name.ilike(f'%{keyword}%'),
-#                 Region.name.ilike(f'%{keyword}%')  # Include region name in the search
-#             )
-#         ).all()
-
-
-
-#         # Serialize the search results
-#         data = [state.serialize() for state in results]
-#         return jsonify(data), 200
-#     else:
-#         return {'message': 'No keyword provided'}, 400
-    
-
-
-@views.route("/about")
-def about():
-    return render_template("about.html", current_user=current_user)
-
-
-
-
-
-
-
-
-
-
-
-
-# def get_states(region_id):
-#     states = State.query.filter_by(region_id=region_id).all()
-#     return states
-
-# def get_lgas(state_id):
-#     lgas = Lga.query.filter_by(state_id=state_id).all()
-#     return lgas
-
-# @views.route("/states/<int:region_id>")
-# def states(region_id):
-#     states = get_states(region_id)
-#     context = {
-#         'states': states
-#     }
-#     return render_template("states.html", user=current_user, context=context)
-
-# @views.route("/lgas/<int:state_id>")
-# def search(self):
-#     q = request.args.get('q')
-#     if q:
-#         lgas = Lga.query.filter(Lga.name.contains(q)).all()
-#     else:
-#         lgas = Lga.query.all()
-#     return render_template("index.html", lgas=lgas)
-
-
-
-
-# # about route displays info about the page
-# @views.route('/about')
-# def about():
-# 	return render_template('about.html')
-
-
-# @views.route("/contact", methods=['GET', 'POST'])
-# def contact():
-#     if request.method == 'POST':
-#         flash('We appreciate the feedback, be on the lookout for our response',
-#                 category='success')
-#     return render_template("contact.html", current_user=current_user)
-
-
-

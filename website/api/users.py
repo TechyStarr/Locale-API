@@ -1,5 +1,5 @@
 # from api import db
-from flask import request
+from flask import Flask, request
 from flask_restx import Resource, fields, Namespace, abort
 from website.models.users import User
 from website.utils.utils import db
@@ -7,11 +7,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from http import HTTPStatus
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
 from flask_jwt_extended.exceptions import NoAuthorizationError
-
+from flask_caching import Cache
 
 
 auth_namespace = Namespace('auth', description='Authentication Endpoints')
 
+app = Flask(__name__)
+
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 
 
@@ -38,6 +41,7 @@ login_model = auth_namespace.model(
 
 @auth_namespace.route('/signup')
 class SignUp(Resource):
+	@cache.cached(timeout=60) # Cache the response for 60 seconds
 	@auth_namespace.expect(signup_model)
 	@auth_namespace.marshal_with(signup_model)
 	def post(self):
@@ -73,7 +77,7 @@ class SignUp(Resource):
 
 @auth_namespace.route('/login')
 class UserLogin(Resource):
-
+	@cache.cached(timeout=60) # Cache the response for 60 seconds
 	@auth_namespace.expect(login_model)
 	def post(self):
 		"""
@@ -104,6 +108,7 @@ class UserLogin(Resource):
 
 @auth_namespace.route('/refresh')
 class Refresh(Resource):
+	@cache.cached(timeout=60) # Cache the response for 60 seconds
 	@jwt_required(refresh=True)
 	def post(self):
 		"""
