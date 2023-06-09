@@ -52,7 +52,7 @@ def register():
 			new_user = User(
                             username = username, 
                             email = email, 
-                            password_hash = password_hash
+                            password = password_hash
                         )
 
 			new_user.save()
@@ -74,9 +74,10 @@ def login():
 
         user = User.query.filter_by(email=email).first()
         if user:
-            if check_password_hash(user.password_hash, password):
+            if check_password_hash(user.password, password):
                 flash(f"Good to have you back, {user.username}", category='success')
                 login_user(user, remember=True)
+
                 
                 return redirect(url_for('views.index'))
             else:

@@ -40,7 +40,7 @@ def index():
 
 @views.route("/q", methods=['GET', 'POST'])
 def query():
-    if request.method == 'POST':
+    if request.method == 'GET':
         q = request.form.get('q')
         if q:
             results = State.query.join(Region).filter(
@@ -54,9 +54,15 @@ def query():
             ).all()
             return render_template("search.html", results=results)
         else:
+            flash("No results found", category="danger")
             return redirect(url_for('views.index'))
+            
     else:
         return redirect(url_for('views.index'))
+    
+
+
+    
     
 
 
