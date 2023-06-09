@@ -43,14 +43,14 @@ def register():
 		email_exists = User.query.filter_by(email=email).first()
 		if email_exists:
 			flash('This mail already exists!', category='error')
-		elif password != confirm_password:
-			flash('Password does not match.', category='error')
+		# elif password != confirm_password:
+		# 	flash('Password does not match.', category='error')
 		elif len(password) < 8:
 			flash('Password is too short.', category='error')
 		elif len(email) < 5:
 			flash('Invalid email.', category='error')
 		else:
-			new_user = User(username = username, email = email, password_hash = password_hash, confirm_password = confirm_password)
+			new_user = User(username = username, email = email, password_hash = password_hash)
 			db.session.add(new_user)
 			db.session.commit()
 			flash('Your account has been created!')
