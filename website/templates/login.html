@@ -1,24 +1,25 @@
-{% extends "base.html" %}
-{% block title %}Login{% endblock %} 
+{% extends 'base.html' %}
 {% block content %}
-<form method="POST" action="{{url_for('Users.login')}}">
-	<br>
-	<h1 class="reg"> Welcome Back, buddy!</h1>
-	<div class="form-group">
-		<fieldset>
-			<label for="email"> Email:</label>
-			<input type="text" name="email" class="form-control" placeholder="Enter your Email address" required>
-		</fieldset>
-		<br>
-		<fieldset>
-			<label for="password">Password:</label>
-			<input type="password" name="password" class="form-control" placeholder="Enter your Password"
-				required>
-		</fieldset>
-		<br>
-		<fieldset align="center">
-			<button type="submit" id="button" class="button">Submit</button>
-		</fieldset>
-	</div>
+<form action="{{url_for('Users.login')}}" method="POST">
+  <div class="form-group">
+    <h3>Log In</h3>
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" name="username" class="form-control"/>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Log In" class="button"/>
+  </div>
+  <div class="form-group">
+    <small>
+      Do not have an account? <a href="{{url_for('Users.register')}}">Create One</a>
+    </small>
+  </div>
 </form>
-{% endblock %}
+{% endblock content %}

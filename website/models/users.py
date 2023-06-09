@@ -8,14 +8,14 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(45), nullable=False, unique=True)
     email = db.Column(db.String(50), nullable=False, unique=True)
-    password = db.Column(db.Text(), nullable=False)
+    password_hash = db.Column(db.Text(), nullable=False)
     is_staff = db.Column(db.Boolean(), default=False)
     is_active = db.Column(db.Boolean(), default=False)
 
-    def __init__(self, username, email, password):
+    def __init__(self, username, email, password_hash):
         self.username = username
         self.email = email
-        self.password = password
+        self.password_hash = password_hash
         # self.is_authenticated = True
 
 

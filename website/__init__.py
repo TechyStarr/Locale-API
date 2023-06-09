@@ -77,21 +77,10 @@ def create_app(config=config_dict['dev']):
 )
 
 
-
-
-
-
-    
-
     # register namespaces for api
     api.add_namespace(auth_namespace, path='/user')
     api.add_namespace(view_namespace, path='/view')
     api.add_namespace(search_ns, path='/query')
-
-
-
-
-
 
 
     @app.shell_context_processor 
@@ -117,7 +106,6 @@ def create_app(config=config_dict['dev']):
             user.is_authenticated = True
             return user
         return None
-    
 
 
     return app

@@ -27,6 +27,7 @@ limiter = Limiter(
 
 
 
+
 # signup route
 @auth.route('/signup', methods = ['GET', 'POST'])
 @cache.cached(timeout=60) # Cache the response for 60 seconds
@@ -49,13 +50,9 @@ def register():
 		elif len(email) < 5:
 			flash('Invalid email.', category='error')
 		else:
-			new_user = User(
-                            username = username, 
-                            email = email, 
-                            password = password_hash
-                        )
-
-			new_user.save()
+			new_user = User(username = username, email = email, password_hash = password_hash, confirm_password = confirm_password)
+			db.session.add(new_user)
+			db.session.commit()
 			flash('Your account has been created!')
 			login_user(new_user, remember=True)
 
@@ -65,20 +62,23 @@ def register():
 
 
 
+
+
+
+
+
 @auth.route("/login", methods=['GET', 'POST'])
 @cache.cached(timeout=60) # Cache the response for 60 seconds
 def login():
     if request.method == 'POST':
         email = request.form.get("email")
-        password = request.form.get("password")
+        password_hash = request.form.get("password")
 
         user = User.query.filter_by(email=email).first()
         if user:
-            if check_password_hash(user.password, password):
+            if check_password_hash(user.password_hash, password_hash):
                 flash(f"Good to have you back, {user.username}", category='success')
                 login_user(user, remember=True)
-
-                
                 return redirect(url_for('views.index'))
             else:
                 flash("Incorrect password!", category='error')
