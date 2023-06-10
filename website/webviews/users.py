@@ -50,7 +50,7 @@ def register():
 		elif len(email) < 5:
 			flash('Invalid email.', category='error')
 		else:
-			new_user = User(username = username, email = email, password_hash = password_hash)
+			new_user = User(username = username, email = email, password = password_hash)
 			db.session.add(new_user)
 			db.session.commit()
 			flash('Your account has been created!')
@@ -73,10 +73,10 @@ def login():
     if request.method == 'POST':
         email = request.form.get("email")
         password_hash = request.form.get("password")
-
+        print(email, password_hash)
         user = User.query.filter_by(email=email).first()
         if user:
-            if check_password_hash(user.password_hash, password_hash):
+            if check_password_hash(user.password, password_hash):
                 flash(f"Good to have you back, {user.username}", category='success')
                 login_user(user, remember=True)
                 return redirect(url_for('views.index'))

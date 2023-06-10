@@ -19,13 +19,20 @@ from flask_limiter.util import get_remote_address
 from flask_jwt_extended import JWTManager
 
 
+app = Flask(__name__)
+login_manager = LoginManager(app)
+login_manager.login_view = 'Users.login'
+login_manager.init_app(app)
 
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
 
 def create_app(config=config_dict['dev']):
-    app = Flask(__name__)
+    
 
     
     app.config.from_object(config) # config object from config.py file in config folder
@@ -94,19 +101,11 @@ def create_app(config=config_dict['dev']):
             'Area': Area
         }
     
-    login_manager = LoginManager()
-    login_manager.login_view = 'Users.login'
-    login_manager.init_app(app)
+    
 
-    @login_manager.user_loader
-    def load_user(user_id):
-        user_data = User.query.get(user_id)
-        if user_data:
-            user = User(user_data.id, user_data.email, user_data.password)
-            user.is_authenticated = True
-            return user
-        return None
+    
 
+    
 
     return app
 

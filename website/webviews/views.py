@@ -33,6 +33,7 @@ limiter = Limiter(
 @limiter.limit("100 per minute")
 def index():
     # regions = Region.query.all()
+    print(current_user, "====================")
     return render_template("index.html", current_user=current_user)
 
 
@@ -41,33 +42,32 @@ def index():
 @views.route("/q", methods=['GET', 'POST'])
 def query():
     if request.method == 'GET':
-        q = request.form.get('q')
-        if q:
+        query = request.form.get('query')
+        if query:
             results = State.query.join(Region).filter(
                 db.or_(
-                    State.name.ilike(f'%{q}%'),
-                    State.capital.ilike(f'%{q}%'),
-                    # State.lgas.ilike(f'%{q}%'),
-                    Lga.name.ilike(f'%{q}%'),
-                    Region.name.ilike(f'%{q}%')  # Include region name in the search
+                    State.name.ilike(f'%{query}%'),
+                    State.capital.ilike(f'%{query}%'),
+                    # State.lgas.ilike(f'%{query}%'),
+                    Lga.name.ilike(f'%{query}%'),
+                    Region.name.ilike(f'%{query}%')  # Include region name in the search
                 )
             ).all()
-            return render_template("search.html", results=results)
+            return render_template("search_results.html", results=results)
         else:
             flash("No results found", category="danger")
             return redirect(url_for('views.index'))
-            
     else:
         return redirect(url_for('views.index'))
     
 
 
-    
+
     
 
 
 @views.route("/dev")
-# @login_required
+@login_required
 def dev():
     return render_template("dev.html", current_user=current_user)
 
