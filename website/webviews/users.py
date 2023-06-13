@@ -104,7 +104,7 @@ def contact():
 def logout():
 	logout_user()
 	flash('Logout successful')
-	return redirect(url_for('aven.index'))
+	return redirect(url_for('views.index'))
 
 
 

@@ -54,11 +54,37 @@ def query():
                 )
             ).all()
             return render_template("search_results.html", results=results)
-        else:
-            flash("No results found", category="danger")
-            return redirect(url_for('views.index'))
-    else:
-        return redirect(url_for('views.index'))
+    
+    #     else:
+    #         print("I didn't find anything")
+    #         flash("No results found", category="danger")
+    #         return redirect(url_for('views.index'))
+    # else:
+    #     return redirect(url_for('views.index'))
+
+
+
+
+
+# @views.route("/q", methods=['GET', 'POST'])
+# def query():
+#     if request.method == 'GET':
+#         query = request.form.get('query')
+#         if query:
+#             results = State.query.join(Region).filter(
+#                 db.or_(
+#                     State.name.ilike(f'%{query}%'),
+#                     State.capital.ilike(f'%{query}%'),
+#                     # State.lgas.ilike(f'%{query}%'),
+#                     Lga.name.ilike(f'%{query}%'),
+#                     Region.name.ilike(f'%{query}%')  # Include region name in the search
+#                 )
+#             ).all()
+#             return render_template("search_results.html", results=results)
+    
+#     # Return a default response when no valid query is provided or the request method is not 'GET'
+#     return "Invalid query or method"
+
     
 
 
