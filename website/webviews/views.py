@@ -107,16 +107,24 @@ def api_key():
 # @login_required
 def generate_api_key():
     if request.method == "GET":
-        user = User.query.filter_by(email=current_user.email).first()
-        user.api_key()
-        try:
-            user.save()
-            flash( "Your api key is {}".format(user.api_key), category="success")
-            flash("API Key generated successfully", category="success")
-            return redirect(url_for("views.dev"))
-        except:
-            flash("API Key generation failed", category="danger")
-            return redirect(url_for("views.dev"))
+        current_user.api_key = api_key()
+        db.session.commit()
+        flash( "Your api key is {}".format(current_user.api_key), category="success")
+        flash("API Key generated successfully", category="success")
+        return redirect(url_for("views.dev"))
     else:
         flash("You're not authorized to do this", category="danger")
         return redirect(url_for("views.dev"))
+
+
+
+# import secrets
+
+# # Generate a random API key
+# def generate_api_key():
+#     return secrets.token_hex(16)
+
+# @views.route("/generate_api_key", methods=['GET'])
+# def generate_api_key_route():
+#     api_key = generate_api_key()
+#     return api_key
