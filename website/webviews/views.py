@@ -37,65 +37,50 @@ def index():
     return render_template("index.html", current_user=current_user)
 
 
-
-
 @views.route("/q", methods=['GET', 'POST'])
-def query():
-    if request.method == 'GET':
-        query = request.form.get('query')
+def search_results():
+    if request.method == "POST":
+        query = request.form.get("query")
+        regions = Region.query.filter(Region.name.ilike(f"%{query}%")).all()
         if query:
-            results = State.query.join(Region).filter(
-                db.or_(
-                    State.name.ilike(f'%{query}%'),
-                    State.capital.ilike(f'%{query}%'),
-                    # State.lgas.ilike(f'%{query}%'),
-                    Lga.name.ilike(f'%{query}%'),
-                    Region.name.ilike(f'%{query}%')  # Include region name in the search
-                )
-            ).all()
-            return render_template("search_results.html", results=results)
-    
-    #     else:
-    #         print("I didn't find anything")
-    #         flash("No results found", category="danger")
-    #         return redirect(url_for('views.index'))
-    # else:
-    #     return redirect(url_for('views.index'))
+            results = State.query.filter(State.name.ilike(f"%{query}%")).all()
+            if results:
+
+                context = {
+                    "results": results,
+                    "query": query,
+                    "regions": regions
+
+                }
+                return render_template("search_results.html", current_user=current_user, **context)
+            # return redirect(url_for("views.search_results", query=query))
+    return render_template("search_results.html", current_user=current_user)
 
 
 
 
 
-# @views.route("/q", methods=['GET', 'POST'])
-# def query():
-#     if request.method == 'GET':
-#         query = request.form.get('query')
-#         if query:
-#             results = State.query.join(Region).filter(
-#                 db.or_(
-#                     State.name.ilike(f'%{query}%'),
-#                     State.capital.ilike(f'%{query}%'),
-#                     # State.lgas.ilike(f'%{query}%'),
-#                     Lga.name.ilike(f'%{query}%'),
-#                     Region.name.ilike(f'%{query}%')  # Include region name in the search
-#                 )
-#             ).all()
-#             return render_template("search_results.html", results=results)
-    
-#     # Return a default response when no valid query is provided or the request method is not 'GET'
-#     return "Invalid query or method"
+# @views.route("/api/v1/regions", methods=['GET'])
+# def regions():
+#     regions = Region.query.all()
+#     region_list = []
+#     for region in regions:
+#         region_list.append(region.name)
+#     return jsonify(region_list)
 
-    
-
-
-
-    
 
 
 @views.route("/dev")
 @login_required
 def dev():
-    return render_template("dev.html", current_user=current_user)
+    regions = Region.query.all()
+    states = State.query.all()
+
+    context = {
+        "regions": regions,
+        "states": states
+    }
+    return render_template("dev.html", current_user=current_user, **context)
 
 
 def api_key():
