@@ -39,26 +39,14 @@ def index():
 
 @views.route("/q", methods=['GET', 'POST'])
 def search_results():
-    if request.method == "POST":
-        query = request.form.get("query")
-        regions = Region.query.filter(Region.name.ilike(f"%{query}%")).all()
-        if query:
-            results = State.query.filter(State.name.ilike(f"%{query}%")).all()
-            if results:
-
-                context = {
-                    "results": results,
-                    "query": query,
-                    "regions": regions
-
-                }
-                return render_template("search_results.html", current_user=current_user, **context)
-            # return redirect(url_for("views.search_results", query=query))
+    query = request.form.get("query")
+    print(query)
+    if query:
+        results = State.query.filter(State.name.ilike(f"%{query}%")).all()
+        print(results)
+        print(current_user)
+        
     return render_template("search_results.html", current_user=current_user)
-
-
-
-
 
 # @views.route("/api/v1/regions", methods=['GET'])
 # def regions():
@@ -67,6 +55,19 @@ def search_results():
 #     for region in regions:
 #         region_list.append(region.name)
 #     return jsonify(region_list)
+
+
+
+@views.route("/api/v1/regions", methods=['GET'])
+def regions():
+    query = request.args.get("query")
+    if query:
+        regions = Region.query.filter(Region.name.ilike(f"%{query}%")).all()
+    #  = State.query.filter(State.name.ilike(f"%{query}%")).all()
+        region_list = []
+        for region in regions:
+            region_list.append(region.name)
+        return jsonify(region_list)
 
 
 
