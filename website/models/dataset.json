@@ -119,7 +119,6 @@
             "deputy_governor": "Ude Oko Chukwu",
             "date_created": "27th August, 1991",
             "motto": "God's Own State",
-            "website": "www.abiastate.gov.ng",
             "map": "https://en.wikipedia.org/wiki/Abia_State#/media/File:Nigeria_Abia_State_map.png",
             "description": "Abia is a state in the south eastern part of Nigeria. The capital is Umuahia and the major commercial city is Aba, formerly a British colonial government outpost. The state was created in 1991 from part of Imo State and its citizens are predominantly Igbo people (95% of population). It is one of the nine constituent states of the Niger Delta region.",
             "landmarks": [
@@ -139,8 +138,13 @@
             "region": "North East",
             "region_id": "5",
             "capital": "Yola",
-            "population": "3,168,101",
-            "postal_code": "640001",
+            "slogan": "Land of Beauty, Sunshine and Hospitality",
+            "senatorial_districts": [
+                "Adamawa North",
+                "Adamawa Central",
+                "Adamawa South"
+            ],
+            
             "lgas": [
                 "Demsa",
                 "Fufore",
@@ -163,8 +167,42 @@
                 "Toungo",
                 "Yola North",
                 "Yola South"
+            ],
+            "postal_code": "640001",
+            "landmass": "49,119 km2 (18,962 sq mi)",
+            "population": "4,653,066",
+            "dialect": "Hausa",
+            "latitude": "10.3158",
+            "longitude": "9.8442",
+            "website": "http://www.bauchistate.gov.ng/",
+            "geo_politcal_zone": "North East",
+            "created_date": "3 February 1976",
+            "created_by": "General Murtala Mohammed",
+            "past_governors": [
+                "Muhammadu Buhari",
+                "Abdulkadir Ahmed",
+                "Abdullahi Sarki Mukhtar",
+                "Ahmed Adamu Mu'azu",
+                "Adamu Mu'azu",
+                "Isa Yuguda",
+                "Muhammad Abdullahi Abubakar"
+            ],
+            "borders": [
+                "Kano",
+                "Jigawa",
+                "Plateau",
+                "Taraba",
+                "Gombe",
+                "Yobe"
+            ],
+            "known_for": [
+                "Yankari National Park",
+                "Sumu Wildlife Reserve",
+                "Wiki Warm Springs",
+                "Emir's Palace",
+                "Bauchi Central Mosque",
+                "Bauchi State Library"
             ]
-
         },
 
 
@@ -216,7 +254,6 @@
             "landmass": "7,081 km2 (2,735 sq mi)",
             "population": "5,450,758",
             "dialect": "Ibibio",
-            "map": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Nigeria_Akwa_Ibom_state_map.png/250px-Nigeria_Akwa_Ibom_state_map.png",
             "latitude": "4.9833",
             "longitude": "7.9167",
             "website": "http://www.akwaibomstate.gov.ng/",
@@ -283,7 +320,6 @@
             "landmass": "4,844 km2 (1,870 sq mi)",
             "population": "4,182,032",
             "dialect": "Igbo",
-            "map": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Nigeria_Akwa_Ibom_state_map.png/250px-Nigeria_Akwa_Ibom_state_map.png",
             "latitude": "6.2107",
             "longitude": "7.0323",
             "website": "http://www.anambrastate.gov.ng/",
@@ -2508,7 +2544,7 @@
         {
             "id": 1,
             "state_id": 1,
-            "lga": "Aba North",
+            "lga_name": "Aba North",
             "state":"Abia",
             "senatorial_district": "Abia Central",
             "area": "46",
@@ -2524,7 +2560,7 @@
         {
             "id": 2,
             "state_id": 1,
-            "lga": "Aba South",
+            "lga_name": "Aba South",
             "state":"Abia",
             "senatorial_district": "Abia Central",
             "area": "65",
@@ -2540,7 +2576,7 @@
         {
             "id": 3,
             "state_id": 1,
-            "lga": "Arochukwu",
+            "lga_name": "Arochukwu",
             "senatorial_district": "Abia North",
             "area": "193",
             "population": "193,987",
@@ -2555,7 +2591,7 @@
         {
             "id": 4,
             "state_id": 1,
-            "lga": "Bende",
+            "lga_name": "Bende",
             "state":"Abia",
             "senatorial_district": "Abia North",
             "area": "137",
@@ -2571,7 +2607,7 @@
         {
             "id": 5,
             "state_id": 1,
-            "lga": "Ikwuano",
+            "lga_name": "Ikwuano",
             "state":"Abia",
             "senatorial_district": "Abia North",
             "area": "139",
@@ -2587,7 +2623,7 @@
         {
             "id": 6,
             "state_id": 1,
-            "lga": "Isiala Ngwa North",
+            "lga_name": "Isiala Ngwa North",
             "state":"Abia",
             "senatorial_district": "Abia Central",
             "area": "140",
@@ -2603,7 +2639,7 @@
         {
             "id": 7,
             "state_id": 1,
-            "lga": "Isiala Ngwa South",
+            "lga_name": "Isiala Ngwa South",
             "state":"Abia",
             "senatorial_district": "Abia Central",
             "area": "140",
@@ -2619,7 +2655,7 @@
         {
             "id": 8,
             "state_id": 1,
-            "lga": "Isuikwuato",
+            "lga_name": "Isuikwuato",
             "state":"Abia",
             "senatorial_district": "Abia North",
             "area": "140",
@@ -2635,7 +2671,7 @@
         {
             "id": 9,
             "state_id": 1,
-            "lga": "Obi Ngwa",
+            "lga_name": "Obi Ngwa",
             "state":"Abia",
             "senatorial_district": "Abia Central",
             "area": "140",
@@ -2647,7 +2683,7 @@
         {
             "id": 10,
             "state_id": 1,
-            "lga": "Ohafia",
+            "lga_name": "Ohafia",
             "state":"Abia",
             "senatorial_district": "Abia North",
             "area": "140",
@@ -2659,7 +2695,7 @@
         {
             "id": 11,
             "state_id": 1,
-            "lga": "Osisioma Ngwa",
+            "lga_name": "Osisioma Ngwa",
             "state":"Abia",
             "senatorial_district": "Abia Central",
             "area": "140",
@@ -2671,7 +2707,7 @@
         {
             "id": 12,
             "state_id": 1,
-            "lga": "Ugwunagbo",
+            "lga_name": "Ugwunagbo",
             "state":"Abia",
             "senatorial_district": "Abia South",
             "area": "140",
@@ -2683,7 +2719,7 @@
         {
             "id": 13,
             "state_id": 1,
-            "lga": "Ukwa East",
+            "lga_name": "Ukwa East",
             "state":"Abia",
             "senatorial_district": "Abia South",
             "area": "140",
@@ -2695,7 +2731,7 @@
         {
             "id": 14,
             "state_id": 1,
-            "lga": "Ukwa West",
+            "lga_name": "Ukwa West",
             "state":"Abia",
             "senatorial_district": "Abia South",
             "area": "140",
@@ -2707,7 +2743,7 @@
         {
             "id": 15,
             "state_id": 1,
-            "lga": "Umuahia North",
+            "lga_name": "Umuahia North",
             "state":"Abia",
             "senatorial_district": "Abia Central",
             "area": "140",
@@ -2719,7 +2755,7 @@
         {
             "id": 16,
             "state_id": 1,
-            "lga": "Umuahia South",
+            "lga_name": "Umuahia South",
             "state":"Abia",
             "senatorial_district": "Abia Central",
             "area": "140",
@@ -2731,7 +2767,7 @@
         {
             "id": 17,
             "state_id": 1,
-            "lga": "Umu Nneochi",
+            "lga_name": "Umu Nneochi",
             "state":"Abia",
             "senatorial_district": "Abia North",
             "area": "140",
@@ -2743,7 +2779,7 @@
         {
             "id": 1,
             "state_id": 2,
-            "lga": "Demsa",
+            "lga_name": "Demsa",
             "state":"Adamawa",
             "senatorial_district": "Adamawa North",
             "area": "140",
@@ -2761,7 +2797,7 @@
         {
             "id": 2,
             "state_id": 2,
-            "lga": "Fufore",
+            "lga_name": "Fufore",
             "state":"Adamawa",
             "senatorial_district": "Adamawa North",
             "area": "140",
@@ -2779,7 +2815,7 @@
         {
             "id": 3,
             "state_id": 2,
-            "lga": "Ganye",
+            "lga_name": "Ganye",
             "state":"Adamawa",
             "senatorial_district": "Adamawa South",
             "area": "140",
@@ -2797,7 +2833,7 @@
         {
             "id": 4,
             "state_id": 2,
-            "lga": "Girei",
+            "lga_name": "Girei",
             "state":"Adamawa",
             "senatorial_district": "Adamawa North",
             "area": "140",
@@ -2815,7 +2851,7 @@
         {
             "id": 5,
             "state_id": 2,
-            "lga": "Gombi",
+            "lga_name": "Gombi",
             "state":"Adamawa",
             "senatorial_district": "Adamawa North",
             "area": "140",
@@ -2833,7 +2869,7 @@
         {
             "id": 6,
             "state_id": 2,
-            "lga": "Guyuk",
+            "lga_name": "Guyuk",
             "state":"Adamawa",
             "senatorial_district": "Adamawa South",
             "area": "140",
@@ -2851,7 +2887,7 @@
         {
             "id": 7,
             "state_id": 2,
-            "lga": "Hong",
+            "lga_name": "Hong",
             "state":"Adamawa",
             "senatorial_district": "Adamawa North",
             "area": "140",
@@ -2869,7 +2905,7 @@
         {
             "id": 8,
             "state_id": 2,
-            "lga": "Jada",
+            "lga_name": "Jada",
             "state":"Adamawa",
             "senatorial_district": "Adamawa South",
             "area": "140",
@@ -2887,7 +2923,7 @@
         {
             "id": 9,
             "state_id": 2,
-            "lga": "Lamurde",
+            "lga_name": "Lamurde",
             "state":"Adamawa",
             "senatorial_district": "Adamawa South",
             "area": "140",
@@ -2905,7 +2941,7 @@
         {
             "id": 10,
             "state_id": 2,
-            "lga": "Madagali",
+            "lga_name": "Madagali",
             "state":"Adamawa",
             "senatorial_district": "Adamawa North",
             "area": "140",
