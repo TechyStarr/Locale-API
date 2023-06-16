@@ -206,11 +206,6 @@
             "region_id": "2",
             "capital": "Uyo",
             "slogan": "Land of Promise",
-            "senatorial_districts": [
-                "Akwa Ibom North East",
-                "Akwa Ibom North West",
-                "Akwa Ibom South"
-            ],
             "lgas": [
                 "Abak",
                 "Eastern Obolo",
@@ -268,11 +263,6 @@
             "region_id": "1",
             "capital": "Awka",
             "slogan": "Light of the Nation",
-            "_districts": [
-                "Anambra Central",
-                "Anambra North",
-                "Anambra South"
-            ],
             "lgas": [
                 "Aguata",
                 "Akwa North",
@@ -680,11 +670,6 @@
             "region_id": "1",
             "capital": "Abakaliki",
             "slogan": "Salt of the Nation",
-            "senatorial_districts": [
-                "Ebonyi South",
-                "Ebonyi Central",
-                "Ebonyi North"
-            ],
             "lgas": [
                 "Abakaliki",
                 "Afikpo-North",
@@ -727,7 +712,6 @@
             "region_id": "2",
             "capital": "Benin City",
             "slogan": "Heartbeat of the Nation",
-            "senatorial_districts": ["Edo South", "Edo Central", "Edo North"],
             "lgas": [
                 "Afokpella",
                 "Afuze",
@@ -784,11 +768,6 @@
             "region_id": "3",
             "capital": "Ado-Ekiti",
             "slogan": "Land of Honour",
-            "senatorial_districts": [
-                "Ekiti South",
-                "Ekiti Central",
-                "Ekiti North"
-            ],
             "lgas": [
                 "Ado-Ekiti",
                 "Aiyekire",
@@ -837,11 +816,6 @@
             "region_id": "1",
             "capital": "Enugu",
             "slogan": "Coal City State",
-            "senatorial_districts": [
-                "Enugu North",
-                "Enugu East",
-                "Enugu West"
-            ],
             "lgas": [
                 "Aninri",
                 "Awgu",
@@ -890,11 +864,6 @@
             "region_id": "5",
             "capital": "Gombe",
             "slogan": "Jewel in the Savannah",
-            "senatorial_districts": [
-                "Gombe Central",
-                "Gombe North",
-                "Gombe South"
-            ],
             "lgas": [
                 "Akko",
                 "Balanga",
@@ -933,7 +902,6 @@
             "region_id": "1",
             "capital": "Owerri",
             "slogan": "Eastern Heartland",
-            "senatorial_districts": ["Imo East", "Imo North", "Imo West"],
             "lgas": [
                 "Aboh-Mbaise",
                 "Ahiazu-Mbaise",
@@ -997,11 +965,6 @@
             "region_id": "6",
             "capital": "Dutse",
             "slogan": "The New World",
-            "senatorial_districts": [
-                "Jigawa North - West",
-                "Jigawa North – East",
-                "Jigawa South – West"
-            ],
             "lgas": [
                 "Auyo",
                 "Babura",
@@ -1064,11 +1027,6 @@
             "region_id": "6",
             "capital": "Birnin Kebbi",
             "slogan": "Land of Equity",
-            "senatorial_districts": [
-                "Kebbi Central",
-                "Kebbi North",
-                "Kebbi South"
-            ],
             "lgas": [
                 "Aleiro",
                 "Arewa-Dandi",
@@ -1119,11 +1077,6 @@
             "region_id": "6",
             "capital": "Kaduna",
             "slogan": "Centre of Learning",
-            "senatorial_districts": [
-                "Kaduna Central",
-                "Kaduna North",
-                "Kaduna South"
-            ],
             "lgas": [
                 "Birnin-Gwari",
                 "Chikun",
@@ -1193,11 +1146,6 @@
             "region_id": "6",
             "capital": "Kano",
             "slogan": "Centre of Commerce",
-            "senatorial_districts": [
-                "Kano South",
-                "Kano Central",
-                "Kano North"
-            ],
             "lgas": [
                 "Ajingi",
                 "Albasu",
@@ -1279,11 +1227,6 @@
             "region_id": "4",
             "capital": "Lokoja",
             "slogan": "The Confluence State",
-            "senatorial_districts": [
-                "Kogi Central",
-                "Kogi East",
-                "Kogi West"
-            ],
             "lgas": [
                 "Adavi",
                 "Ajaokuta",
@@ -1349,11 +1292,6 @@
             "region_id": "6",
             "capital": "Katsina",
             "slogan": "Home of Hospitality",
-            "senatorial_districts": [
-                "Katsina Central",
-                "Katsina North",
-                "Katsina South"
-            ],
             "lgas": [
                 "Bakori",
                 "Batagarawa",
@@ -1416,11 +1354,6 @@
             "region_id": "4",
             "capital": "Ilorin",
             "slogan": "State of Harmony",
-            "senatorial_districts": [
-                "Kwara Central",
-                "Kwara North",
-                "Kwara South"
-            ],
             "lgas": [
                 "Asa",
                 "Baruten",
@@ -1473,11 +1406,6 @@
             "region_id": "3",
             "capital": "Ikeja",
             "slogan": "Centre of Excellence",
-            "senatorial_districts": [
-                "Lagos West",
-                "Lagos Central",
-                "Lagos East"
-            ],
             "lgas": [
                 "Agege",
                 "Ajeromi-Ifelodun",
@@ -1526,11 +1454,6 @@
             "region_id": "4",
             "capital": "Lafia",
             "slogan": "Home of Solid Minerals",
-            "senatorial_districts": [
-                "Nassarawa South",
-                "Nassarawa North",
-                "Nassarawa West"
-            ],
             "lgas": [
                 "Akwanga",
                 "Awe",
@@ -1578,11 +1501,6 @@
             "region_id": "4",
             "capital": "Minna",
             "slogan": "The Power State",
-            "senatorial_districts": [
-                "Niger East",
-                "Niger North",
-                "Niger South"
-            ],
             "lgas": [
                 "Agaie",
                 "Agwara",
@@ -1646,11 +1564,6 @@
             "region_id": "3",
             "capital": "Abeokuta",
             "slogan": "Gateway State",
-            "senatorial_districts": [
-                "Ogun Central",
-                "Ogun East",
-                "Ogun West"
-            ],
             "lgas": [
                 "Abeokuta-North",
                 "Abeokuta-South",
@@ -1698,11 +1611,6 @@
             "region_id": "3",
             "capital": "Akure",
             "slogan": "Sunshine State",
-            "senatorial_districts": [
-                "Ondo Central",
-                "Ondo North",
-                "Ondo South"
-            ],
             "lgas": [
                 "Akoko",
                 "Akoko-North",
@@ -1756,11 +1664,6 @@
             "region_id": "3",
             "capital": "Osogbo",
             "slogan": "Land of Virtue",
-            "senatorial_districts": [
-                "Osun Central",
-                "Osun East",
-                "Osun West"
-            ],
             "lgas": [
                 "Atakumosa",
                 "Atakumosa East",
@@ -1815,7 +1718,6 @@
             "region_id": "3",
             "capital": "Ibadan",
             "slogan": "Pace Setter",
-            "senatorial_districts": ["Oyo Central", "Oyo North", "Oyo South"],
             "lgas": [
                 "Afijio",
                 "Akinyele",
@@ -1872,11 +1774,6 @@
             "region_id": "4",
             "capital": "Jos",
             "slogan": "Home of Peace and Tourism",
-            "senatorial_districts": [
-                "Plateau Central",
-                "Plateau North",
-                "Plateau South"
-            ],
             "lgas": [
                 "Barkin-Ladi",
                 "Bassa",
@@ -1925,11 +1822,6 @@
             "region_id": "2",
             "capital": "Port Harcourt",
             "slogan": "Treasure Base of the Nation",
-            "senatorial_districts": [
-                "Rivers East",
-                "Rivers South East",
-                "Rivers West"
-            ],
             "lgas": [
                 "Aboa/Odual",
                 "Ahoada-East",
@@ -1987,11 +1879,6 @@
             "region_id": "6",
             "capital": "Sokoto",
             "slogan": "Seat of the Caliphate",
-            "senatorial_districts": [
-                "Sokoto East",
-                "Sokoto North",
-                "Sokoto South"
-            ],
             "lgas": [
                 "Binji",
                 "Bodinga",
@@ -2075,7 +1962,6 @@
             "region_id": "5",
             "capital": "Damaturu",
             "slogan": "Pride of the Sahel",
-            "senatorial_districts": ["Yobe East", "Yobe North", "Yobe South"],
             "lgas": [
                 "Bade",
                 "Borsali",
@@ -2116,11 +2002,6 @@
             "region_id": "6",
             "capital": "Gusau",
             "slogan": "Farming is Our Pride",
-            "senatorial_districts": [
-                "Zamfara Central",
-                "Zamfara North",
-                "Zamfara West"
-            ],
             "lgas": [
                 "Anka",
                 "Bakura",
@@ -2159,7 +2040,6 @@
             "region_id": "4",
             "capital": "Abuja",
             "slogan": "Centre of Unity",
-            "senatorial_districts": ["Federal Capital Territory"],
             "lgas": [
                 "Abaji",
                 "Abuja Municipal",
@@ -2202,13 +2082,6 @@
             "state_id": 1,
             "lga_name": "Aba North",
             "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "46",
-            "population": "241,498",
-            "headquarters": "Aba",
-            "description": "Aba North is a Local Government Area of Abia State, Nigeria. Its headquarters are in the city of Aba. It has an area of 46 km² and a population of 241,498 at the 2006 census.",
-            "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "landmass": "46 km2 (18 sq mi)",
             "borders": ["Aba South", "Osisioma Ngwa", "Umuahia North", "Umuahia South"]
         },
@@ -2218,13 +2091,6 @@
             "state_id": 1,
             "lga_name": "Aba South",
             "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "65",
-            "population": "134,102",
-            "headquarters": "Aba",
-            "description": "Aba South is a Local Government Area of Abia State, Nigeria. Its headquarters are in the city of Aba. It has an area of 65 km² and a population of 134,102 at the 2006 census.",
-            "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "landmass": "65 km2 (25 sq mi)",
             "borders": ["Aba North", "Osisioma Ngwa", "Umuahia North", "Umuahia South"]
         },
@@ -2233,13 +2099,7 @@
             "id": 3,
             "state_id": 1,
             "lga_name": "Arochukwu",
-            "senatorial_district": "Abia North",
-            "area": "193",
-            "population": "193,987",
-            "headquarters": "Arochukwu",
-            "description": "Arochukwu is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Arochukwu. It has an area of 193 km² and a population of 193,987 at the 2006 census.",
-            "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
+            "state":"Abia",
             "landmass": "193 km2 (75 sq mi)",
             "borders": ["Bende", "Ikwuano", "Isiala Ngwa North", "Ohafia", "Umuahia North"]
         },
@@ -2249,13 +2109,6 @@
             "state_id": 1,
             "lga_name": "Bende",
             "state":"Abia",
-            "senatorial_district": "Abia North",
-            "area": "137",
-            "population": "245,753",
-            "headquarters": "Bende",
-            "description": "Bende is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Bende. It has an area of 137 km² and a population of 245,753 at the 2006 census.",
-            "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "landmass": "137 km2 (53 sq mi)",
             "borders": ["Arochukwu", "Ikwuano", "Isiala Ngwa North", "Ohafia", "Umuahia North"]
         },
@@ -2265,13 +2118,6 @@
             "state_id": 1,
             "lga_name": "Ikwuano",
             "state":"Abia",
-            "senatorial_district": "Abia North",
-            "area": "139",
-            "population": "230,596",
-            "headquarters": "Ikwuano",
-            "description": "Ikwuano is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Ikwuano. It has an area of 139 km² and a population of 230,596 at the 2006 census.",
-            "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "landmass": "139 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Isiala Ngwa North", "Ohafia", "Umuahia North"]
         },
@@ -2281,13 +2127,6 @@
             "state_id": 1,
             "lga_name": "Isiala Ngwa North",
             "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Isiala Ngwa North",
-            "description": "Isiala Ngwa North is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Isiala Ngwa North. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Ohafia", "Umuahia North"]
         },
@@ -2297,13 +2136,6 @@
             "state_id": 1,
             "lga_name": "Isiala Ngwa South",
             "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Isiala Ngwa South",
-            "description": "Isiala Ngwa South is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Isiala Ngwa South. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Umuahia North"]
         },
@@ -2313,13 +2145,6 @@
             "state_id": 1,
             "lga_name": "Isuikwuato",
             "state":"Abia",
-            "senatorial_district": "Abia North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Isuikwu",
-            "description": "Isuikwuato is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Isuikwuato. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Ohafia"]
         },
@@ -2329,10 +2154,7 @@
             "state_id": 1,
             "lga_name": "Obi Ngwa",
             "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Obi Ngwa",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Ohafia"]
         },
 
@@ -2341,10 +2163,7 @@
             "state_id": 1,
             "lga_name": "Ohafia",
             "state":"Abia",
-            "senatorial_district": "Abia North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Ohafia",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2353,10 +2172,7 @@
             "state_id": 1,
             "lga_name": "Osisioma Ngwa",
             "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Osisioma Ngwa",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2365,10 +2181,7 @@
             "state_id": 1,
             "lga_name": "Ugwunagbo",
             "state":"Abia",
-            "senatorial_district": "Abia South",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Ugwunagbo",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2377,10 +2190,7 @@
             "state_id": 1,
             "lga_name": "Ukwa East",
             "state":"Abia",
-            "senatorial_district": "Abia South",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Ukwa East",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2389,10 +2199,7 @@
             "state_id": 1,
             "lga_name": "Ukwa West",
             "state":"Abia",
-            "senatorial_district": "Abia South",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Ukwa West",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2401,10 +2208,7 @@
             "state_id": 1,
             "lga_name": "Umuahia North",
             "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Umuahia North",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2413,10 +2217,7 @@
             "state_id": 1,
             "lga_name": "Umuahia South",
             "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Umuahia South",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2425,10 +2226,7 @@
             "state_id": 1,
             "lga_name": "Umu Nneochi",
             "state":"Abia",
-            "senatorial_district": "Abia North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Umu Nneochi",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2437,10 +2235,7 @@
             "state_id": 2,
             "lga_name": "Demsa",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Demsa",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2455,10 +2250,7 @@
             "state_id": 2,
             "lga_name": "Fufore",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Fufore",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2473,10 +2265,7 @@
             "state_id": 2,
             "lga_name": "Ganye",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa South",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Ganye",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2491,10 +2280,7 @@
             "state_id": 2,
             "lga_name": "Girei",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Girei",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2509,10 +2295,7 @@
             "state_id": 2,
             "lga_name": "Gombi",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Gombi",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2527,10 +2310,7 @@
             "state_id": 2,
             "lga_name": "Guyuk",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa South",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Guyuk",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2545,10 +2325,7 @@
             "state_id": 2,
             "lga_name": "Hong",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Hong",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2563,10 +2340,7 @@
             "state_id": 2,
             "lga_name": "Jada",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa South",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Jada",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2581,10 +2355,7 @@
             "state_id": 2,
             "lga_name": "Lamurde",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa South",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Lamurde",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
@@ -2599,10 +2370,7 @@
             "state_id": 2,
             "lga_name": "Madagali",
             "state":"Adamawa",
-            "senatorial_district": "Adamawa North",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Madagali",
+            "landmass": "140 km2 (54 sq mi)",
             "borders": [
                 "Ganye",
                 "Guyuk",
