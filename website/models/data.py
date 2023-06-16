@@ -40,7 +40,6 @@ class State(db.Model):
     capital = db.Column(db.String(45))
     population = db.Column(db.String(100))
     area = db.Column(db.String(100))
-    postal_code = db.Column(db.String(100))
     # No_of_LGAs = db.Column(db.String(100))
     # language = db.Column(db.String(100))
     lgas = db.relationship('Lga', backref='state', lazy=True) # One to many relationship with Lga lazy=True means that the data is loaded on access
@@ -82,7 +81,7 @@ class Lga(db.Model):
     population = db.Column(db.String(100))
     headquarters = db.Column(db.String(100))
     # description = db.Column(db.String(100))
-    created_date = db.Column(db.DateTime(), default=db.func.current_timestamp())
+    date_of_creation = db.Column(db.DateTime(), default=db.func.current_timestamp())
     created_by = db.Column(db.String(100))
     landmass = db.Column(db.String(100))
     # language = db.Column(db.String(100))
@@ -160,7 +159,6 @@ def load_dataset():
             capital=state_data['capital'],
             population=state_data['population'],
             # area=state_data['area'],
-            # postal_code=state_data['postal_code'],
             # No_of_LGAs=state_data['No_of_LGAs'],
             )
         
@@ -180,7 +178,7 @@ def load_dataset():
             population=lga_data['population'],
             headquarters=lga_data['headquarters'],
             # description=lga_data['description'],
-            # created_date=lga_data['created_date'],
+            # date_of_creation=lga_data['date_of_creation'],
             # created_by=lga_data['created_by'],
             # landmass=lga_data['landmass'],
             # borders=lga_data['borders'],

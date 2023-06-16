@@ -23,7 +23,6 @@ def serialized_state(state):
         'capital': state.capital,
         'population': state.population,
         'area': state.area,
-        'postal_code': state.postal_code,
         # 'No_of_LGAs': state.No_of_LGAs,
         'lgas': state.lgas
     }

@@ -21,7 +21,6 @@ state_model = search_ns.model(
         'capital': fields.String(required=True, description="Capital"),
         'population': fields.String(required=True, description="Population"),
         'area': fields.String(required=True, description="Area"),
-        'postal_code': fields.String(required=True, description="Postal Code"),
         # 'No_of_LGAs': fields.String(required=True, description="No of LGAs"),
         'lgas': fields.String(required=True, description="Local Government Areas"),
     }
