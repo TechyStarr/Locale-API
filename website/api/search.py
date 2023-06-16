@@ -33,7 +33,6 @@ lga_model = search_ns.model(
         'name': fields.String(required=True, description="LGA Name"),
         'state_id': fields.String(required=True, description="state"),
         'state': fields.String(required=True, description="Region ID"),
-        'senatorial_district': fields.String(required=True, description="Capital"),
         'area': fields.String(required=True, description="Area"),
         'population': fields.String(required=True, description="Population"),
         'headquarters': fields.String(required=True, description="Area"),

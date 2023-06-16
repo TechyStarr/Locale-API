@@ -77,7 +77,6 @@ class Lga(db.Model):
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'))
     state_id = db.Column(db.Integer(), db.ForeignKey('states.id'), nullable=False)
     area = db.Column(db.String(100))
-    senatorial_district = db.Column(db.String(45))
     population = db.Column(db.String(100))
     headquarters = db.Column(db.String(100))
     # description = db.Column(db.String(100))
@@ -173,7 +172,6 @@ def load_dataset():
             name=lga_data['lga'],
             state_id=lga_data['state_id'],
             state=state,
-            senatorial_district=lga_data['senatorial_district'],
             area=lga_data['area'],
             population=lga_data['population'],
             headquarters=lga_data['headquarters'],

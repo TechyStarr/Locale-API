@@ -34,7 +34,6 @@ def serialized_lga(lga):
         'name': lga.name,
         'state_id': lga.state_id,
         'state': lga.state,
-        'senatorial_district': lga.senatorial_district,
         'area': lga.area,
         'population': lga.population,
         'headquarters': lga.headquarters

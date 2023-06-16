@@ -35,7 +35,6 @@ lga_model = view_namespace.model(
         'name': fields.String(required=True, description="LGA Name"),
         'state_id': fields.String(required=True, description="state"),
         'state': fields.String(required=True, description="Region ID"),
-        'senatorial_district': fields.String(required=True, description="Capital"),
         'area': fields.String(required=True, description="Area"),
         'population': fields.String(required=True, description="Population"),
         'headquarters': fields.String(required=True, description="Area"),
@@ -237,7 +236,6 @@ class Retrieve(Resource):
         
         lga.name = data['name']
         lga.state_id = data['state_id']
-        lga.senatorial_district = data['senatorial_district']
         lga.area = data['area']
         lga.population = data['population']
         lga.headquarters = data['headquarters']
