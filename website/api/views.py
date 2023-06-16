@@ -236,7 +236,4 @@ class Retrieve(Resource):
         
         lga.name = data['name']
         lga.state_id = data['state_id']
-        lga.area = data['area']
-        lga.population = data['population']
-        lga.headquarters = data['headquarters']
         return lga, HTTPStatus.OK

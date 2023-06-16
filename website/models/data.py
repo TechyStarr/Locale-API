@@ -169,13 +169,9 @@ def load_dataset():
 
     for lga_data in dataset['LGAs']: 
         lga = Lga(
-            name=lga_data['lga'],
+            name=lga_data['lga_name'],
             state_id=lga_data['state_id'],
             state=state,
-            area=lga_data['area'],
-            population=lga_data['population'],
-            headquarters=lga_data['headquarters'],
-            # description=lga_data['description'],
             # date_of_creation=lga_data['date_of_creation'],
             # created_by=lga_data['created_by'],
             # landmass=lga_data['landmass'],
