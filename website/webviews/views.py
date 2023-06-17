@@ -90,7 +90,7 @@ def api_key():
 
 
 @views.route("/generate-api-key")
-# @login_required
+@login_required
 def generate_api_key():
     if request.method == "GET":
         current_user.api_key = api_key()

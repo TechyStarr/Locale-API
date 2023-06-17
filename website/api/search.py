@@ -1,4 +1,3 @@
-import json
 from flask import Flask, request
 from flask_restx import Api, Resource, fields, Namespace, abort
 from website.utils.utils import db

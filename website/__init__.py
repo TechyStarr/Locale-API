@@ -3,11 +3,13 @@ from flask_restx import Api
 from website.utils.utils import db
 from .api.users import auth_namespace
 from .api.views import view_namespace
+
+# from .api.api_key import api_key_ns
 from .webviews.users import auth
 from .webviews.views import views
 from .api.search import search_ns
 from website.config.config import config_dict
-from website.models.users import User
+from website.models.users import User, ApiKey
 from website.models.data import Region, State, Lga, Area
 from flask_migrate import Migrate
 from flask_login import LoginManager
@@ -90,6 +92,7 @@ def create_app(config=config_dict['dev']):
     api.add_namespace(search_ns, path='/query')
 
 
+
     @app.shell_context_processor 
     def make_shell_context():
         return {
@@ -98,7 +101,8 @@ def create_app(config=config_dict['dev']):
             'Region': Region,
             'State': State,
             'Lga': Lga,
-            'Area': Area
+            'Area': Area,
+            'ApiKey': ApiKey
         }
     
     

@@ -1,7 +1,7 @@
-# from api import db
+from uuid import uuid4
 from flask import Flask, request
 from flask_restx import Resource, fields, Namespace, abort
-from website.models.users import User
+from website.models.users import User, ApiKey
 from website.utils.utils import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from http import HTTPStatus
@@ -44,6 +44,35 @@ login_model = auth_namespace.model(
 		'password': fields.String(required=True, description='User Password')
 	}
 )
+
+
+
+# def api_key():
+#     gen_api_key = secrets.token_hex(16)
+#     return gen_api_key
+
+
+
+@auth_namespace.route("/generate-api-key")
+class ApiKey(Resource):
+	def get_api_key():
+		user = User.query.filter_by(email=user.email).first()
+		if user:
+			key = ApiKey.query.filter_by(user_id=user.id).first()
+
+			if key:
+				return key
+			api_key = ApiKey(
+				key = str(uuid4()),
+				developer_name=auth_namespace.payload['developer_name']
+			)
+			db.save(api_key)
+			return api_key
+		return {"message": "User not found"}, 404
+    
+	
+
+
 
 
 

@@ -76,14 +76,8 @@ class Lga(db.Model):
     name = db.Column(db.String(45), nullable=False, unique=True)
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'))
     state_id = db.Column(db.Integer(), db.ForeignKey('states.id'), nullable=False)
-    area = db.Column(db.String(100))
-    population = db.Column(db.String(100))
-    headquarters = db.Column(db.String(100))
-    # description = db.Column(db.String(100))
     date_of_creation = db.Column(db.DateTime(), default=db.func.current_timestamp())
     created_by = db.Column(db.String(100))
-    landmass = db.Column(db.String(100))
-    # language = db.Column(db.String(100))
     borders = db.Column(db.String(100))
 
     def __repr__(self):
