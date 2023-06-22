@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from http import HTTPStatus
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
 from flask_jwt_extended.exceptions import NoAuthorizationError
-from flask_caching import Cache
+# from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
@@ -34,7 +34,6 @@ signup_model = auth_namespace.model(
 		'password_hash': fields.String(required=True, description='User Password')
 	}
 )
-
 
 
 
