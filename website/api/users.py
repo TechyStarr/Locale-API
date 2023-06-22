@@ -8,8 +8,8 @@ from http import HTTPStatus
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
 from flask_jwt_extended.exceptions import NoAuthorizationError
 # from flask_caching import Cache
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
+# from flask_limiter import Limiter
+# from flask_limiter.util import get_remote_address
 
 
 auth_namespace = Namespace('Auth', description='Authentication Endpoints')
