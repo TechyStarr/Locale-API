@@ -26,5 +26,5 @@ python-dotenv==0.21.1
 pytz==2023.3
 SQLAlchemy==2.0.15
 typing_extensions==4.6.3
-Werkzeug==2.3.4
+Werkzeug==2.2.3
 
