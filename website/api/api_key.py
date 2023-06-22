@@ -36,17 +36,17 @@
 #     return gen_api_key
 
 
-@api_key_ns.route("/generate-api-key")
+# @api_key_ns.route("/generate-api-key")
 
-def get_api_key():
-    user = User.query.filter_by(email=user.email).first()
-    if user:
-        api_key = ApiKey(
-            key = str(uuid4()),
-            developer_name=api_key_ns.payload['developer_name']
-        )
-        db.save(api_key)
-        return api_key
+# def get_api_key():
+#     user = User.query.filter_by(email=user.email).first()
+#     if user:
+#         api_key = ApiKey(
+#             key = str(uuid4()),
+#             developer_name=api_key_ns.payload['developer_name']
+#         )
+#         db.save(api_key)
+#         return api_key
     
 
 
