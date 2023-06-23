@@ -1,8 +1,18 @@
 <template>
   <div>
     <button @click="getData">Get Data</button>
-    <div v-if="responseData">
-      <p>{{ responseData }}</p>
+    <div v-if="parsedData">
+      <ul>
+        <li v-for="item in parsedData" :key="item.id" class="item">
+          <p :style="{ fontWeight: item.highlighted ? 'bold' : 'normal' }">{{ item.name }}</p>
+          <p>{{ item.region }}</p>
+          <p>{{ item.description }}</p>
+          <p>{{ item.capital }}</p>
+          <p>{{ item.population }}</p>
+          <p>{{ item.area }}</p>
+          <p>{{ item.lga }}</p>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -13,14 +23,18 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      responseData: null
+      responseData: null,
+      parsedData: null
     }
   },
+  // Call the getData method on creation to get the data from the API server and store it in the responseData variable
   methods: {
     getData () {
-      axios.get('http://127.0.0.1:5000/view/regions')
+      axios
+        .get('http://127.0.0.1:5000/view/states')
         .then(response => {
-          this.responseData = response.data
+          // this.responseData = response.data
+          this.parsedData = response.data
         })
         .catch(error => {
           // Handle the error here
