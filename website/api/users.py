@@ -7,23 +7,23 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from http import HTTPStatus
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
 from flask_jwt_extended.exceptions import NoAuthorizationError
-# from flask_caching import Cache
-# from flask_limiter import Limiter
-# from flask_limiter.util import get_remote_address
+from flask_caching import Cache
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 
 auth_namespace = Namespace('Auth', description='Authentication Endpoints')
 
 app = Flask(__name__)
 
-# cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
-# limiter = Limiter(
-#     get_remote_address,
-#     app=app,
-#     default_limits=["200 per day", "50 per hour"],
-#     storage_uri="memory://",
-#     )
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour"],
+    storage_uri="memory://",
+    )
 
 
 
@@ -78,8 +78,8 @@ class ApiKey(Resource):
 
 @auth_namespace.route('/signup')
 class SignUp(Resource):
-	# @cache.cached(timeout=60) # Cache the response for 60 seconds
-	# @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+	@cache.cached(timeout=60) # Cache the response for 60 seconds
+	@limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 
 	@auth_namespace.expect(signup_model)
 	@auth_namespace.marshal_with(signup_model)
@@ -101,7 +101,6 @@ class SignUp(Resource):
 			password_hash = generate_password_hash(data.get('password_hash')),
 			# is_admin = True
 		)
-		password_hash = generate_password_hash(data.get('password_hash'))
 		try:
 			new_user.save()
 			return new_user, HTTPStatus.CREATED, {
@@ -117,7 +116,7 @@ class SignUp(Resource):
 
 @auth_namespace.route('/login')
 class UserLogin(Resource):
-	# @cache.cached(timeout=60) # Cache the response for 60 seconds
+	@cache.cached(timeout=60) # Cache the response for 60 seconds
 	@auth_namespace.expect(login_model)
 	def post(self):
 		"""
@@ -130,7 +129,7 @@ class UserLogin(Resource):
 
 		user = User.query.filter_by(email=email).first()
 		
-		if (user is not None) and email and check_password_hash(user.password_hash, password): 
+		if (user is not None) and email and check_password_hash(user.password, password): 
 			access_token = create_access_token(identity=user.username)
 			refresh_token = create_refresh_token(identity=user.username)
 
@@ -148,7 +147,7 @@ class UserLogin(Resource):
 
 @auth_namespace.route('/refresh')
 class Refresh(Resource):
-	# @cache.cached(timeout=60) # Cache the response for 60 seconds
+	@cache.cached(timeout=60) # Cache the response for 60 seconds
 	@jwt_required(refresh=True)
 	def post(self):
 		"""

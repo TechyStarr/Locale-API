@@ -18,6 +18,7 @@
       {{ loginError }}
     </div>
   </div>
+
 </template>
 
 <script>
@@ -35,6 +36,7 @@ export default {
     login() {
       // Reset error message
       this.loginError = '';
+      
 
       // make an API call to the backend
       axios.post('http://127.0.0.1:5000/auth/login', {
