@@ -17,3 +17,30 @@ dist/
 downloads/
 env/
 lib/
+
+
+# Ignore build output
+/dist/
+
+# Ignore dependencies
+/node_modules/
+
+# Ignore environment-specific settings
+.env.local
+.env.development.local
+.env.production.local
+
+# Ignore IDE and editor specific files
+.idea/
+.vscode/
+*.sublime-*
+*.swp
+*.swo
+
+# Ignore logs and build cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cypress/
+.cypress-logs/
+.cypress-debug.log

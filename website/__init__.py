@@ -3,8 +3,6 @@ from flask_restx import Api
 from website.utils.utils import db
 from .api.users import auth_namespace
 from .api.views import view_namespace
-
-# from .api.api_key import api_key_ns
 from .webviews.users import auth
 from .webviews.views import views
 from .api.search import search_ns
@@ -14,17 +12,18 @@ from website.models.data import Region, State, Lga, Area
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_caching import Cache
-
-
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 
 
 app = Flask(__name__)
 login_manager = LoginManager(app)
 login_manager.login_view = 'Users.login'
 login_manager.init_app(app)
+
+cors = CORS(app)
 
 
 @login_manager.user_loader

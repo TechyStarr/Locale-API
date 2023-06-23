@@ -104,7 +104,7 @@ class readData(Resource):
 @view_namespace.route('/regions')
 class RetrieveRegion(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("1/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @view_namespace.marshal_with(region_model, as_list=True)
     @view_namespace.doc(
         description='Get all Regions',
