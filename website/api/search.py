@@ -17,8 +17,16 @@ state_model = search_ns.model(
         'region': fields.String(required=True, description="Region"),
         'region_id': fields.String(required=True, description="Region ID"),
         'capital': fields.String(required=True, description="Capital"),
+        'slogan': fields.String(required=True, description="Slogan"),
+        'landmass': fields.String(required=True, description="Landmass"),
         'population': fields.String(required=True, description="Population"),
-        'area': fields.String(required=True, description="Area"),
+        'dialect': fields.String(required=True, description="Dialect"),
+        'latitude': fields.String(required=True, description="Latitude"),
+        'longitude': fields.String(required=True, description="Longitude"),
+        'website': fields.String(required=True, description="Website"),
+        'date_of_creation': fields.String(required=True, description="Date of Creation"),
+        'borders': fields.String(required=True, description="Borders"),
+        'known_for': fields.String(required=True, description="Known For"),
         # 'No_of_LGAs': fields.String(required=True, description="No of LGAs"),
         'lgas': fields.String(required=True, description="Local Government Areas"),
     }
@@ -28,12 +36,11 @@ state_model = search_ns.model(
 lga_model = search_ns.model(
     'lga', {
         'id': fields.String(required=True),
-        'name': fields.String(required=True, description="LGA Name"),
+        'lga_name': fields.String(required=True, description="LGA Name"),
         'state_id': fields.String(required=True, description="state"),
         'state': fields.String(required=True, description="Region ID"),
-        'area': fields.String(required=True, description="Area"),
-        'population': fields.String(required=True, description="Population"),
-        'headquarters': fields.String(required=True, description="Area"),
+        'landmass': fields.String(required=True, description="Landmass"),
+        'borders': fields.String(required=True, description="Borders"),
     }
 )
 
@@ -45,7 +52,7 @@ region_model= search_ns.model(
     'Region', {
         'id': fields.String(required=True),
         'name': fields.String(required=True, description="Course Name"),
-        'state': fields.Nested((state_model), required=True, description="States"),
+        'states': fields.Nested((state_model), required=True, description="States"),
     }
 )
 

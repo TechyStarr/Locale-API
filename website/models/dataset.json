@@ -179,7 +179,6 @@
             "longitude": "9.8442",
             "website": "http://www.bauchistate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "General Murtala Mohammed",
             "borders": [
                 "Borno",
                 "Gombe",
@@ -246,7 +245,6 @@
             "longitude": "7.9167",
             "website": "http://www.akwaibomstate.gov.ng/",
             "date_of_creation": "23 September 1987",
-            "created_by": "General Ibrahim Babangida",
             "borders": ["Cross River", "Abia", "Rivers", "Bayelsa"],
             "known_for": [
                 "Bridge of No Return, Ikot Abasi",
@@ -300,7 +298,6 @@
             "longitude": "7.0323",
             "website": "http://www.anambrastate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "General Ibrahim Babangida",
             "borders": ["Kogi", "Delta", "Abia", "Enugu", "Imo"],
             "known_for": [
                 "Ogbunike Caves",
@@ -346,7 +343,6 @@
             "longitude": "9.8442",
             "website": "http://www.bauchistate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "General Murtala Mohammed",
             "borders": [
                 "Kano",
                 "Jigawa",
@@ -405,7 +401,6 @@
             "longitude": "8.5214",
             "website": "http://www.benuestate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "General Murtala Mohammed",
             "borders": ["Taraba", "Nasarawa", "Cross River", "Enugu", "Kogi"],
             "known_for": [
                 "Benue River",
@@ -468,7 +463,6 @@
             "longitude": "13.1500",
             "website": "http://www.bornostate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "General Murtala Mohammed",
             "borders": [
                 "Yobe",
                 "Adamawa",
@@ -516,7 +510,6 @@
             "longitude": "6.2676",
             "website": "http://www.bayelsa.gov.ng/",
             "date_of_creation": "1 October 1996",
-            "created_by": "General Sani Abacha",
             "borders": ["Rivers", "Delta"],
             "known_for": [
                 "The Ox-Bow Lake, Yenagoa",
@@ -565,7 +558,6 @@
             "longitude": "8.3333",
             "website": "http://www.crossriverstate.gov.ng/",
             "date_of_creation": "27 May 1967",
-            "created_by": "General Yakubu Gowon",
             "borders": [
                 "Benue",
                 "Ebonyi",
@@ -649,7 +641,6 @@
             "longitude": "8.3333",
             "website": "http://www.deltastate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "General Ibrahim Babangida",
             "borders": ["Edo", "Ondo", "Anambra", "Imo", "Rivers", "Bayelsa"],
             "known_for": [
                 "Nana of Itsekiri’s palace/Nana Living History Museum, Koko",
@@ -694,7 +685,6 @@
             "longitude": "8.1000",
             "website": "http://www.ebonyistate.gov.ng/",
             "date_of_creation": "1 October 1996",
-            "created_by": "General Sani Abacha",
             "borders": ["Benue", "Cross River", "Enugu", "Imo"],
             "known_for": [
                 "Mmahi Ezi Salt Lake, Okposi Okwu",
@@ -750,7 +740,6 @@
             "longitude": "8.1000",
             "website": "http://www.edostate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "General Ibrahim Babangida",
             "borders": ["Delta", "Kogi", "Ondo", "Anambra", "Rivers"],
             "known_for": [
                 "Benin Moat, Benin City",
@@ -795,7 +784,6 @@
             "longitude": "5.3333",
             "website": "http://www.ekitistate.gov.ng/",
             "date_of_creation": "1 October 1996",
-            "created_by": "General Sani Abacha",
             "borders": ["Kogi", "Kwara", "Ondo", "Osun"],
             "known_for": [
                 "Ikogosi Warm and Cold Springs, Ikogosi",
@@ -843,7 +831,6 @@
             "longitude": "7.5000",
             "website": "http://www.enugustate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "General Ibrahim Babangida",
             "borders": ["Abia", "Anambra", "Benue", "Ebonyi", "Kogi"],
             "known_for": [
                 "Enugu Rangers",
@@ -884,7 +871,6 @@
             "longitude": "11.1711",
             "website": "http://www.gombestate.gov.ng/",
             "date_of_creation": "1 October 1996",
-            "created_by": "General Sani Abacha",
             "borders": ["Adamawa", "Bauchi", "Borno", "Yobe", "Taraba"],
             "known_for": [
                 "Tomb of Buba Yero, Gombe",
@@ -947,7 +933,6 @@
             "longitude": "7.0333",
             "website": "http://www.imostate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "Murtala Mohammed",
             "borders": ["Abia", "Anambra", "Ebonyi", "Enugu", "Rivers"],
             "known_for": [
                 "Oguta Lake, Oguta",
@@ -1001,7 +986,6 @@
             "longitude": "9.9667",
             "website": "http://www.jigawastate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "Ibrahim Babangida",
             "borders": [
                 "Bauchi",
                 "Kano",
@@ -1058,7 +1042,6 @@
             "longitude": "4.1994",
             "website": "http://www.kebbistate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "Ibrahim Babangida",
             "borders": ["Niger", "Zamfara", "Katsina", "Sokoto"],
             "known_for": [
                 "Kanta National Museum, Argungun",
@@ -1111,7 +1094,6 @@
             "longitude": "7.4333",
             "website": "http://www.kadunastate.gov.ng/",
             "date_of_creation": "27 May 1967",
-            "created_by": "Gen. Yakubu Gowon",
             "borders": [
                 "Kano",
                 "Katsina",
@@ -1198,7 +1180,6 @@
             "longitude": "8.5167",
             "website": "http://www.kanostate.gov.ng/",
             "date_of_creation": "27 May 1967",
-            "created_by": "Gen. Yakubu Gowon",
             "borders": [
                 "Jigawa",
                 "Katsina",
@@ -1260,7 +1241,6 @@
             "longitude": "6.7333",
             "website": "http://www.kogistate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "borders": [
                 "Nasarawa",
                 "Benue",
@@ -1335,7 +1315,6 @@
             "longitude": "7.6000",
             "website": "http://www.katsinastate.gov.ng/",
             "date_of_creation": "23 September 1987",
-            "created_by": "Gen. Ibrahim Babangida",
             "borders": [
                 "Jigawa",
                 "Kano",
@@ -1379,7 +1358,6 @@
             "longitude": "4.5500",
             "website": "http://www.kwarastate.gov.ng/",
             "date_of_creation": "27 May 1967",
-            "created_by": "Gen. Yakubu Gowon",
             "borders": [
                 "Benue",
                 "Kogi",
@@ -1436,7 +1414,6 @@
             "longitude": "3.3792",
             "website": "http://www.lagosstate.gov.ng/",
             "date_of_creation": "27 May 1967",
-            "created_by": "Gen. Yakubu Gowon",
             "borders": ["Ogun", "Ondo"],
             "known_for": [
                 "National Museum Lagos",
@@ -1475,7 +1452,6 @@
             "longitude": "8.5000",
             "website": "http://www.nasarawastate.gov.ng/",
             "date_of_creation": "1 October 1996",
-            "created_by": "Gen. Sani Abacha",
             "borders": [
                 "Benue",
                 "Kogi",
@@ -1535,7 +1511,6 @@
             "longitude": "6.5500",
             "website": "http://www.nigerstate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "Gen. Murtala Mohammed",
             "borders": [
                 "Kebbi",
                 "Zamfara",
@@ -1593,7 +1568,6 @@
             "longitude": "3.3500",
             "website": "http://www.ogunstate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "Gen. Murtala Mohammed",
             "borders": ["Ondo", "Oyo", "Osun", "Ondo", "Oyo", "Osun"],
             "known_for": [
                 "Olumo Rock",
@@ -1646,7 +1620,6 @@
             "longitude": "5.2000",
             "website": "http://www.ondostate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "Gen. Murtala Mohammed",
             "borders": ["Ogun", "Osun", "Ekiti", "Ogun", "Osun", "Ekiti"],
             "known_for": [
                 "Idanre Hills",
@@ -1705,7 +1678,6 @@
             "longitude": "5.2000",
             "website": "http://www.osun.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "borders": ["Oyo", "Ekiti", "Ondo"],
             "known_for": ["Osun-Osogbo", "Osun-Osogbo"]
         },
@@ -1760,7 +1732,6 @@
             "longitude": "5.2000",
             "website": "http://www.oyostate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "Gen. Murtala Mohammed",
             "borders": ["Ogun", "Osun", "Kwara", "Ogun", "Osun", "Kwara"],
 
             "known_for": ["Ibadan", "Ibadan"]
@@ -1800,7 +1771,6 @@
             "longitude": "5.2000",
             "website": "http://www.plateaustate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "Gen. Murtala Mohammed",
             "borders": [
                 "Bauchi",
                 "Kaduna",
@@ -1857,7 +1827,6 @@
             "longitude": "5.2000",
             "website": "http://www.riversstate.gov.ng/",
             "date_of_creation": "27 May 1967",
-            "created_by": "Gen. Yakubu Gowon",
             "borders": [
                 "Abia",
                 "Akwa Ibom",
@@ -1910,7 +1879,6 @@
             "longitude": "5.2333",
             "website": "http://www.sokotostate.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "Gen. Murtala Mohammed",
             "borders": ["Kebbi", "Zamfara", "Kebbi", "Zamfara"],
             "known_for": ["Sokoto", "Sokoto"]
         },
@@ -1949,7 +1917,6 @@
             "longitude": "11.3667",
             "website": "http://www.tarabastate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "borders": ["Bauchi", "Gombe", "Plateau", "Cameroon"],
             "known_for": ["Jalingo", "Jalingo"]
         },
@@ -1989,7 +1956,6 @@
             "longitude": "11.5000",
             "website": "http://www.yobestate.gov.ng/",
             "date_of_creation": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
             "borders": ["Bauchi", "Borno", "Gombe", "Jigawa"],
             "known_for": ["Damaturu", "Damaturu"]
         },
@@ -2026,7 +1992,6 @@
             "longitude": "6.6600",
             "website": "http://www.zamfarastate.gov.ng/",
             "date_of_creation": "1 October 1996",
-            "created_by": "Gen. Sani Abacha",
             "borders": ["Kaduna", "Katsina", "Kebbi", "Sokoto"],
             "known_for": ["Gusau", "Gusau"]
         },
@@ -2055,7 +2020,6 @@
             "longitude": "7.5333",
             "website": "http://www.fct.gov.ng/",
             "date_of_creation": "3 February 1976",
-            "created_by": "General Murtala Mohammed",
             "borders": [
                 "Kogi",
                 "Nasarawa",

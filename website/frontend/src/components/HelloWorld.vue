@@ -30,14 +30,16 @@ export default {
   data () {
     return {
       responseData: null,
-      parsedData: null
+      parsedData: null,
+      searchQuery: '',
+      searchResults: null
     }
   },
   // Call the getData method on creation to get the data from the API server and store it in the responseData variable
   methods: {
     getData () {
       axios
-        .get('http://127.0.0.1:5000/view/states')
+        .get('http://127.0.0.1:5000/query/')
         .then(response => {
           // this.responseData = response.data
           this.parsedData = response.data
@@ -46,6 +48,23 @@ export default {
           // Handle the error here
           console.log('Error: ', error)
         })
+    },
+    search () {
+      axios.get('http://')
+        .then(response => {
+          this.searchResults = response.data
+        })
+        .catch(error => {
+          console.log('Error: ', error)
+        })
+    },
+    // Use a computed property to parse the data and store it in the parsedData variable
+    computed: {
+      parsedData () {
+        if (this.responseData) {
+          return JSON.parse(this.responseData)
+        }
+      }
     }
   }
 }

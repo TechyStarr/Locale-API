@@ -31,7 +31,7 @@ signup_model = auth_namespace.model(
     'Signup', {
 		'username': fields.String(required=True, description="User's Username"),
 		'email': fields.String(required=True, description='User Email Address'),
-		'password_hash': fields.String(required=True, description='User Password')
+		'password': fields.String(required=True, description='User Password')
 	}
 )
 
@@ -98,7 +98,7 @@ class SignUp(Resource):
 		new_user = User(
 			username = data.get('username'),
 			email = data.get('email'),
-			password_hash = generate_password_hash(data.get('password_hash')),
+			password = generate_password_hash(data.get('password')),
 			# is_admin = True
 		)
 		try:
