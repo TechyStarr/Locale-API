@@ -101,6 +101,7 @@ class SignUp(Resource):
 			password_hash = generate_password_hash(data.get('password_hash')),
 			# is_admin = True
 		)
+		password_hash = generate_password_hash(data.get('password_hash'))
 		try:
 			new_user.save()
 			return new_user, HTTPStatus.CREATED, {

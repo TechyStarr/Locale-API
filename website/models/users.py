@@ -11,10 +11,10 @@ class User(db.Model, UserMixin):
     password = db.Column(db.Text(), nullable=False)
     is_active = db.Column(db.Boolean(), default=True)
 
-    def __init__(self, username, email, password):
-        self.username = username
-        self.email = email
-        self.password = password
+    # def __init__(self, username, email, password):
+    #     self.username = username
+    #     self.email = email
+    #     self.password = password
         # self.is_authenticated = True
 
 

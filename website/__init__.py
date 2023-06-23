@@ -86,7 +86,7 @@ def create_app(config=config_dict['dev']):
 
 
     # register namespaces for api
-    api.add_namespace(auth_namespace, path='/user')
+    api.add_namespace(auth_namespace, path='/auth')
     api.add_namespace(view_namespace, path='/view')
     api.add_namespace(search_ns, path='/query')
 
