@@ -5,7 +5,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
     <div>
-    <h1>Home Page</h1>
+    <h1>Welcome to Locale</h1>
     <input type="text" v-model="searchQuery" placeholder="Search...">
     <button @click="search">Search</button>
     <div v-if="searchResults">

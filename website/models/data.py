@@ -16,6 +16,7 @@ class State(db.Model):
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
     capital = db.Column(db.String(50), nullable=False)
     slogan = db.Column(db.String(50), nullable=False)
+    lgas = db.Relationship('Lga', backref='states', lazy=True)
     landmass = db.Column(db.String(50), nullable=False)
     population = db.Column(db.String(50), nullable=False)
     dialect = db.Column(db.String(50), nullable=False)
@@ -25,13 +26,14 @@ class State(db.Model):
     borders = db.Column(db.String(200), nullable=False)
     known_for = db.Column(db.String(200), nullable=False)
 
-    def __init__(self, name, region, region_id, capital, slogan, landmass, population, dialect,
+    def __init__(self, name, region, region_id, capital, slogan, lgas, landmass, population, dialect,
                 latitude, longitude, website, borders, known_for):
         self.name = name
         self.region = region
         self.region_id = region_id
         self.capital = capital
         self.slogan = slogan
+        self.lgas = lgas
         self.landmass = landmass
         self.population = population
         self.dialect = dialect
@@ -90,10 +92,9 @@ class Lga(db.Model):
     __tablename__ = 'lgas'
     id = db.Column(db.Integer(), primary_key=True)
     lga_name = db.Column(db.String(45), nullable=False, unique=True)
-    region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'))
     state_id = db.Column(db.Integer(), db.ForeignKey('states.id'), nullable=False)
-    date_of_creation = db.Column(db.DateTime(timezone=True), default=datetime.utcnow())
-    created_by = db.Column(db.String(100))
+    # state = db.Column(db.String(45), nullable=False)
+    landmass = db.Column(db.String(45), nullable=False)
     borders = db.Column(db.String(100))
 
     def __repr__(self):
@@ -164,6 +165,7 @@ def load_dataset():
             region_id=state_data['region_id'],
             capital=state_data['capital'],
             slogan=state_data['slogan'],
+            lgas=state_data['lgas'],
             landmass=state_data['landmass'],
             population=state_data['population'],
             dialect=state_data['dialect'],
@@ -182,14 +184,16 @@ def load_dataset():
 
     for lga_data in dataset['LGAs']:
         lga = Lga(
-            lga_name=lga_data['lga_name'],
-            region_id=lga_data['region_id'],
-            state_id=lga_data['state_id'],
-            date_of_creation=lga_data['date_of_creation'],
-            created_by=lga_data['created_by'],
-            borders=lga_data['borders'],
+            lga_name=lga_data.get('lga_name'),
+            state_id=lga_data.get('state_id'),
+            # state=lga_data.get('state'),
+            landmass=lga_data.get('landmass'),
+            borders=lga_data.get('borders'),
         )
+        print(lga)
         db.session.add(lga)
+
+
 
     # Add other models and relationships based on your dataset structure
 

@@ -1,0 +1,18 @@
+<template>
+  <div class="home">
+    <!-- <h3>locale</h3> -->
+    <HelloWorld msg="Welcome to Locale"/>
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+import HelloWorld from '@/components/Locale.vue'
+
+export default {
+  name: 'HomeView',
+  components: {
+    HelloWorld
+  }
+}
+</script>

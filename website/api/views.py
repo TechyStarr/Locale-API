@@ -32,12 +32,10 @@ view_namespace = Namespace('View', description = 'View related operations')
 lga_model = view_namespace.model(
     'lga', {
         'id': fields.String(required=True),
-        'name': fields.String(required=True, description="LGA Name"),
+        'lga_name': fields.String(required=True, description="LGA Name"),
         'state_id': fields.String(required=True, description="state"),
-        'state': fields.String(required=True, description="Region ID"),
-        'area': fields.String(required=True, description="Area"),
-        'population': fields.String(required=True, description="Population"),
-        'headquarters': fields.String(required=True, description="Area"),
+        'landmass': fields.String(required=True, description="Landmass"),
+        'borders': fields.String(required=True, description="Borders"),
     }
 )
 
