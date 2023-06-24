@@ -4,7 +4,7 @@ from website.utils.utils import db
 
 from website.models.users import User
 from http import HTTPStatus
-from website.models.data import Region, State, Lga, City, Area, load_dataset
+from website.models.data import Region, State, Lga, load_dataset
 from .serializers import serialized_state, serialized_lga, serialized_region
 
 

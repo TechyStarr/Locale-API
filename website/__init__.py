@@ -8,7 +8,7 @@ from .webviews.views import views
 from .api.search import search_ns
 from website.config.config import config_dict
 from website.models.users import User, ApiKey
-from website.models.data import Region, State, Lga, Area
+from website.models.data import Region, State, Lga, load_dataset
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_caching import Cache
@@ -100,15 +100,8 @@ def create_app(config=config_dict['dev']):
             'Region': Region,
             'State': State,
             'Lga': Lga,
-            'Area': Area,
             'ApiKey': ApiKey
         }
     
-    
-
-    
-
-    
-
     return app
 

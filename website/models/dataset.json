@@ -177,7 +177,6 @@
             "latitude": "10.3158",
             "longitude": "9.8442",
             "website": "http://www.bauchistate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": [
                 "Borno",
                 "Gombe",
@@ -243,7 +242,6 @@
             "latitude": "4.9833",
             "longitude": "7.9167",
             "website": "http://www.akwaibomstate.gov.ng/",
-            "date_of_creation": "23 September 1987",
             "borders": ["Cross River", "Abia", "Rivers", "Bayelsa"],
             "known_for": [
                 "Bridge of No Return, Ikot Abasi",
@@ -296,7 +294,6 @@
             "latitude": "6.2107",
             "longitude": "7.0323",
             "website": "http://www.anambrastate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": ["Kogi", "Delta", "Abia", "Enugu", "Imo"],
             "known_for": [
                 "Ogbunike Caves",
@@ -341,7 +338,6 @@
             "latitude": "10.3158",
             "longitude": "9.8442",
             "website": "http://www.bauchistate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": [
                 "Kano",
                 "Jigawa",
@@ -399,7 +395,6 @@
             "latitude": "7.7327",
             "longitude": "8.5214",
             "website": "http://www.benuestate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": ["Taraba", "Nasarawa", "Cross River", "Enugu", "Kogi"],
             "known_for": [
                 "Benue River",
@@ -461,7 +456,6 @@
             "latitude": "11.8333",
             "longitude": "13.1500",
             "website": "http://www.bornostate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": [
                 "Yobe",
                 "Adamawa",
@@ -508,7 +502,6 @@
             "latitude": "4.9267",
             "longitude": "6.2676",
             "website": "http://www.bayelsa.gov.ng/",
-            "date_of_creation": "1 October 1996",
             "borders": ["Rivers", "Delta"],
             "known_for": [
                 "The Ox-Bow Lake, Yenagoa",
@@ -556,7 +549,6 @@
             "latitude": "5.6367",
             "longitude": "8.3333",
             "website": "http://www.crossriverstate.gov.ng/",
-            "date_of_creation": "27 May 1967",
             "borders": [
                 "Benue",
                 "Ebonyi",
@@ -639,7 +631,6 @@
             "latitude": "5.6367",
             "longitude": "8.3333",
             "website": "http://www.deltastate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": ["Edo", "Ondo", "Anambra", "Imo", "Rivers", "Bayelsa"],
             "known_for": [
                 "Nana of Itsekiri’s palace/Nana Living History Museum, Koko",
@@ -683,7 +674,6 @@
             "latitude": "6.3167",
             "longitude": "8.1000",
             "website": "http://www.ebonyistate.gov.ng/",
-            "date_of_creation": "1 October 1996",
             "borders": ["Benue", "Cross River", "Enugu", "Imo"],
             "known_for": [
                 "Mmahi Ezi Salt Lake, Okposi Okwu",
@@ -738,7 +728,6 @@
             "latitude": "6.3167",
             "longitude": "8.1000",
             "website": "http://www.edostate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": ["Delta", "Kogi", "Ondo", "Anambra", "Rivers"],
             "known_for": [
                 "Benin Moat, Benin City",
@@ -782,7 +771,6 @@
             "latitude": "7.6667",
             "longitude": "5.3333",
             "website": "http://www.ekitistate.gov.ng/",
-            "date_of_creation": "1 October 1996",
             "borders": ["Kogi", "Kwara", "Ondo", "Osun"],
             "known_for": [
                 "Ikogosi Warm and Cold Springs, Ikogosi",
@@ -829,7 +817,6 @@
             "latitude": "6.4500",
             "longitude": "7.5000",
             "website": "http://www.enugustate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": ["Abia", "Anambra", "Benue", "Ebonyi", "Kogi"],
             "known_for": [
                 "Enugu Rangers",
@@ -869,7 +856,6 @@
             "latitude": "10.2897",
             "longitude": "11.1711",
             "website": "http://www.gombestate.gov.ng/",
-            "date_of_creation": "1 October 1996",
             "borders": ["Adamawa", "Bauchi", "Borno", "Yobe", "Taraba"],
             "known_for": [
                 "Tomb of Buba Yero, Gombe",
@@ -931,7 +917,6 @@
             "latitude": "5.4833",
             "longitude": "7.0333",
             "website": "http://www.imostate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": ["Abia", "Anambra", "Ebonyi", "Enugu", "Rivers"],
             "known_for": [
                 "Oguta Lake, Oguta",
@@ -984,7 +969,6 @@
             "latitude": "12.7500",
             "longitude": "9.9667",
             "website": "http://www.jigawastate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": [
                 "Bauchi",
                 "Kano",
@@ -1040,7 +1024,6 @@
             "latitude": "12.4500",
             "longitude": "4.1994",
             "website": "http://www.kebbistate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": ["Niger", "Zamfara", "Katsina", "Sokoto"],
             "known_for": [
                 "Kanta National Museum, Argungun",
@@ -1092,7 +1075,6 @@
             "latitude": "10.5167",
             "longitude": "7.4333",
             "website": "http://www.kadunastate.gov.ng/",
-            "date_of_creation": "27 May 1967",
             "borders": [
                 "Kano",
                 "Katsina",
@@ -1178,7 +1160,6 @@
             "latitude": "11.9964",
             "longitude": "8.5167",
             "website": "http://www.kanostate.gov.ng/",
-            "date_of_creation": "27 May 1967",
             "borders": [
                 "Jigawa",
                 "Katsina",
@@ -1239,7 +1220,6 @@
             "latitude": "7.8000",
             "longitude": "6.7333",
             "website": "http://www.kogistate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": [
                 "Nasarawa",
                 "Benue",
@@ -1313,7 +1293,6 @@
             "latitude": "12.9908",
             "longitude": "7.6000",
             "website": "http://www.katsinastate.gov.ng/",
-            "date_of_creation": "23 September 1987",
             "borders": [
                 "Jigawa",
                 "Kano",
@@ -1356,7 +1335,6 @@
             "latitude": "8.5000",
             "longitude": "4.5500",
             "website": "http://www.kwarastate.gov.ng/",
-            "date_of_creation": "27 May 1967",
             "borders": [
                 "Benue",
                 "Kogi",
@@ -1412,7 +1390,6 @@
             "latitude": "6.5244",
             "longitude": "3.3792",
             "website": "http://www.lagosstate.gov.ng/",
-            "date_of_creation": "27 May 1967",
             "borders": ["Ogun", "Ondo"],
             "known_for": [
                 "National Museum Lagos",
@@ -1450,7 +1427,6 @@
             "latitude": "8.5000",
             "longitude": "8.5000",
             "website": "http://www.nasarawastate.gov.ng/",
-            "date_of_creation": "1 October 1996",
             "borders": [
                 "Benue",
                 "Kogi",
@@ -1509,7 +1485,6 @@
             "latitude": "9.6000",
             "longitude": "6.5500",
             "website": "http://www.nigerstate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": [
                 "Kebbi",
                 "Zamfara",
@@ -1566,7 +1541,6 @@
             "latitude": "7.1500",
             "longitude": "3.3500",
             "website": "http://www.ogunstate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": ["Ondo", "Oyo", "Osun", "Ondo", "Oyo", "Osun"],
             "known_for": [
                 "Olumo Rock",
@@ -1618,7 +1592,6 @@
             "latitude": "7.2500",
             "longitude": "5.2000",
             "website": "http://www.ondostate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": ["Ogun", "Osun", "Ekiti", "Ogun", "Osun", "Ekiti"],
             "known_for": [
                 "Idanre Hills",
@@ -1676,7 +1649,6 @@
             "latitude": "7.2500",
             "longitude": "5.2000",
             "website": "http://www.osun.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": ["Oyo", "Ekiti", "Ondo"],
             "known_for": ["Osun-Osogbo", "Osun-Osogbo"]
         },
@@ -1730,7 +1702,6 @@
             "latitude": "7.2500",
             "longitude": "5.2000",
             "website": "http://www.oyostate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": ["Ogun", "Osun", "Kwara", "Ogun", "Osun", "Kwara"],
 
             "known_for": ["Ibadan", "Ibadan"]
@@ -1769,7 +1740,6 @@
             "latitude": "7.2500",
             "longitude": "5.2000",
             "website": "http://www.plateaustate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": [
                 "Bauchi",
                 "Kaduna",
@@ -1825,7 +1795,6 @@
             "latitude": "7.2500",
             "longitude": "5.2000",
             "website": "http://www.riversstate.gov.ng/",
-            "date_of_creation": "27 May 1967",
             "borders": [
                 "Abia",
                 "Akwa Ibom",
@@ -1877,7 +1846,6 @@
             "latitude": "13.0667",
             "longitude": "5.2333",
             "website": "http://www.sokotostate.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": ["Kebbi", "Zamfara", "Kebbi", "Zamfara"],
             "known_for": ["Sokoto", "Sokoto"]
         },
@@ -1915,7 +1883,6 @@
             "latitude": "8.9167",
             "longitude": "11.3667",
             "website": "http://www.tarabastate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": ["Bauchi", "Gombe", "Plateau", "Cameroon"],
             "known_for": ["Jalingo", "Jalingo"]
         },
@@ -1954,7 +1921,6 @@
             "latitude": "12.0000",
             "longitude": "11.5000",
             "website": "http://www.yobestate.gov.ng/",
-            "date_of_creation": "27 August 1991",
             "borders": ["Bauchi", "Borno", "Gombe", "Jigawa"],
             "known_for": ["Damaturu", "Damaturu"]
         },
@@ -1990,7 +1956,6 @@
             "latitude": "12.1700",
             "longitude": "6.6600",
             "website": "http://www.zamfarastate.gov.ng/",
-            "date_of_creation": "1 October 1996",
             "borders": ["Kaduna", "Katsina", "Kebbi", "Sokoto"],
             "known_for": ["Gusau", "Gusau"]
         },
@@ -2018,7 +1983,6 @@
             "latitude": "9.0833",
             "longitude": "7.5333",
             "website": "http://www.fct.gov.ng/",
-            "date_of_creation": "3 February 1976",
             "borders": [
                 "Kogi",
                 "Nasarawa",
