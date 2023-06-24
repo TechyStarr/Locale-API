@@ -106,7 +106,7 @@ class Lga(db.Model):
 
 
     def __repr__(self):
-        return f"<City {self.name}>"
+        return f"<Lga {self.lga_name}>"
 
     def save(self):
         db.session.add(self)
