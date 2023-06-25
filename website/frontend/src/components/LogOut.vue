@@ -35,6 +35,7 @@ export default {
           .then(response => {
             // Token is valid, user is authenticated
             this.loggedIn = true
+            console.log('User is logged in', response.data)
           })
           .catch(error => {
             if (error.response.status === 401) {

@@ -154,7 +154,7 @@ class ValidateToken(Resource):
 		current_identity = get_jwt_identity()
 		response = {
 			'message': 'Token is valid',
-			'logged_in_as': current_identity
+			'logged_in_as': current_identity,
 		}
 		return response, HTTPStatus.OK
 
