@@ -143,6 +143,21 @@ class UserLogin(Resource):
 		if not user:
 			abort(401, message='Invalid Credentials')
 
+@auth_namespace.route('/validate_token')
+class ValidateToken(Resource):
+	@cache.cached(timeout=60) # Cache the response for 60 seconds
+	@jwt_required()
+	def get(self):
+		"""
+			Validate JWT Token
+		"""
+		current_identity = get_jwt_identity()
+		response = {
+			'message': 'Token is valid',
+			'logged_in_as': current_identity
+		}
+		return response, HTTPStatus.OK
+
 
 
 @auth_namespace.route('/refresh')

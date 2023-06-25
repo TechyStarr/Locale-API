@@ -8,6 +8,7 @@ from website.models.data import Region, State, Lga, load_dataset
 from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
 
 
@@ -107,6 +108,7 @@ class RetrieveRegion(Resource):
     @view_namespace.doc(
         description='Get all Regions',
     )
+    @jwt_required()
     def get(self):
         regions = Region.query.all()
         if regions is None:

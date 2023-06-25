@@ -45,13 +45,17 @@ export default {
           console.log('Logged in successfully')
           this.$router.push('/') // Redirect to home page
         })
-        // .catch(error => {
-        //   // Invalid credentials, set error message
-        //   this.errorMessage = 'Invalid email or password.'
-        // })
         .catch(error => {
+          if (error.response.status === 401) {
+            // Invalid credentials, set error message
+            this.errorMessage = 'Invalid email or password.'
+          } else {
+            // Handle other errors
+            console.log(error)
+            this.errorMessage = error.message
+          }
           // Handle the error here
-          console.log('Error: ', error)
+          console.log('Error: ', error.message)
         })
     }
   }
