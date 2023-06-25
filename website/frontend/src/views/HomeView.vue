@@ -1,11 +1,7 @@
 <template>
   <div class="home">
-
-    <h3>locale</h3>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-
     <div>
-    <h1>Welcome to Locale</h1>
+    <h1>Locale, your best bet to knowing Nigeria well</h1>
     <input type="text" v-model="searchQuery" placeholder="Search...">
     <button @click="search">Search</button>
     <div v-if="searchResults">
@@ -21,12 +17,12 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// import searchQuery from '@/components/SearchQuery.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    // searchQuery
   }
 }
 </script>

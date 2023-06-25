@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style scoped>
-  .login-container {
+  .register-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;

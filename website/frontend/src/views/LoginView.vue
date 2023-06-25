@@ -1,23 +1,23 @@
 <template>
-    <div class="login-container">
-      <h1>Login</h1>
-      <form @submit.prevent="login">
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" v-model="email" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" v-model="password" required>
-        </div>
-        <div class="form-group">
-          <button type="submit">Login</button>
-        </div>
-      </form>
-      <div v-if="errorMessage" class="error-message">
-        {{ errorMessage }}
+  <div class="register-container">
+    <h1>Log into your account</h1>
+    <form @submit.prevent="login">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" v-model="email" required>
       </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" v-model="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Log In</button>
+      </div>
+    </form>
+    <div v-if="errorMessage" class="error-message">
+      {{ errorMessage }}
     </div>
+  </div>
 </template>
 <script>
 import axios from 'axios'
@@ -35,14 +35,14 @@ export default {
       // Reset error message
       this.errorMessage = ''
 
-      // Make API request to login
+      // Make API request to Register
       axios.post('http://127.0.0.1:5000/auth/login', {
         email: this.email,
         password: this.password
       })
         .then(response => {
         // Successful login, redirect to home page
-          console.log('Login successful')
+          console.log('Logged in successfully')
           this.$router.push('/') // Redirect to home page
         })
         // .catch(error => {
@@ -59,43 +59,45 @@ export default {
 </script>
 
 <style scoped>
-  .login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  h1 {
-    text-align: center;
-  }
-  .form-group {
-    margin-bottom: 20px;
-  }
-  label {
-    display: block;
-    font-weight: bold;
-  }
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+h1 {
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-weight: bold;
+}
 
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+input[type="text"],
+input[type="email"],
 
-  button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  .error-message {
-    color: red;
-    margin-top: 10px;
-  }
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
 </style>
