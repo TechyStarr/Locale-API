@@ -3,14 +3,11 @@ from flask_restx import Api
 from website.utils.utils import db
 from .api.users import auth_namespace
 from .api.views import view_namespace
-from .webviews.users import auth
-from .webviews.views import views
 from .api.search import search_ns
 from website.config.config import config_dict
 from website.models.users import User, ApiKey
 from website.models.data import Region, State, Lga, load_dataset
 from flask_migrate import Migrate
-from flask_login import LoginManager
 from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -18,33 +15,27 @@ from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 
 
-app = Flask(__name__)
-login_manager = LoginManager(app)
-login_manager.login_view = 'Users.login'
-login_manager.init_app(app)
-
-cors = CORS(app)
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+
 
 
 
 def create_app(config=config_dict['dev']):
-    
+    app = Flask(__name__)
 
-    
     app.config.from_object(config) # config object from config.py file in config folder
-    app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
-    app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
-    app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)
-    app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
-
+    # app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
+    # app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
+    # app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)
+    # app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
+    
     cache = Cache(app, config={'CACHE_TYPE': 'simple'})
     cache.init_app(app)
 
+    app.extensions['cache'] = cache
+
+    cors = CORS(app)
 
     limiter = Limiter(
     get_remote_address,
@@ -71,13 +62,8 @@ def create_app(config=config_dict['dev']):
     }
 
 
-    
-    # register blueprints for web views
-    app.register_blueprint(views, url_prefix='')
-    app.register_blueprint(auth, url_prefix='')
-
     api = Api(app,
-        doc="/docs",
+        doc="/",
         title="Locale API", 
         description="Find whatever you're looking for using Locale",
         authorization = authorizations,

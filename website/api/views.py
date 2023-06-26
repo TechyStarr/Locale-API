@@ -4,7 +4,6 @@ from website.utils.utils import db
 from website.models.users import User
 from http import HTTPStatus
 from website.models.data import Region, State, Lga, load_dataset
-# from website import create_app
 from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
