@@ -1,6 +1,6 @@
 <template>
     <div class="register-container">
-      <h1>Register</h1>
+      <h1>Get Started Now</h1>
       <form @submit.prevent="register">
         <div class="form-group">
           <label for="username">Username:</label>
@@ -65,45 +65,55 @@ export default {
 </script>
 
 <style scoped>
-  .register-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  h1 {
-    text-align: center;
-  }
-  .form-group {
-    margin-bottom: 20px;
-  }
-  label {
-    display: block;
-    font-weight: bold;
-  }
+.register-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 4px;
+  display: block;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
 
-  input[type="text"],
-  input[type="email"],
+}
 
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
 
-  button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+input[type="username"],
+input[type="email"],
+input[type="password"] {
+  width: 30rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  .error-message {
-    color: red;
-    margin-top: 10px;
-  }
+button {
+  width: 31.4rem;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
 </style>
