@@ -10,6 +10,18 @@ from .serializers import serialized_state, serialized_lga, serialized_region
 
 search_ns = Namespace('Query', description='Search operations')
 
+search_params = search_ns.parser()
+search_params.add_argument('region', type=str, required=False, help='Filter by region')
+search_params.add_argument('state', type=str, required=False, help='Filter by state')
+search_params.add_argument('lga', type=str, required=False, help='Filter by lga')
+
+# search_params.add_argument('page', type=int, required=false, help='Page number')
+# search_params.add_argument('limit', type=int, required=false, help='Page limit')
+# search_params.add_argument('sort', type=str, required=false, help='Sort by')
+# search_params.add_argument('keyword', type=str, required=false, help='Search keyword')
+
+
+
 state_model = search_ns.model(
     'State', {
         'id': fields.String(required=True),
@@ -43,9 +55,6 @@ lga_model = search_ns.model(
 )
 
 
-
-
-
 region_model= search_ns.model(
     'Region', {
         'id': fields.String(required=True),
@@ -54,14 +63,23 @@ region_model= search_ns.model(
     }
 )
 
+location_model = search_ns.model(
+    'Location', {
+        'name': fields.String(required=True, description="Location Name"),
+        'region': fields.Nested(region_model),
+        'state': fields.Nested(state_model),
+        'lga': fields.Nested(lga_model),
+    }
+)
+
 
 
 # @search_ns.route('/')
 # class QueryStates(Resource):
 #     @search_ns.doc('search_state')
-#     @search_ns.marshal_with(state_model)
+#     # @search_ns.marshal_with(state_model, lga_model, region_model)
 
-#     def post(self):
+#     def get(self):
 
 #         keyword = request.args.get('keyword')
 #         if keyword:
@@ -81,9 +99,16 @@ region_model= search_ns.model(
 #             print(results)
 
 #             # Serialize the search results
-#             data = [serialized_state(state) for state in results]
-#             data = [serialized_region(region) for region in results]
-#             data = [serialized_lga(lga) for lga in results]
+#             data = []
+#             for state in results:
+#                 serialized_state_data = serialized_state(state)
+#                 serialized_region_data = serialized_region(state.region)
+#                 serialized_lga_data = serialized_lga(state.lgas)
+#                 data.append({
+#                     'state': serialized_state_data,
+#                     'region': serialized_region_data,
+#                     'lga': serialized_lga_data
+#                 })
 
 
 #             return {'results': data}, 200
@@ -91,26 +116,6 @@ region_model= search_ns.model(
 #         abort(HTTPStatus.BAD_REQUEST, 'No search keyword provided')
 
 
-# @search_ns.route('/lga')
-# class QueryLga(Resource):
-#     @search_ns.doc('search_lga')
-#     @search_ns.marshal_with(lga_model)
-
-#     def post(self):
-
-#         keyword = request.args.get('keyword')
-#         if keyword:
-#             # Perform the search query based on the keyword
-#             results = Lga.query.filter(
-#                 db.or_(
-#                     Lga.name.ilike(f'%{keyword}%'),
-#                 )
-#             ).all()
-
-#             # Serialize the search results
-#             data = [serialized_lga(lga) for lga in results]
-
-#             return {'results': data}, 200
 
 
 
@@ -143,10 +148,10 @@ class QueryStates(Resource):
             data = []
 
             # Serialize the regions
-            data+=([serialized_region(region) for region in results])
+            data = ([serialized_region(region) for region in results])
 
             # Serialize the states
-            data+=([serialized_state(state) for state in results])
+            data = ([serialized_state(state) for state in results])
 
 
             return results, 200
@@ -154,37 +159,30 @@ class QueryStates(Resource):
             return {'message': 'Enter a search keyword'}, 400
 
 
+@search_ns.route('/filter')
+class Filter(Resource):
+    @search_ns.doc('filter_query')
+    @search_ns.expect(search_params)
+    @search_ns.marshal_with(state_model, lga_model, region_model)
+    def get(self):
+        args = search_params.parse_args() 
+        region = request.args.get('region')
+        state = request.args.get('state')
+        lga = request.args.get('lga')
 
-# @api.route('/states')
-# class StateSearch(Resource):
-#     def get(self):
-#         keyword = request.args.get('keyword')
-#         if keyword:
-#             # Perform the search query based on the keyword
-#             results = State.query.join(Region).filter(
-#                 db.or_(
-#                     State.name.ilike(f'%{keyword}%'),
-#                     State.capital.ilike(f'%{keyword}%'),
-#                     State.local_government_areas.ilike(f'%{keyword}%'),
-#                     Region.name.ilike(f'%{keyword}%')  # Include region name in the search
-#                 )
-#             ).all()
+        query = State.query.join(Region).join(Lga)
 
-#             # Serialize the search results
-#             data = [serialize_state(state) for state in results]
+        if region:
+            query = query.filter(Region.name.ilike(f'%{region}%'))
+        if state:
+            query = query.filter(State.name.ilike(f'%{state}%'))
+        if lga:
+            query = query.filter(Lga.lga_name.ilike(f'%{lga}%'))
 
-#             return {'results': data}, 200
-#         else:
-#             return {'message': 'No keyword provided'}, 400
+        results = query.all()
 
+        return results, 200
+    
 
-
-
-
-
-
-
-
-
-
-
+# /api/locations?region=<region_name>&state=<state_name>&lga=<lga_name>
+# http://127.0.0.1:5000/query/filter?region=South&state=Abia&lga=Umuahia%20North
