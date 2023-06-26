@@ -22,7 +22,6 @@ class User(db.Model, UserMixin):
     def get_by_id(cls, id):
         return cls.query.get_or_404(id)
 
-
 class ApiKey(db.Model):
     __tablename__ = 'api_keys'
     id = db.Column(db.Integer(), primary_key=True)
@@ -30,13 +29,10 @@ class ApiKey(db.Model):
     key = db.Column(db.String(50), nullable=False, unique=True)
     user_id = db.Column(db.Integer(), db.ForeignKey('users.id'), nullable=False)
 
-
     def __init__(self, developer_name, key, user_id):
         self.developer_name = developer_name
         self.key = key
         self.user_id = user_id
-
-
 
     def __repr__(self):
         return f"<User {self.user_id}>"

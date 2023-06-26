@@ -50,12 +50,18 @@ nav {
   padding: 30px;
 }
 
-.logo {
+/* .logo {
   padding: 30px;
   font-size: 1.2rem;
   font-weight: 300;
   margin-top: 0.5rem;
   float: left;
+} */
+
+.logo {
+  font-size: 2rem; /* Adjust the size of the logo */
+  color: #ff0000; /* Adjust the color of the logo */
+  /* Add any other styling properties as per your design */
 }
 
 .nav-tab {

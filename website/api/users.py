@@ -1,3 +1,6 @@
+import json
+import requests
+import secrets
 from uuid import uuid4
 from flask import Flask, request
 from flask_restx import Resource, fields, Namespace, abort
@@ -51,25 +54,52 @@ api_key_model = auth_namespace.model(
 )
 
 
+def api_key():
+	gen_api_key = secrets.token_hex(16)
+	return gen_api_key
 
-# def api_key():
-#     gen_api_key = secrets.token_hex(16)
-#     return gen_api_key
+# url = 'http://127.0.0.1:5000/auth/generate-api-key'
+# headers = {'Content-Type': 'application/json'}
+# data = {
+#     "key": api_key(),
+#     # "user_id": get_jwt_identity()
+# }
+
+# response = requests.post(url, headers=headers, data=json.dumps(data))
 
 
-
-@auth_namespace.route("/generate-api-key")
+@auth_namespace.route('/generate-api-key')
 class ApiKey(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-    @auth_namespace.marshal_with(api_key_model)
-    def post(self):
-        api_key = ApiKey(
-            key=str(uuid4()),
-        )
-        db.session.add(api_key)
-        db.session.commit()
-        return api_key
+	# @cache.cached(timeout=60) # Cache the response for 60 seconds
+	# @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+	@auth_namespace.marshal_with(api_key_model)
+	def post(self):
+		"""
+			Generate an API key
+		"""
+		data = request.get_json()
+
+		current_user = get_jwt_identity()
+
+		# check if user already exists
+		user = User.query.filter_by(email=data.get('email')).first()
+		if user:
+			abort(409, message=f'User {user.username} already exists')
+
+		new_api_key = ApiKey(
+			key = api_key(),
+			user_id = current_user.id
+		)
+		try:
+			new_api_key.save()
+			return new_api_key, HTTPStatus.CREATED, {
+				'message': f'Api Key {new_api_key.key} created successfully'
+			}
+		except Exception as e:
+			# db.session.rollback()
+			return {
+				'message': 'Something went wrong'
+			}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 

@@ -10,16 +10,20 @@
       <button class="get-started-btn">Get Started</button>
     </router-link>
     </div>
-      <input type="text" v-model="searchQuery" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="performSearch">
-      <button @click="performSearch" class="search-button">Search</button>
+
+      <input type="text" v-model="searchQuery" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="search">
+      <button @click="search" class="search-button">Search</button>
       <div v-if="searchResults">
         <ul>
           <li v-for="result in searchResults" :key="result.id">
             {{ result.name }}
+            {{ result.description }}
+            <!-- {{ result.lgas }} -->
           </li>
         </ul>
       </div>
-      <search-component></search-component>
+      <!-- <search-component></search-component> -->
+
     </div>
     <log-out></log-out>
   </div>
@@ -27,22 +31,35 @@
 
 <script>
 import LogOut from '@/components/LogOut.vue'
-import SearchComponent from '@/components/SearchComponent.vue'
+import axios from 'axios'
+// import SearchComponent from '@/components/SearchComponent.vue'
 // import RegisterView from './RegisterView.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    LogOut,
-    SearchComponent
+    LogOut
+    // SearchComponent
     // RegisterView
   },
   data () {
     return {
       searchQuery: '',
-      searchResults: null
+      searchResults: []
+    }
+  },
+  methods: {
+    search () {
+      axios.post('http://127.0.0.1:5000/query/?keyword=' + this.searchQuery)
+        .then(response => {
+          this.searchResults = response.data
+        })
+        .catch(error => {
+          console.log(error)
+        })
     }
   }
+
 }
 </script>
 
