@@ -70,6 +70,25 @@ region_model= view_namespace.model(
 )
 
 
+# @view_namespace.route("/generate-api-key")
+# class ApiKey(Resource):
+#     @cache.cached(timeout=60)  # Cache the response for 60 seconds
+#     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+#     def get_api_key():
+#         user = User.query.filter_by(email=user.email).first()
+#         if user:
+#             key = ApiKey.query.filter_by(user_id=user.id).first()
+#             if key:
+#                 return key
+#             api_key = ApiKey(
+#                 key = str(uuid4()),
+#                 developer_name=auth_namespace.payload['developer_name']
+#             )
+#             db.save(api_key)
+#             return api_key
+#         return {"message": "User not found"}, 404
+
+
 
 
 @view_namespace.route('/load-dataset')

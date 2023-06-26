@@ -73,6 +73,10 @@ export default {
   border-radius: 4px;
 }
 
+.search-input::placeholder {
+  float: left;
+}
+
 .search-button {
   padding: 10px 20px;
   background-color: #f44336;

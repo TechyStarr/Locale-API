@@ -44,6 +44,12 @@ login_model = auth_namespace.model(
 	}
 )
 
+api_key_model = auth_namespace.model(
+	'ApiKey', {
+		'key': fields.String(required=True, description='API Key')
+	}
+)
+
 
 
 # def api_key():
@@ -54,23 +60,16 @@ login_model = auth_namespace.model(
 
 @auth_namespace.route("/generate-api-key")
 class ApiKey(Resource):
-	def get_api_key():
-		user = User.query.filter_by(email=user.email).first()
-		if user:
-			key = ApiKey.query.filter_by(user_id=user.id).first()
-
-			if key:
-				return key
-			api_key = ApiKey(
-				key = str(uuid4()),
-				developer_name=auth_namespace.payload['developer_name']
-			)
-			db.save(api_key)
-			return api_key
-		return {"message": "User not found"}, 404
-    
-	
-
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+    @auth_namespace.marshal_with(api_key_model)
+    def post(self):
+        api_key = ApiKey(
+            key=str(uuid4()),
+        )
+        db.session.add(api_key)
+        db.session.commit()
+        return api_key
 
 
 
@@ -80,7 +79,6 @@ class ApiKey(Resource):
 class SignUp(Resource):
 	@cache.cached(timeout=60) # Cache the response for 60 seconds
 	@limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
 	@auth_namespace.expect(signup_model)
 	@auth_namespace.marshal_with(signup_model)
 	def post(self):

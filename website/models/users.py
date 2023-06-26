@@ -11,15 +11,6 @@ class User(db.Model, UserMixin):
     password = db.Column(db.Text(), nullable=False)
     is_active = db.Column(db.Boolean(), default=True)
 
-    # def __init__(self, username, email, password):
-    #     self.username = username
-    #     self.email = email
-    #     self.password = password
-        # self.is_authenticated = True
-
-
-
-
     def __repr__(self):
         return f"<User {self.username}>"
 
@@ -32,17 +23,12 @@ class User(db.Model, UserMixin):
         return cls.query.get_or_404(id)
 
 
-
-
-
-
 class ApiKey(db.Model):
     __tablename__ = 'api_keys'
     id = db.Column(db.Integer(), primary_key=True)
-    developer_name = db.Column(db.String(50), nullable=False, unique=True)
+    developer_name = db.relationship('User', backref='api_keys')
     key = db.Column(db.String(50), nullable=False, unique=True)
-    user_id = db.Column(db.Integer(), db.ForeignKey('users.id'))
-
+    user_id = db.Column(db.Integer(), db.ForeignKey('users.id'), nullable=False)
 
 
     def __init__(self, developer_name, key, user_id):

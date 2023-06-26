@@ -17,6 +17,9 @@
         <div class="form-group">
           <button type="submit">Register</button>
         </div>
+        <router-link to="/login">
+          <span class="log-alt">Already have an account? Sign In</span>
+        </router-link>
       </form>
       <div v-if="errorMessage" class="error-message">
         {{ errorMessage }}
@@ -99,6 +102,16 @@ input[type="password"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.log-alt {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 20px;
+  color: #f44336;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 button {
