@@ -54,6 +54,7 @@ state_model = view_namespace.model(
         'postal_code': fields.String(required=True, description="Postal Code"),
         # 'No_of_LGAs': fields.String(required=True, description="No of LGAs"),
         'lgas': fields.Nested((lga_model), description="Local Government Areas"),
+        'top_places_of_interest': fields.String(required=True, description="Top Places of Interest"),
     }
 )
 

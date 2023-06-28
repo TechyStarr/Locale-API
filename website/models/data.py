@@ -3,17 +3,6 @@ from .users import db
 from datetime import datetime
 
 
-class PlaceOfInterest(db.Model):
-    __tablename__ = 'place_of_interest'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    location = db.Column(db.String(100), nullable=False)
-    images = db.Column(db.String(200), nullable=False)
-    description = db.Column(db.String(2000), nullable=False)
-    state_id = db.Column(db.Integer, db.ForeignKey('state.id'), nullable=False)
-
-
-
 
 class State(db.Model):
     __tablename__ = 'states'
@@ -24,7 +13,6 @@ class State(db.Model):
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
     capital = db.Column(db.String(50), nullable=False)
     slogan = db.Column(db.String(50), nullable=False)
-    # lgas = db.Column(db.String(50), nullable=False)
     lgas = db.relationship('Lga', backref='states', lazy=True)
     landmass = db.Column(db.String(50), nullable=False)
     population = db.Column(db.String(50), nullable=False)
@@ -39,7 +27,7 @@ class State(db.Model):
     def __init__(self, name, region, region_id, capital, slogan, lgas, landmass, population, dialect,
                 latitude, longitude, website, borders, top_places_of_interest):
         self.name = name
-        self.region = region
+        # self.region = region
         self.region_id = region_id
         self.capital = capital
         self.slogan = slogan
@@ -50,10 +38,7 @@ class State(db.Model):
         self.longitude = longitude
         self.website = website
         self.borders = json.dumps(borders)  # Convert list to JSON string
-        self.top_places_of_interest = json.dumps(top_places_of_interest)  # Convert list to JSON string
-
-
-
+        self.top_places_of_interest = top_places_of_interest  
 
     def __repr__(self):
         return f"<State {self.name}>"
@@ -70,6 +55,33 @@ class State(db.Model):
     # Define an index on the 'name' column
     __table_args__ = (
         db.Index('idx_states_name', 'name'),
+    )
+
+
+class PlaceOfInterest(db.Model):
+    __tablename__ = 'place_of_interest'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    location = db.Column(db.String(100), nullable=False)
+    images = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.String(2000), nullable=False)
+    state_id = db.Column(db.Integer, db.ForeignKey('states.id'), nullable=False)
+
+    def __repr__(self):
+        return f"<PlacesOfInterest {self.name}>"
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_by_id(cls, id):
+        return cls.query.get_or_404(id)
+    
+
+    # Define an index on the 'name' column
+    __table_args__ = (
+        db.Index('idx_PlacesOfInterest_name', 'name'),
     )
 
 
@@ -141,6 +153,18 @@ def load_dataset():
         db.session.add(region)
 
     for state_data in dataset['States']:
+
+        # top_places_of_interest = []
+        # for place_of_interest in state_data['top_places_of_interest']:
+        #     top_places_of_interest.append(PlaceOfInterest(
+        #         name=place_of_interest['name'],
+        #         location=place_of_interest['location'],
+        #         images=place_of_interest['images'],
+        #         description=place_of_interest['description']
+        #     ))
+
+        top_places_of_interest = list(state_data['top_places_of_interest'])
+        del state_data['top_places_of_interest']
         state = State(
             name=state_data['state'],
             region=state_data['region'],
@@ -155,8 +179,11 @@ def load_dataset():
             longitude=state_data['longitude'],
             website=state_data['website'],
             borders=state_data['borders'],
-            top_places_of_interest=state_data['top_places_of_interest'],
+            state.top_places_of_interest = [
+                PlaceOfInterest(**place_of_interest) for place_of_interest in top_places_of_interest,
+                ]
         )
+
         
         # Retrieve the LGAs from the database based on their names
         # lgas = Lga.query.filter(Lga.lga_name.in_(state_data['lgas'])).all()
@@ -173,6 +200,16 @@ def load_dataset():
             borders=lga_data.get('borders'),
         )
         db.session.add(lga)
+
+    for places_of_interest_data in dataset['places_of_interest']:
+        places_of_interest = PlaceOfInterest(
+            name = places_of_interest_data.get('name'),
+            location = places_of_interest_data('location'),
+            images = places_of_interest_data.get('images'),
+            description = places_of_interest_data.get('description'),
+            state_id = places_of_interest_data('state_id')
+        )
+        db.session.add(places_of_interest)
 
 
 
