@@ -37,7 +37,7 @@ state_model = search_ns.model(
         'longitude': fields.String(required=True, description="Longitude"),
         'website': fields.String(required=True, description="Website"),
         'borders': fields.String(required=True, description="Borders"),
-        'known_for': fields.String(required=True, description="Known For"),
+        'top_places_of_interest': fields.String(required=True, description="Known For"),
         # 'No_of_LGAs': fields.String(required=True, description="No of LGAs"),
         'lgas': fields.String(required=True, description="Local Government Areas"),
     }

@@ -129,12 +129,62 @@
                 "Imo",
                 "Rivers"
             ],
-            "known_for": [
-                "National War Museum",
-                "Arochukwu Long Juju Slave Route",
-                "Ojukwu Bunker",
-                "Azumini Blue River",
-                "Abia State Museum"
+            "top_places_of_interest": [
+                {
+                    "name": "National War Museum",
+                    "location": "Umuahia",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/National-War-Museum-Umuahia.jpg?resize=768%2C576&ssl=1",                 
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum_Umuahia.jpg/220px-National_War_Museum_Umuahia.jpg"
+                    ],
+                    "description": "The National War Museum is located in Umuahia, Abia State, Nigeria. It was established on 5 January 1985. The Museum has a gallery of Nigeria's civil war and exhibits samples of weapons and equipment used during the war. The Museum also has a research library and a refreshment and handicraft stand. The National War Museum was established to serve as a memorial to the soldiers who fought in the Nigerian Civil War. The Museum is located in the former command centre of the Biafran Army. The Museum is run by the Federal Government of Nigeria through the National Commission for Museums and Monuments. The Museum is open to the public from 9am to 4pm every day except on public holidays."
+            
+                },
+                {
+                    "name": "Azumini Blue River",
+                    "location": "Azumini",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Azumini-Blue-River.jpg?resize=768%2C576&ssl=1",
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum_Umuahia.jpg/220px-National_War_Museum_Umuahia.jpg"
+                    ],
+                    "description": "The Azumini Blue River is a tourist destination for nature lovers, located in Abia state along its boundary with Akwa Ibom state. The River has become a destination for Tourist because of the beautiful scenery it offers. The features of the River include its crystal Clear aqua marine color, where it’s name Azumini Blue River comes from. the river bank is perfect for picnicking, camping, photo shoot and so on, other actives one can engage in is boat ride or (canoeing) canoe paddling, swimming etc "
+                },
+                {
+                    "name": "Long Juju of Arochukwu",
+                    "location": "Arochukwu",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Long-Juju-of-Arochukwu.jpg?resize=768%2C576&ssl=1",
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum_Umuahia.jpg/220px-National_War_Museum_Umuahia.jpg"
+                    ],
+                    "description": "The Long Juju Slave Route of Arochukwu is a sacred altar, a six foot gully that takes people to the temple and the waterfall in Arochukwu Long Juju Slave route. The mystic Long-Juju shrine, the slave routes and other relics of the slave trade era have become important tourist attractions in Abia State as people seek to explore the shrine of Ibini Ukpabi and the cult monument of Kamula."
+                },
+                {
+                    "name": "Akwete Weaving",
+                    "location": "Akwete",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Akwete-Weaving.jpg?resize=768%2C576&ssl=1",
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum_Umuahia.jpg/220px-National_War_Museum_Umuahia.jpg"
+                    ],
+                    "description": "Akwete is a town in Abia state, it is the Headquarter of Ukwa East Locale Government of the state. Akwete is known in Nigeria and West Africa for its unique weaving making the town an important tourist destination in the state. Akwete cloth is a unique hand woven textile produced in Igboland for which the town of Akwete in Abia state, South Eastern Nigeria is famous. The raw materials used in its production are wool, cotton, silk, raffia, cotton and the bark of certain trees (hemp). the Akwete cloth was originally referred to as “Akwa Miri” (Cloth of the water) meaning towel. The traditional Igbo weaving as demonstrated in Akwete processes sisal-hemp, raffia and spun cotton into finished product on a wide vertical loom."
+                },
+                {
+                    "name": "Amanagwu Waterfall",
+                    "location": "Arochukwu",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Amanagwu-Waterfall.jpg?resize=768%2C576&ssl=1",
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum_Umuahia.jpg/220px-National_War_Museum_Umuahia.jpg"
+                    ],
+                    "description": "Amanagwu waterfall, Known as Ogbana nkume is located in Amanagwu Arochukwu.. The waterfall which is one of the major tourist attractions in the town attracts visitors from within and outside the community. As the waterfall makes its way down the rock, its forms a pool at the base of the rock. The waterfall is a perfect relaxation spot ideal for picnicking and swimming."
+                },
+                {
+                    "name": "National Museum Of colonial History Aba",
+                    "location": "Aba",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/National-Museum-Of-colonial-History-Aba.jpg?resize=768%2C576&ssl=1",
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum_Umuahia.jpg/220px-National_War_Museum_Umuahia.jpg"
+                    ],
+                    "description": "The National Museum of Colonial History located in Ikot Ekpene Road, Aba was opened in 1985. The museum’s building, which is also a national monument, was said to have been brought in from Britain in the 1890s and assembled at Akwete to serve as a trade station. Its collection consists of objects relating to the colonial period in Nigeria and the country’s path to nationhood, old Nigerian money and relics of the slave trade era."
+                }
             ]
 
         },
@@ -185,13 +235,51 @@
                 "Chad",
                 "Benue"
             ],
-            "known_for": [
-                "Yankari National Park",
-                "Sumu Wildlife Reserve",
-                "Wiki Warm Springs",
-                "Emir's Palace",
-                "Bauchi Central Mosque",
-                "Bauchi State Library"
+            "top_places_of_interest": [
+                {
+                    "name": "Mandara Mountains",
+                    "location": "Adamawa",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Mandara-mountains.jpg?w=570&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Mandara-mountains.jpg?w=570&ssl=1"
+                    ],
+                    "description": " The Mandara Mountains are a volcanic range extending about 190 km along the northern part of the Cameroon-Nigeria border. Mandara Mountains is the most popular mountain in Adamawa and one of the post popular attraction in the state. Mandara Mountains which lie in the northeastern part of the state along the Cameroon border is an ideal place for hiking, rock and mountain climbing."
+                },
+                {
+                    "name": "Sukur Kingdom",
+                    "location": "Adamawa",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Sukur-Kingdom.jpg?resize=768%2C548&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Sukur-Kingdom.jpg?resize=768%2C548&ssl=1"
+                    ],
+                    "description": " Sukur, popularly refereed as Sukur Cultural Landscape is a UNESCO World Heritage Site located on a hill above the village of Sukur in the Adamawa State. Sukur which is located in Madagali Local Government Area, and has been accredited as world Heritage sites by UNESCO because of its natural exposition of human nature and its preserved structures dating more than 500 years is one of the most popular tourist site in Nigerian. Sukur is said to be one of the most visited place by tourists in Adamawa state."
+                },
+                {
+                    "name": "Kiri Dam",
+                    "location": "Kiri town in Shelleng",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Kiri-Dam.jpg?w=600&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Kiri-Dam.jpg?w=600&ssl=1"
+                    ],
+                    "description": "Located near Kiri town in Shelleng local government area of Adamawa State. Kiri Dam was specifically built to supply the electricity and water needs of Savannah Sugar Company at Numan. On the hilly side overlooking the dam are beautiful structures with modern facilities to accommodate tourist. Apart from irrigation and fishing, Kiri dam is an ideal place for boat racing and surfing"
+                },
+                {
+                    "name": "Kora Hills",
+                    "location": " Jada LGA",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Koma-Hill-Adamawa.jpg?w=451&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Koma-Hill-Adamawa.jpg?w=451&ssl=1"
+                    ],
+                    "description": "The Koma Hills are located on the mountainous fringes bordering the Republic of Cameroon in the Jada LGA of Adamawa. The Koma hill which was said to have been discovered in 1986 by a corps member is home to the koma people, a small primitive hill-dwelling ethnic group. Koma hills is a beautiful place, perfect for nature lovers and adventure seekers."
+                },
+                {
+                    "name": "Ruwan Zafi",
+                    "location": "Lamurde LGA",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Hot-spring.jpg?w=650&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Hot-spring.jpg?w=650&ssl=1"
+                    ]
+                }
             ]
         },
 
@@ -243,11 +331,51 @@
             "longitude": "7.9167",
             "website": "http://www.akwaibomstate.gov.ng/",
             "borders": ["Cross River", "Abia", "Rivers", "Bayelsa"],
-            "known_for": [
-                "Bridge of No Return, Ikot Abasi",
-                "Amalgamtion House",
-                "Ibibio Museu and State Park",
-                "National Museum of Colonial History"
+            "top_places_of_interest": [
+                {
+                    "name": "Ibeno Beach",
+                    "location": "Eket, Akwa Ibom state",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Ibeno-Beach.jpg?resize=768%2C768&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Ibeno-Beach.jpg?resize=768%2C768&ssl=1"
+                    ],
+                    "description": "Ibeno beach is one of the beaches on the Atlantic Ocean, located in Eket, Akwa Ibom state, south south Nigeria. This is the most popular tourist destination in Akwa Ibom State and  one of the most popular beach and tourist destination in Nigeria. Ibeno beach which is believed to be the longest beach in west Africa is about 45km, the beach stretches from Ibeno to James Town all in Akwa Ibom. Ibeno beach has become the most preferred tourist destination in Nigeria  because of its serenity and peaceful nature."
+                },
+                {
+                    "name": "Oron museum",
+                    "location": "Oron",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Oron-Museum.jpg?w=460&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Oron-Museum.jpg?w=460&ssl=1"
+                    ],
+                    "description": "Oron Museum is a museum located in Oron,  Akwa Ibom State Nigeria. The museum which was established in 1958 to accommodate eight hundred known ancestral figures of the Oron people which are believed to be among the oldest and finest surviving wood carvings in Africa. During the civil war, many of the wood carvings were looted and the museum was severely damaged. In 1975, the museum was reinaugurated and today houses the remains of the wooden sculptures and other ethnographic materials from across Nigeria. The museum also has displays of bunkers used during the civil war as well as a crafts village."
+                },
+                {
+                    "name": "Amalgamation House",
+                    "location": "Ikot Abasi",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Amalgamation-house-2.jpg?resize=768%2C628&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Amalgamation-house-2.jpg?resize=768%2C628&ssl=1"
+                    ],
+                    "description": "Amalgamation House is the building which Lord Lugard declared the amalgamation of the Northern and Southern Protectorates of Nigeria in 1914. The amalgamation house which is located in ikot abasi in ikwa ibom state, has become a top tourist spot in the state. The Amalgamation House also double as the building in which General Olusegun Obasanjo (the former commanding officer of the Nigerian Army) and General Phillip Effiong of the Biafran Army signed the declaration of cease-fire that ended the Nigerian civil war in January 1970."
+                },
+                {
+                    "name": "Godswill Akpabio International Stadium",
+                    "location": "Uyo",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Akwa-Ibom.jpg?resize=768%2C417&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Akwa-Ibom.jpg?resize=768%2C417&ssl=1"
+                    ],
+                    "description": "The Godswill Akpabio International Stadium is an all-seater national sports stadium located in Uyo, the state capital of Akwa Ibom. The stadium serves as a home to the Nigerian Super Eagles as well as a center for various social, cultural, and religious events. Facilities in the stadium includes: 30,000 capacity covered main bowl, Bullet Proof VVIP/VIP areas, Box office, Media facilities, Two scoreboards that comprise electronic scoreboard and video facilities for replays, Floodlights, Eight-lane 400m standard track, Warm-up facility with six-lane 400m track, 7,500 seater Grand Stand, Ambulance bay etc."
+                },
+                {
+                    "name": "Unity Park Uyo",
+                    "location": "Nsikak Eduok",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Unity-Park-Uyo.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Unity-Park-Uyo.jpg?resize=768%2C576&ssl=1"
+                    ]
+                }
             ]
         },
 
@@ -295,10 +423,43 @@
             "longitude": "7.0323",
             "website": "http://www.anambrastate.gov.ng/",
             "borders": ["Kogi", "Delta", "Abia", "Enugu", "Imo"],
-            "known_for": [
-                "Ogbunike Caves",
-                "Agulu Lake",
-                "Ogbaukwu Caves and Waterfalls"
+            "top_places_of_interest": [
+                {
+                    "name": "Ogbunike Cave",
+                    "location": "St. Monica College, Ogbunike",
+                    "images": [
+                        "https://i0.wp.com/1.bp.blogspot.com/-5w5QVqedj8Y/Th8hpnLv4kI/AAAAAAAAAYY/bAmT-Y7UuLU/s640/cave3.jpg?resize=640%2C440&ssl=1",
+                        "https://i0.wp.com/1.bp.blogspot.com/-5w5QVqedj8Y/Th8hpnLv4kI/AAAAAAAAAYY/bAmT-Y7UuLU/s640/cave3.jpg?resize=640%2C440&ssl=1"
+                    ],
+                    "description": "Ogbunike Caves are situated in a valley with tropical rain forest behind the “Ogba” hills in which lies St. Monica College, Ogbunike. Descending into the valley where the caves are located is a lengthy walkway made up of about 317 steps said to have been constructed by the Anambra State Government in the mid 90s. At the end of the walkway is an open space used as a reception point where visitors are by tradition to remove their shoes."
+                },
+                {
+                    "name": "Ogbaukwu Caves and Waterfalls",
+                    "location": "Owerre Ezeukala Community",
+                    "images": [
+                        "https://i0.wp.com/1.bp.blogspot.com/-RdihregsFmM/V3axx4Tf-6I/AAAAAAAAKko/pNOvfJ-ZTRgucpPzRUtFy6mm3f_eEOX7ACKgB/s640/zzzzzzz.jpg?w=800&ssl=1",
+                        "https://i0.wp.com/2.bp.blogspot.com/-eka1s44epbc/V3axzRtbqoI/AAAAAAAAKkw/ucM9T9f9iP0BRwje_H9WlhuOJgkZ3CtFACKgB/s640/zzzzzzzzz.jpg?resize=640%2C480&ssl=1"
+                    ],
+                    "description": "Ogbaukwu Caves presents one of the greatest natural tourist attraction in Anambra State. But very little is known about the site, which has been in existence for many years. Hidden away from the busy routes that crisscross Anambra, the Ogbaukwu Caves and Waterfalls are located in Owerre Ezeukala community that borders three other states: Abia, Enugu and Imo. It is approximately 75 kilometres east of Onitsha. The Ogba Ukwu cave is considered to be one of the largest cave in West Africa, which will take upwards to two hours to explore."
+                },
+                {
+                    "name": "Agulu Lake",
+                    "location": "Agulu town, Aniocha Local Government Area",
+                    "images": [
+                        "data:image/jpeg;base64,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",
+                        "data:image/jpeg;base64,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"
+                    ],
+                    "description": "Agulu Lake is one of the numerous sites of attraction, alongside the Ogbunike cave, River Niger, Ikenga Virgin forest, Omashi-iyi cave, Akpu, Odo River and Obutu Lake Omogho, iyi-ocha Lake Amaokpala town, ekwuluimili botanical and herbal garden, Nanka natural springs amongst others all situated in different parts of Anambra State, one the major States in eastern Nigeria which has one of the biggest commercial center in the country. Immaculate white in colour, and sometimes made green by algae depending on the season of the year, Agulu Lake is very wide, it has a lengthy diameter and beautiful surface area, located along Awka road, Umuowele village in Agulu town, Aniocha Local Government Area of Anambra  State"
+                },
+                {
+                    "name": "Iyiocha Lake Amaokpala",
+                    "location": "Oko Town",
+                    "images": [
+                        "data:image/jpeg;base64,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",
+                        "data:image/jpeg;base64,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"
+                    ],
+                    "description": "This is a long and still lake at the outskirts of the town.  The far end of the lake is in Oko town where the Federal Polytechnic is located.  The lake is as quiet as the Dead Sea and no aquatic life has been recorded in it.  The mystery behind the lake is that till date no case of drowning of an indigene of the community has been recorded. Mrs. Rose Ezeh, wife of the present Town Union Chairman once fell into the lake and it was about one hour later that rescuers were able to reach her.  Clearly expecting the worst, the locals were however mystified to discover that she had not taken in one single gulp of water.  As soon as she was rescued, she woke up and went home."
+                }
             ]
         },
 
@@ -346,13 +507,52 @@
                 "Gombe",
                 "Yobe"
             ],
-            "known_for": [
-                "Yankari National Park",
-                "Sumu Wildlife Reserve",
-                "Wiki Warm Springs",
-                "Emir's Palace",
-                "Bauchi Central Mosque",
-                "Bauchi State Library"
+            "top_places_of_interest": [
+                {
+                    "name": "Yankari National Park",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Yankari-Game-Reserve-2.jpg?w=718&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Yankari-Game-Reserve-2.jpg?w=718&ssl=1"
+                    ],
+                    "description": "Located in bauchi state, north eastern Nigeria, Yankari game reserve is a large wildlife covering an area of about 2,244 square kilometres in south central part of of bauchi state. The reserve is home to animals such as Hippopotamus, wild ox, crocodiles, roan gazella, waterbucks, African bush elephant, olive baboon, patas monkey, Tantalus monkey, roan antelope, western hartebeest, lion, African buffalo, and leopard. Yankari Game Reserve has been described by the Lonely Planet Guide as holding “about the only remnant of wildlife left in Nigeria."
+                },
+                {
+                    "name": "Wikki Warm Springs",
+                    "location": "Park Lodge, Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Wikki-Warm-Springs.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Wikki-Warm-Springs.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "The Wiki Warm Springs which can be found in the Yankari National Park is one of the many attraction to visitors in Bauchi state.  The Wikki Warm Spring is the biggest of the four warm springs in Yankari, which have come about as a result of geothermal activity below the park.  It is located near the park lodge and is about 200m long and 10m wide, containing crystal-clear water at a temperature of around 31 degrees Celsius."
+                },
+                {
+                    "name": "Marshall Caves",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Marshall-Caves-2.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Marshall-Caves-2.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "The Marshall Cave is one of the most popular attractions in Bauchi State. The caves were discovered in the early part of the 20th century by a British historian known as P.J Marshall in 1980. Each cave has a length of 200 metres, depth of 10 metres, and width of 30 and 80 metres. The caves features rock paintings and engravings in various lines, presumably created by their initial inhabitants."
+                },
+                {
+                    "name": "Tunga Dutse",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Tunga-Dutse.jpg?w=680&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Tunga-Dutse.jpg?w=680&ssl=1"
+                    ],
+                    "description": "Tunga Dutse is popular for the ancient engraving on the rocks, The writings are large and cover a huge area on the sandstone embankment. The meaning and age of the inscriptions are yet to be determined but they are one of the most significant wall writings to be found in Bauchi. While in Bauchi state, Tunga Dutse is one place to visit."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -396,19 +596,16 @@
             "longitude": "8.5214",
             "website": "http://www.benuestate.gov.ng/",
             "borders": ["Taraba", "Nasarawa", "Cross River", "Enugu", "Kogi"],
-            "known_for": [
-                "Benue River",
-                "Katsina-Ala River",
-                "Kwande River",
-                "Katsina-Ala River",
-                "Ushongo Hills",
-                "Benue State University",
-                "Federal University of Agriculture",
-                "Benue State Polytechnic",
-                "College of Education",
-                "Benue State University Teaching Hospital",
-                "Federal Medical Center",
-                "Benue State Library"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -465,11 +662,25 @@
                 "Cameroon",
                 "Chad"
             ],
-            "known_for": [
-                "Kanuri people",
-                "Kanem-Bornu Empire",
-                "Kanem Empire",
-                "Kanem-Bornu Empire"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
 
         },
@@ -503,13 +714,25 @@
             "longitude": "6.2676",
             "website": "http://www.bayelsa.gov.ng/",
             "borders": ["Rivers", "Delta"],
-            "known_for": [
-                "The Ox-Bow Lake, Yenagoa",
-                "Oloibiri Oil Museum, Oloibiri",
-                "Isaac Boro Garden Park, Yenagoa",
-                "Peace Park, Yenagoa",
-                "Akassa Wildlife Forest, Akassa",
-                "Ogboinbiri Oil Well, Ogboinbiri"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -557,16 +780,25 @@
                 "Kogi",
                 "Akwa Ibom"
             ],
-            "known_for": [
-                "Obudu Cattle Ranch",
-                "Obudu Mountain Resort",
-                "Kwa Falls",
-                "Agbokim Waterfalls",
-                "Tinapa Resort",
-                "Cross River National Park",
-                "Cross River Gorilla",
-                "Cross River State National Park",
-                "Cross River State National Park"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -632,14 +864,25 @@
             "longitude": "8.3333",
             "website": "http://www.deltastate.gov.ng/",
             "borders": ["Edo", "Ondo", "Anambra", "Imo", "Rivers", "Bayelsa"],
-            "known_for": [
-                "Nana of Itsekiri’s palace/Nana Living History Museum, Koko",
-                "Ogbeowele Forest Reserve, Abraka",
-                "Ogbe-Ijoh Waterside Market, Warri",
-                "Ogbeke Square, Asaba",
-                "Lander Brothers Anchorage, Asaba",
-                "Ogbeogonogo Modern Market, Asaba",
-                "Okpuzu Waterfa,ll, Ibusa"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -675,11 +918,25 @@
             "longitude": "8.1000",
             "website": "http://www.ebonyistate.gov.ng/",
             "borders": ["Benue", "Cross River", "Enugu", "Imo"],
-            "known_for": [
-                "Mmahi Ezi Salt Lake, Okposi Okwu",
-                "Amachor Cave, Amagu",
-                "Ndibe Sand Beach, Afikpo",
-                "Greater Rice Husks, Abakaliki"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -729,11 +986,25 @@
             "longitude": "8.1000",
             "website": "http://www.edostate.gov.ng/",
             "borders": ["Delta", "Kogi", "Ondo", "Anambra", "Rivers"],
-            "known_for": [
-                "Benin Moat, Benin City",
-                "Benin National Museum, Benin City",
-                "Emotan Statue, Benin City",
-                "Igun Bronze Casters Guild, Benin City"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -772,14 +1043,25 @@
             "longitude": "5.3333",
             "website": "http://www.ekitistate.gov.ng/",
             "borders": ["Kogi", "Kwara", "Ondo", "Osun"],
-            "known_for": [
-                "Ikogosi Warm and Cold Springs, Ikogosi",
-                "Olosunta, Ikere",
-                "Ori Oke Owa, Ikere",
-                "Ori Oke Aiyegunle, Ikere",
-                "Arinta Waterfalls, Ipole-Iloro",
-                "Okemesi Hills, Okemesi",
-                "Olosunta, Ughele and Orole Hills, Ikere"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -818,13 +1100,25 @@
             "longitude": "7.5000",
             "website": "http://www.enugustate.gov.ng/",
             "borders": ["Abia", "Anambra", "Benue", "Ebonyi", "Kogi"],
-            "known_for": [
-                "Enugu Rangers",
-                "Enugu State University of Science and Technology",
-                "University of Nigeria, Nsukka",
-                "Enugu State University Teaching Hospital",
-                "Enugu State Broadcasting Service",
-                "Enugu State College of Education (Technical)"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -857,11 +1151,25 @@
             "longitude": "11.1711",
             "website": "http://www.gombestate.gov.ng/",
             "borders": ["Adamawa", "Bauchi", "Borno", "Yobe", "Taraba"],
-            "known_for": [
-                "Tomb of Buba Yero, Gombe",
-                "Kaltungo Slave Route, Kaltungo",
-                "Bima Hill, Gombe",
-                "Tangale Hill, Tangale"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -918,11 +1226,25 @@
             "longitude": "7.0333",
             "website": "http://www.imostate.gov.ng/",
             "borders": ["Abia", "Anambra", "Ebonyi", "Enugu", "Rivers"],
-            "known_for": [
-                "Oguta Lake, Oguta",
-                "Owerri Amusement Park, Owerri",
-                "Owerri Mall, Owerri",
-                "Owerri Zoo, Owerri"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -977,12 +1299,25 @@
                 "Yobe",
                 "Zamfara"
             ],
-            "known_for": [
-                "Kazaure Emirate",
-                "Kiyawa Emirate",
-                "Birnin Kudu Rock Painting, Birnin Kudu",
-                "Baturiya Wetlands and Bird Sanctuary, Baturiya",
-                "Jigawa State Museum, Dutse"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1025,12 +1360,25 @@
             "longitude": "4.1994",
             "website": "http://www.kebbistate.gov.ng/",
             "borders": ["Niger", "Zamfara", "Katsina", "Sokoto"],
-            "known_for": [
-                "Kanta National Museum, Argungun",
-                "Argungu Fishing Festival, Argungu",
-                "Kanta Museum, Argungu",
-                "Girmache Shrine, Zuru",
-                "Karishi Traditional Settlement, Karishi"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1089,15 +1437,25 @@
                 "Bauchi",
                 "Gombe"
             ],
-            "known_for": [
-                "Kajuru Castle, Kajuru",
-                "Kofar Gamji Park, Kaduna",
-                "Kamuku National Park, Birnin Gwari",
-                "Kaduna Museum, Kaduna",
-                "Kajuru Castle, Kajuru",
-                "Kofar Gamji Park, Kaduna",
-                "Kamuku National Park, Birnin Gwari",
-                "Kaduna Museum, Kaduna"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1169,15 +1527,25 @@
                 "Zamfara",
                 "Kebbi"
             ],
-            "known_for": [
-                "Kano City Walls",
-                "Kano Emir's Palace",
-                "Kurmi Market",
-                "Kofar Mata Dyeing Pit",
-                "Kano City Walls",
-                "Kano Emir's Palace",
-                "Kurmi Market",
-                "Kofar Mata Dyeing Pit"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1233,13 +1601,25 @@
                 "Niger",
                 "FCT"
             ],
-            "known_for": [
-                "Mount Patti",
-                "Lord Lugard House",
-                "Confluence of Rivers Niger and Benue",
-                "Mount Patti",
-                "Lord Lugard House",
-                "Confluence of Rivers Niger and Benue"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1300,7 +1680,26 @@
                 "Zamfara",
                 "Maradi Region, Niger"
             ],
-            "known_for": ["Katsina Airport", "Katsina Airport"]
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ]
         },
 
 
@@ -1345,11 +1744,25 @@
                 "Niger",
                 "Kebbi"
             ],
-            "known_for": [
-                "Kainji National Park",
-                "Esie Museum",
-                "Kainji National Park",
-                "Esie Museum"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1391,11 +1804,25 @@
             "longitude": "3.3792",
             "website": "http://www.lagosstate.gov.ng/",
             "borders": ["Ogun", "Ondo"],
-            "known_for": [
-                "National Museum Lagos",
-                "National Arts Theatre",
-                "National Museum Lagos",
-                "National Arts Theatre"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1436,11 +1863,16 @@
                 "Kano",
                 "Bauchi"
             ],
-            "known_for": [
-                "Farin Ruwa Falls",
-                "Keffi",
-                "Farin Ruwa Falls",
-                "Keffi"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1497,11 +1929,16 @@
                 "Kogi",
                 "Zamfara"
             ],
-            "known_for": [
-                "Gurara Falls",
-                "Kainji Lake",
-                "Gurara Falls",
-                "Kainji Lake"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1542,11 +1979,16 @@
             "longitude": "3.3500",
             "website": "http://www.ogunstate.gov.ng/",
             "borders": ["Ondo", "Oyo", "Osun", "Ondo", "Oyo", "Osun"],
-            "known_for": [
-                "Olumo Rock",
-                "Owu Waterfalls",
-                "Olumo Rock",
-                "Owu Waterfalls"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1593,11 +2035,16 @@
             "longitude": "5.2000",
             "website": "http://www.ondostate.gov.ng/",
             "borders": ["Ogun", "Osun", "Ekiti", "Ogun", "Osun", "Ekiti"],
-            "known_for": [
-                "Idanre Hills",
-                "Owo Museum",
-                "Idanre Hills",
-                "Owo Museum"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         },
 
@@ -1650,7 +2097,17 @@
             "longitude": "5.2000",
             "website": "http://www.osun.gov.ng/",
             "borders": ["Oyo", "Ekiti", "Ondo"],
-            "known_for": ["Osun-Osogbo", "Osun-Osogbo"]
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ]
         },
 
 
@@ -1704,7 +2161,17 @@
             "website": "http://www.oyostate.gov.ng/",
             "borders": ["Ogun", "Osun", "Kwara", "Ogun", "Osun", "Kwara"],
 
-            "known_for": ["Ibadan", "Ibadan"]
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ]
         },
 
 
@@ -1741,16 +2208,17 @@
             "longitude": "5.2000",
             "website": "http://www.plateaustate.gov.ng/",
             "borders": [
-                "Bauchi",
-                "Kaduna",
-                "Nasarawa",
-                "Taraba",
-                "Bauchi",
-                "Kaduna",
-                "Nasarawa",
-                "Taraba"
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ],
-            "known_for": ["Jos", "Jos"]
+            "top_places_of_interest": ["Jos", "Jos"]
         },
 
         
@@ -1805,7 +2273,17 @@
                 "Bayelsa",
                 "Imo"
             ],
-            "known_for": ["Port Harcourt", "Port Harcourt"]
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ]
         },
 
 
@@ -1847,7 +2325,17 @@
             "longitude": "5.2333",
             "website": "http://www.sokotostate.gov.ng/",
             "borders": ["Kebbi", "Zamfara", "Kebbi", "Zamfara"],
-            "known_for": ["Sokoto", "Sokoto"]
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ]
         },
 
 
@@ -1884,7 +2372,17 @@
             "longitude": "11.3667",
             "website": "http://www.tarabastate.gov.ng/",
             "borders": ["Bauchi", "Gombe", "Plateau", "Cameroon"],
-            "known_for": ["Jalingo", "Jalingo"]
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ]
         },
 
 
@@ -1922,7 +2420,17 @@
             "longitude": "11.5000",
             "website": "http://www.yobestate.gov.ng/",
             "borders": ["Bauchi", "Borno", "Gombe", "Jigawa"],
-            "known_for": ["Damaturu", "Damaturu"]
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ]
         },
 
 
@@ -1957,7 +2465,17 @@
             "longitude": "6.6600",
             "website": "http://www.zamfarastate.gov.ng/",
             "borders": ["Kaduna", "Katsina", "Kebbi", "Sokoto"],
-            "known_for": ["Gusau", "Gusau"]
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ]
         },
 
 
@@ -1992,12 +2510,16 @@
                 "Plateau"
             ],
     
-            "known_for": [
-                "Zuma Rock, Madalla",
-                "Millennium Park, Maitama",
-                "Jabi lake, Jabi",
-                "National Mosque, Central Business District",
-                "Lower Usman Dam, Bwari"
+            "top_places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
             ]
         }
     ],

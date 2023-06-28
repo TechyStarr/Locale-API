@@ -88,7 +88,7 @@ class readData(Resource):
 
     def get(self):
         # load_dataset()
-        f = open('website/models/dataset.json')
+        f = open('website/models/dataset.json', 'r', encoding='utf-8')
         print(f.read())
         return {'message': 'Dataset loaded successfully'}
     

@@ -3,6 +3,14 @@ from .users import db
 from datetime import datetime
 
 
+class PlaceOfInterest(db.Model):
+    __tablename__ = 'place_of_interest'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    location = db.Column(db.String(100), nullable=False)
+    images = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.String(2000), nullable=False)
+    state_id = db.Column(db.Integer, db.ForeignKey('state.id'), nullable=False)
 
 
 
@@ -25,10 +33,11 @@ class State(db.Model):
     longitude = db.Column(db.Float, nullable=False)
     website = db.Column(db.String(50), nullable=False)
     borders = db.Column(db.String(200), nullable=False)
-    known_for = db.Column(db.String(200), nullable=False)
+    top_places_of_interest = db.relationship('PlaceOfInterest', backref='state', lazy=True)
+
 
     def __init__(self, name, region, region_id, capital, slogan, lgas, landmass, population, dialect,
-                latitude, longitude, website, borders, known_for):
+                latitude, longitude, website, borders, top_places_of_interest):
         self.name = name
         self.region = region
         self.region_id = region_id
@@ -41,7 +50,7 @@ class State(db.Model):
         self.longitude = longitude
         self.website = website
         self.borders = json.dumps(borders)  # Convert list to JSON string
-        self.known_for = json.dumps(known_for)  # Convert list to JSON string
+        self.top_places_of_interest = json.dumps(top_places_of_interest)  # Convert list to JSON string
 
 
 
@@ -124,7 +133,7 @@ class Lga(db.Model):
 
 
 def load_dataset():
-    with open('website/models/dataset.json') as file:
+    with open('website/models/dataset.json', 'r', encoding='utf-8') as file:
         dataset = json.load(file)
 
     for region_data in dataset['Regions']:
@@ -146,7 +155,7 @@ def load_dataset():
             longitude=state_data['longitude'],
             website=state_data['website'],
             borders=state_data['borders'],
-            known_for=state_data['known_for'],
+            top_places_of_interest=state_data['top_places_of_interest'],
         )
         
         # Retrieve the LGAs from the database based on their names
