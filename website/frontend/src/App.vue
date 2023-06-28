@@ -13,6 +13,9 @@
     <router-link to="/developer">
         <span class="nav-tab">Developer</span>
     </router-link>
+    <router-link to="/fun">
+        <span class="nav-tab">Fun</span>
+    </router-link>
     <div>
       <router-link to="/login">
         <span class="nav2">Sign In</span>

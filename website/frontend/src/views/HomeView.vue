@@ -7,7 +7,7 @@
     </div>
     <div>
       <router-link to="/register">
-      <button class="get-started-btn">Get Started</button>
+      <button class="get-started-btn">Sign Up to Get Started</button>
     </router-link>
     </div>
 
@@ -23,7 +23,22 @@
         </ul>
       </div>
       <!-- <search-component></search-component> -->
+      <!-- <div> -->
+        <!-- filter for regions, state and LGA -->
+        <!-- <input v-model="region" placeholder="Region"> -->
+        <!-- <input v-model="state" placeholder="State">
+        <input v-model="lga" placeholder="LGA">
+      </div> -->
 
+      <!-- Button to trigger the filter request -->
+      <!-- <button @click="filterLocations">Filter</button> -->
+
+        <!-- Display the filtered locations -->
+      <ul>
+        <li v-for="location in filteredLocations" :key="location.id">
+          {{ location.name }}
+        </li>
+      </ul>
     </div>
     <log-out></log-out>
   </div>
@@ -45,7 +60,11 @@ export default {
   data () {
     return {
       searchQuery: '',
-      searchResults: []
+      searchResults: [],
+      region: '',
+      state: '',
+      lga: '',
+      filteredLocations: []
     }
   },
   methods: {
@@ -57,10 +76,25 @@ export default {
         .catch(error => {
           console.log(error)
         })
+    },
+    filterLocations () {
+      const url = 'http://127.0.0.1:5000/query/?keyword=' + this.searchQuery
+      const params = {
+        region: this.region,
+        state: this.state,
+        lga: this.lga
+      }
+      axios.get(url, { params })
+        .then(response => {
+          this.filteredLocations = response.data
+        })
+        .catch(error => {
+          console.log(error)
+        })
     }
   }
-
 }
+
 </script>
 
 <style>
