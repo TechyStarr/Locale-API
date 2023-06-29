@@ -1,5 +1,5 @@
 from website.models.data import State, Region, Lga
-# from website.models.users import User
+from website.models.users import User, ApiKey
 
 # user serializer
 
@@ -56,4 +56,11 @@ def serialized_place_of_interest(place_of_interest):
         'images': place_of_interest.images,
         'description': place_of_interest.description,
         'state_id': place_of_interest.state_id,
+    }
+
+
+def serialized_key(key):
+    return {
+        'id': key.id,
+        'key': key.key,
     }

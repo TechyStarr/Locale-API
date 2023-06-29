@@ -6,7 +6,7 @@ from website.models.users import User
 from http import HTTPStatus
 from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest
 from .serializers import serialized_state, serialized_lga, serialized_region
-
+from ..api.users import validate_api_key
 
 search_ns = Namespace('Query', description='Search operations')
 
@@ -129,6 +129,7 @@ class QueryStates(Resource):
     @search_ns.doc('search_query')
     @search_ns.marshal_with(state_model, lga_model, region_model)
 
+    @validate_api_key
     def post(self):
 
         keyword = request.args.get('keyword')  # Get the search keyword from the query parameters

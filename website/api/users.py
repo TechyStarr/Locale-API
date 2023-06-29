@@ -1,5 +1,6 @@
 import json
 import secrets
+from functools import wraps
 from uuid import uuid4
 from flask import Flask, request
 from flask_restx import Resource, fields, Namespace, abort
@@ -57,46 +58,46 @@ def api_key():
 	gen_api_key = secrets.token_hex(16)
 	return gen_api_key
 
-
 @auth_namespace.route('/generate-api-key')
-class ApiKey(Resource):
-	# @cache.cached(timeout=60) # Cache the response for 60 seconds
-	# @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+class GenerateApiKey(Resource):
 	@auth_namespace.marshal_with(api_key_model)
 	def post(self):
 		"""
-			Generate an API key
-		"""
-		api_key = secrets.token_hex(16)
+		Generate an API key
+		# """
+		# data = request.get_json()
+		# user = User.query.filter_by(email=data.get('email')).first()
+		# if not user:
+		# 	abort(404, message='User not found')
+		key = secrets.token_hex(16)
+		api_key = ApiKey(
+			key=key,
+		)
+		api_key.save()
+
 		return api_key, HTTPStatus.CREATED, {
 			"message": "Api key generated successfully"
 		}
 
 
-		# data = request.get_json()
+	# def validate_api_key(api_key):
+	# 	key = ApiKey.query.filter_by(key=api_key).first()
+	# 	if not key:
+	# 		abort(404, message='Invalid API Key')
+	# 		return key
 
-		# current_user = get_jwt_identity()
 
-		# # check if user already exists
-		# user = User.query.filter_by(email=data.get('email')).first()
-		# if user:
-		# 	abort(409, message=f'User {user.username} already exists')
-
-		# new_api_key = ApiKey(
-		# 	key = api_key(),
-		# 	user_id = current_user.id
-		# )
-		# try:
-		# 	new_api_key.save()
-		# 	return new_api_key, HTTPStatus.CREATED, {
-		# 		'message': f'Api Key {new_api_key.key} created successfully'
-		# 	}
-		# except Exception as e:
-		# 	# db.session.rollback()
-		# 	return {
-		# 		'message': 'Something went wrong'
-		# 	}, HTTPStatus.INTERNAL_SERVER_ERROR
-
+def validate_api_key(func):
+	@wraps(func)
+	def wrapper(*args, **kwargs):
+		api_key = request.headers.get('X-API-KEY')
+		if not api_key:
+			abort(401, message='No API Key provided')
+		key = ApiKey.query.filter_by(key=api_key).first()
+		if not key:
+			abort(404, message='Invalid API Key')
+		return func(*args, **kwargs)
+	return wrapper
 
 
 
@@ -107,6 +108,8 @@ class SignUp(Resource):
 	@limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 	@auth_namespace.expect(signup_model)
 	@auth_namespace.marshal_with(signup_model)
+	# @validate_api_key
+	@auth_namespace.doc(security='apikey')
 	def post(self):
 		"""
 			Register a user
