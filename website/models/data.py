@@ -21,11 +21,11 @@ class State(db.Model):
     longitude = db.Column(db.Float, nullable=False)
     website = db.Column(db.String(50), nullable=False)
     borders = db.Column(db.String(200), nullable=False)
-    top_places_of_interest = db.relationship('PlaceOfInterest', backref='state', lazy=True)
+    places_of_interest = db.relationship('PlaceOfInterest', backref='state', lazy=True)
 
 
     def __init__(self, name, region, region_id, capital, slogan, lgas, landmass, population, dialect,
-                latitude, longitude, website, borders, top_places_of_interest):
+                latitude, longitude, website, borders, places_of_interest):
         self.name = name
         # self.region = region
         self.region_id = region_id
@@ -38,7 +38,7 @@ class State(db.Model):
         self.longitude = longitude
         self.website = website
         self.borders = json.dumps(borders)  # Convert list to JSON string
-        self.top_places_of_interest = top_places_of_interest  
+        self.places_of_interest = places_of_interest  
 
     def __repr__(self):
         return f"<State {self.name}>"
@@ -153,18 +153,18 @@ def load_dataset():
         db.session.add(region)
 
     for state_data in dataset['States']:
+        places_of_interest = []  # Initialize places_of_interest as an empty list
+        for place_of_interest in state_data['places_of_interest']:
+            place = PlaceOfInterest(
+                name=place_of_interest['name'] if 'name' in place_of_interest else '',
+                location=place_of_interest['location'] if 'location' in place_of_interest else '',
+                images=place_of_interest['images'] if 'images' in place_of_interest else '',
+                description=place_of_interest['description'] if 'description' in place_of_interest else '',
+                state_id=None  # Set the state_id to None for now
+            )
+            places_of_interest.append(place)
 
-        # top_places_of_interest = []
-        # for place_of_interest in state_data['top_places_of_interest']:
-        #     top_places_of_interest.append(PlaceOfInterest(
-        #         name=place_of_interest['name'],
-        #         location=place_of_interest['location'],
-        #         images=place_of_interest['images'],
-        #         description=place_of_interest['description']
-        #     ))
-
-        top_places_of_interest = list(state_data['top_places_of_interest'])
-        del state_data['top_places_of_interest']
+        del state_data['places_of_interest']
         state = State(
             name=state_data['state'],
             region=state_data['region'],
@@ -179,40 +179,18 @@ def load_dataset():
             longitude=state_data['longitude'],
             website=state_data['website'],
             borders=state_data['borders'],
-            state.top_places_of_interest = [
-                PlaceOfInterest(**place_of_interest) for place_of_interest in top_places_of_interest,
-                ]
+            places_of_interest=places_of_interest  # Assign the places_of_interest list to state
         )
 
-        
-        # Retrieve the LGAs from the database based on their names
-        # lgas = Lga.query.filter(Lga.lga_name.in_(state_data['lgas'])).all()
-        # state.lgas = lgas
-        
         db.session.add(state)
 
     for lga_data in dataset['LGAs']:
         lga = Lga(
             lga_name=lga_data.get('lga_name'),
             state_id=lga_data.get('state_id'),
-            # state=lga_data.get('state'),
             landmass=lga_data.get('landmass'),
-            borders=lga_data.get('borders'),
+            borders=lga_data.get('borders')
         )
         db.session.add(lga)
-
-    for places_of_interest_data in dataset['places_of_interest']:
-        places_of_interest = PlaceOfInterest(
-            name = places_of_interest_data.get('name'),
-            location = places_of_interest_data('location'),
-            images = places_of_interest_data.get('images'),
-            description = places_of_interest_data.get('description'),
-            state_id = places_of_interest_data('state_id')
-        )
-        db.session.add(places_of_interest)
-
-
-
-    # Add other models and relationships based on your dataset structure
 
     db.session.commit()

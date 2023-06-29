@@ -129,7 +129,7 @@
                 "Imo",
                 "Rivers"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "National War Museum",
                     "location": "Umuahia",
@@ -235,7 +235,7 @@
                 "Chad",
                 "Benue"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Mandara Mountains",
                     "location": "Adamawa",
@@ -331,7 +331,7 @@
             "longitude": "7.9167",
             "website": "http://www.akwaibomstate.gov.ng/",
             "borders": ["Cross River", "Abia", "Rivers", "Bayelsa"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Ibeno Beach",
                     "location": "Eket, Akwa Ibom state",
@@ -423,7 +423,7 @@
             "longitude": "7.0323",
             "website": "http://www.anambrastate.gov.ng/",
             "borders": ["Kogi", "Delta", "Abia", "Enugu", "Imo"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Ogbunike Cave",
                     "location": "St. Monica College, Ogbunike",
@@ -507,7 +507,7 @@
                 "Gombe",
                 "Yobe"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Yankari National Park",
                     "location": "Bauchi State",
@@ -596,7 +596,7 @@
             "longitude": "8.5214",
             "website": "http://www.benuestate.gov.ng/",
             "borders": ["Taraba", "Nasarawa", "Cross River", "Enugu", "Kogi"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -662,7 +662,7 @@
                 "Cameroon",
                 "Chad"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -714,7 +714,7 @@
             "longitude": "6.2676",
             "website": "http://www.bayelsa.gov.ng/",
             "borders": ["Rivers", "Delta"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -780,7 +780,7 @@
                 "Kogi",
                 "Akwa Ibom"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -864,7 +864,7 @@
             "longitude": "8.3333",
             "website": "http://www.deltastate.gov.ng/",
             "borders": ["Edo", "Ondo", "Anambra", "Imo", "Rivers", "Bayelsa"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -918,7 +918,7 @@
             "longitude": "8.1000",
             "website": "http://www.ebonyistate.gov.ng/",
             "borders": ["Benue", "Cross River", "Enugu", "Imo"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -986,7 +986,7 @@
             "longitude": "8.1000",
             "website": "http://www.edostate.gov.ng/",
             "borders": ["Delta", "Kogi", "Ondo", "Anambra", "Rivers"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1043,7 +1043,7 @@
             "longitude": "5.3333",
             "website": "http://www.ekitistate.gov.ng/",
             "borders": ["Kogi", "Kwara", "Ondo", "Osun"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1100,7 +1100,7 @@
             "longitude": "7.5000",
             "website": "http://www.enugustate.gov.ng/",
             "borders": ["Abia", "Anambra", "Benue", "Ebonyi", "Kogi"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1151,7 +1151,7 @@
             "longitude": "11.1711",
             "website": "http://www.gombestate.gov.ng/",
             "borders": ["Adamawa", "Bauchi", "Borno", "Yobe", "Taraba"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1226,7 +1226,7 @@
             "longitude": "7.0333",
             "website": "http://www.imostate.gov.ng/",
             "borders": ["Abia", "Anambra", "Ebonyi", "Enugu", "Rivers"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1299,7 +1299,7 @@
                 "Yobe",
                 "Zamfara"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1360,7 +1360,7 @@
             "longitude": "4.1994",
             "website": "http://www.kebbistate.gov.ng/",
             "borders": ["Niger", "Zamfara", "Katsina", "Sokoto"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1437,7 +1437,7 @@
                 "Bauchi",
                 "Gombe"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1527,7 +1527,7 @@
                 "Zamfara",
                 "Kebbi"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1601,7 +1601,7 @@
                 "Niger",
                 "FCT"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1680,7 +1680,7 @@
                 "Zamfara",
                 "Maradi Region, Niger"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1744,7 +1744,7 @@
                 "Niger",
                 "Kebbi"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1804,7 +1804,7 @@
             "longitude": "3.3792",
             "website": "http://www.lagosstate.gov.ng/",
             "borders": ["Ogun", "Ondo"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1863,7 +1863,7 @@
                 "Kano",
                 "Bauchi"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1929,7 +1929,7 @@
                 "Kogi",
                 "Zamfara"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -1979,7 +1979,7 @@
             "longitude": "3.3500",
             "website": "http://www.ogunstate.gov.ng/",
             "borders": ["Ondo", "Oyo", "Osun", "Ondo", "Oyo", "Osun"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2035,7 +2035,7 @@
             "longitude": "5.2000",
             "website": "http://www.ondostate.gov.ng/",
             "borders": ["Ogun", "Osun", "Ekiti", "Ogun", "Osun", "Ekiti"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2097,7 +2097,7 @@
             "longitude": "5.2000",
             "website": "http://www.osun.gov.ng/",
             "borders": ["Oyo", "Ekiti", "Ondo"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2161,7 +2161,7 @@
             "website": "http://www.oyostate.gov.ng/",
             "borders": ["Ogun", "Osun", "Kwara", "Ogun", "Osun", "Kwara"],
 
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2218,7 +2218,7 @@
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
             ],
-            "top_places_of_interest": ["Jos", "Jos"]
+            "places_of_interest": ["Jos", "Jos"]
         },
 
         
@@ -2273,7 +2273,7 @@
                 "Bayelsa",
                 "Imo"
             ],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2325,7 +2325,7 @@
             "longitude": "5.2333",
             "website": "http://www.sokotostate.gov.ng/",
             "borders": ["Kebbi", "Zamfara", "Kebbi", "Zamfara"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2372,7 +2372,7 @@
             "longitude": "11.3667",
             "website": "http://www.tarabastate.gov.ng/",
             "borders": ["Bauchi", "Gombe", "Plateau", "Cameroon"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2420,7 +2420,7 @@
             "longitude": "11.5000",
             "website": "http://www.yobestate.gov.ng/",
             "borders": ["Bauchi", "Borno", "Gombe", "Jigawa"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2465,7 +2465,7 @@
             "longitude": "6.6600",
             "website": "http://www.zamfarastate.gov.ng/",
             "borders": ["Kaduna", "Katsina", "Kebbi", "Sokoto"],
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2510,7 +2510,7 @@
                 "Plateau"
             ],
     
-            "top_places_of_interest": [
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",

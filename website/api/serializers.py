@@ -32,7 +32,7 @@ def serialized_state(state):
         'longitude': state.longitude,
         'website': state.website,
         'borders': state.borders,
-        'top_places_of_interest': state.top_places_of_interest,
+        'places_of_interest': state.places_of_interest,
         # 'No_of_LGAs': state.No_of_LGAs,
         
     }
@@ -47,3 +47,12 @@ def serialized_lga(lga):
         'borders': lga.borders,
     }
 
+def serialized_place_of_interest(place_of_interest):
+    return {
+        'id': place_of_interest.id,
+        'name': place_of_interest.name,
+        'location': place_of_interest.location,
+        'images': place_of_interest.images,
+        'description': place_of_interest.description,
+        'state_id': place_of_interest.state_id,
+    }
