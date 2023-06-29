@@ -10,7 +10,6 @@ from flask_limiter.util import get_remote_address
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
 
-
 app = Flask(__name__)
 
 # cache response for 60 seconds

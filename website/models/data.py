@@ -68,6 +68,14 @@ class PlaceOfInterest(db.Model):
     description = db.Column(db.String(2000), nullable=False)
     state_id = db.Column(db.Integer, db.ForeignKey('states.id'), nullable=False)
 
+    def __init__(self, name, location, images, description, state_id):
+        self.name = name
+        self.location = location
+        self.images = json.dumps(images)
+        self.description = description
+        self.state_id = state_id
+
+    
     def __repr__(self):
         return f"<PlacesOfInterest {self.name}>"
 
@@ -156,17 +164,16 @@ def load_dataset():
     for state_data in dataset['States']:
         places_of_interest = []  # Initialize places_of_interest as an empty list
         for place_of_interest in state_data['places_of_interest']:
-            # images = json.dumps(place_of_interest['images'])
             place = PlaceOfInterest(
                 name=place_of_interest['name'] if 'name' in place_of_interest else '',
                 location=place_of_interest['location'] if 'location' in place_of_interest else '',
-                # images= images,
+                images= place_of_interest['images'] if 'images' in place_of_interest else '',
                 description=place_of_interest['description'] if 'description' in place_of_interest else '',
                 state_id=None  # Set the state_id to None for now
             )
             places_of_interest.append(place)
 
-        del state_data['places_of_interest']
+        # del state_data['places_of_interest']
         state = State(
             name=state_data['state'],
             region=state_data['region'],

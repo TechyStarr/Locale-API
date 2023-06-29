@@ -33,6 +33,10 @@ def create_app(config=config_dict['dev']):
     cache = Cache(app, config={'CACHE_TYPE': 'simple'})
     cache.init_app(app)
 
+    view_namespace.cache = cache
+    search_ns.cache = cache
+    auth_namespace.cache = cache
+
     app.extensions['cache'] = cache
 
     cors = CORS(app)

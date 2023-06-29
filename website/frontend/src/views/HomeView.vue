@@ -40,6 +40,7 @@
         </li>
       </ul>
     </div>
+    <places-of-interest></places-of-interest>
     <log-out></log-out>
   </div>
 </template>
@@ -47,13 +48,15 @@
 <script>
 import LogOut from '@/components/LogOut.vue'
 import axios from 'axios'
+import PlacesOfInterest from '@/components/PlacesOfInterest.vue'
 // import SearchComponent from '@/components/SearchComponent.vue'
 // import RegisterView from './RegisterView.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    LogOut
+    LogOut,
+    PlacesOfInterest
     // SearchComponent
     // RegisterView
   },

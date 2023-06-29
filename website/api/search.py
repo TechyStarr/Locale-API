@@ -4,7 +4,7 @@ from website.utils.utils import db
 
 from website.models.users import User
 from http import HTTPStatus
-from website.models.data import Region, State, Lga, load_dataset
+from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest
 from .serializers import serialized_state, serialized_lga, serialized_region
 
 
@@ -182,6 +182,26 @@ class Filter(Resource):
         results = query.all()
 
         return results, 200
+    
+
+
+@search_ns.route('/places')
+class Places(Resource):
+    @search_ns.doc('places_query')
+    @search_ns.marshal_with(state_model, lga_model, region_model)
+    def get(self):
+        keyword = request.args.get('keyword')
+        if keyword:
+            results = PlaceOfInterest.query.filter(
+                db.or_(
+                    PlaceOfInterest.name.ilike(f'%{keyword}%'),  # Search by places of interest
+                    PlaceOfInterest.description.ilike(f'%{keyword}%'),  # Search by places of interest description
+                    PlaceOfInterest.location.ilike(f'%{keyword}%'),  # Search by places of interest location
+                )
+            ).all()
+            return results, 200
+        else:
+            return {'message': 'Enter a search keyword'}, 400
     
 
 # /api/locations?region=<region_name>&state=<state_name>&lga=<lga_name>

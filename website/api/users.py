@@ -1,5 +1,4 @@
 import json
-import requests
 import secrets
 from uuid import uuid4
 from flask import Flask, request
@@ -57,15 +56,6 @@ api_key_model = auth_namespace.model(
 def api_key():
 	gen_api_key = secrets.token_hex(16)
 	return gen_api_key
-
-# url = 'http://127.0.0.1:5000/auth/generate-api-key'
-# headers = {'Content-Type': 'application/json'}
-# data = {
-#     "key": api_key(),
-#     # "user_id": get_jwt_identity()
-# }
-
-# response = requests.post(url, headers=headers, data=json.dumps(data))
 
 
 @auth_namespace.route('/generate-api-key')

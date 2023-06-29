@@ -2207,7 +2207,8 @@
             "latitude": "7.2500",
             "longitude": "5.2000",
             "website": "http://www.plateaustate.gov.ng/",
-            "borders": [
+            "borders": ["Bauchi", "Kaduna", "Nasarawa", "Taraba", "Benue"],
+            "places_of_interest": [
                 {
                     "name": "Gubi Lake",
                     "location": "Bauchi State",
@@ -2217,8 +2218,7 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ],
-            "places_of_interest": ["Jos", "Jos"]
+            ]
         },
 
         
