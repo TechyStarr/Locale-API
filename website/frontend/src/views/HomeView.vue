@@ -103,27 +103,38 @@ export default {
 
 <style>
 .header-text {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 300;
-  margin-top: 4rem;
-  display: flex;
+  margin-top: 12rem;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  /* white-space: ; */
   /* padding-bottom: 2rem; */
 }
 
+h1 {
+  font-size: x; /* Adjust the font size to your desired value */
+  overflow: hidden; /* Hide any overflowing text */
+}
+
 .get-started-btn {
-  padding: 10px 20px;
+  padding: 16px 20px;
   background-color: #f44336;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 4rem;
+
+}
+
+.get-started-btn:hover {
+  background-color: #1e1e1e;
 }
 
 .search-input {
-  padding: 10px 4rem;
+  padding: 16px 8rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -133,7 +144,7 @@ export default {
 }
 
 .search-button {
-  padding: 10px 20px;
+  padding: 16px 2rem;
   background-color: #f44336;
   color: #fff;
   border: none;

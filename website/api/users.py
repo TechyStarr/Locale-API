@@ -67,29 +67,35 @@ class ApiKey(Resource):
 		"""
 			Generate an API key
 		"""
-		data = request.get_json()
+		api_key = secrets.token_hex(16)
+		return api_key, HTTPStatus.CREATED, {
+			"message": "Api key generated successfully"
+		}
 
-		current_user = get_jwt_identity()
 
-		# check if user already exists
-		user = User.query.filter_by(email=data.get('email')).first()
-		if user:
-			abort(409, message=f'User {user.username} already exists')
+		# data = request.get_json()
 
-		new_api_key = ApiKey(
-			key = api_key(),
-			user_id = current_user.id
-		)
-		try:
-			new_api_key.save()
-			return new_api_key, HTTPStatus.CREATED, {
-				'message': f'Api Key {new_api_key.key} created successfully'
-			}
-		except Exception as e:
-			# db.session.rollback()
-			return {
-				'message': 'Something went wrong'
-			}, HTTPStatus.INTERNAL_SERVER_ERROR
+		# current_user = get_jwt_identity()
+
+		# # check if user already exists
+		# user = User.query.filter_by(email=data.get('email')).first()
+		# if user:
+		# 	abort(409, message=f'User {user.username} already exists')
+
+		# new_api_key = ApiKey(
+		# 	key = api_key(),
+		# 	user_id = current_user.id
+		# )
+		# try:
+		# 	new_api_key.save()
+		# 	return new_api_key, HTTPStatus.CREATED, {
+		# 		'message': f'Api Key {new_api_key.key} created successfully'
+		# 	}
+		# except Exception as e:
+		# 	# db.session.rollback()
+		# 	return {
+		# 		'message': 'Something went wrong'
+		# 	}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 

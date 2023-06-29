@@ -62,11 +62,14 @@ export default {
 }
 
 .img {
-  /* padding: 0px 10px 0px; */
-  width: 30vw; /* Set the desired width */
-  height: 50vh; /* Maintain aspect ratio */
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  width: 380px; /* Set the desired width */
+  height: 380px; /* Maintain aspect ratio */
   border-radius: 8px; /* Apply border radius if desired */
-  margin: 20px; /* Add margin-bottom for spacing */
+ /* Add margin-bottom for spacing */
+  margin-left: 30px;
+  margin-right: 30px;
   /* Add any additional styles as needed */
 }
 </style>
