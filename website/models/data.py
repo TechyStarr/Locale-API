@@ -13,7 +13,7 @@ class State(db.Model):
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
     capital = db.Column(db.String(50), nullable=False)
     slogan = db.Column(db.String(50), nullable=False)
-    lgas = db.relationship('Lga', backref='states', lazy=True)
+    lgas = db.Column(db.String(500), nullable=False)  # Store LGAs as a JSON string
     landmass = db.Column(db.String(50), nullable=False)
     population = db.Column(db.String(50), nullable=False)
     dialect = db.Column(db.String(50), nullable=False)
@@ -31,6 +31,7 @@ class State(db.Model):
         self.region_id = region_id
         self.capital = capital
         self.slogan = slogan
+        self.lgas = json.dumps(lgas)  # Convert list to JSON string
         self.landmass = landmass
         self.population = population
         self.dialect = dialect
@@ -63,7 +64,7 @@ class PlaceOfInterest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     location = db.Column(db.String(100), nullable=False)
-    images = db.Column(db.String(200), nullable=False)
+    images = db.Column(db.String(200), nullable=True)
     description = db.Column(db.String(2000), nullable=False)
     state_id = db.Column(db.Integer, db.ForeignKey('states.id'), nullable=False)
 
@@ -155,10 +156,11 @@ def load_dataset():
     for state_data in dataset['States']:
         places_of_interest = []  # Initialize places_of_interest as an empty list
         for place_of_interest in state_data['places_of_interest']:
+            # images = json.dumps(place_of_interest['images'])
             place = PlaceOfInterest(
                 name=place_of_interest['name'] if 'name' in place_of_interest else '',
                 location=place_of_interest['location'] if 'location' in place_of_interest else '',
-                images=place_of_interest['images'] if 'images' in place_of_interest else '',
+                # images= images,
                 description=place_of_interest['description'] if 'description' in place_of_interest else '',
                 state_id=None  # Set the state_id to None for now
             )

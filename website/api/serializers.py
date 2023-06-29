@@ -24,7 +24,7 @@ def serialized_state(state):
         'region_id': state.region_id,
         'capital': state.capital,
         'slogan': state.slogan,
-        'lgas': state.lgas,
+        'lgas': state.lgas,  # Convert list to string
         'landmass': state.landmass,
         'population': state.population,
         'dialect': state.dialect,
@@ -36,6 +36,7 @@ def serialized_state(state):
         # 'No_of_LGAs': state.No_of_LGAs,
         
     }
+    
 
 
 def serialized_lga(lga):
