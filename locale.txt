@@ -116,3 +116,4 @@ a message indicating that no matching records were found.
 
 
 
+### A create/add button to add a new place to the database by uploading images and adding a description of the place

@@ -1,11 +1,29 @@
 <template>
   <div>
-    <h2>Places of Interest</h2>
-      <div v-for="place in places" :key="place.id">
-      <h3>{{ place.name }}</h3>
-      <p>{{ place.location }}</p>
+    <div class="header-text">
+      <h1>
+        Places of Interest
+      </h1>
+    </div>
+    <!-- <div v-for="place in places" :key="place.id"> -->
+      <!-- <h3>{{ place.name }}</h3> -->
+      <!-- <p>{{ place.location }}</p>
       <img :src="place.image" alt="Place of Interest" />
-      <p>{{ place.description }}</p>
+      <p>{{ place.description }}</p> -->
+    <!-- </div> -->
+    <div class="image-group">
+        <div>
+        <img class="img" :src="imageURL" alt="Fetched Image" />
+        <h3>National War museum</h3>
+      </div>
+      <div>
+        <img class="img" :src="imageURL" alt="Fetched Image" />
+        <h3>National War museum</h3>
+      </div>
+      <div>
+        <img class="img" :src="imageURL" alt="Fetched Image" />
+        <h3>National War museum</h3>
+      </div>
     </div>
   </div>
 </template>
@@ -16,13 +34,15 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      places: []
+      places: [],
+      imageURL: 'https://images.unsplash.com/photo-1560792523-9b3e98060a4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60'
+
     }
   },
   mounted () {
     // Make API call to retrieve places of interest
     // Replace 'apiEndpoint' with the actual endpoint URL
-    axios.get('http://127.0.0.1:5000/query/places?keyword=' + this.searchQuery)
+    axios.get('http://127.0.0.1:5000/query/place')
       .then(response => {
         this.places = response.data
       })
@@ -33,3 +53,20 @@ export default {
 
 }
 </script>
+
+<style>
+.image-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img {
+  /* padding: 0px 10px 0px; */
+  width: 30vw; /* Set the desired width */
+  height: 50vh; /* Maintain aspect ratio */
+  border-radius: 8px; /* Apply border radius if desired */
+  margin: 20px; /* Add margin-bottom for spacing */
+  /* Add any additional styles as needed */
+}
+</style>

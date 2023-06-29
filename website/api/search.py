@@ -184,6 +184,22 @@ class Filter(Resource):
         return results, 200
     
 
+@search_ns.route('/place')
+class RetrieveRegion(Resource):
+    # @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    # @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+    @search_ns.marshal_with(region_model, as_list=True)
+    @search_ns.doc(
+        description='Get all Places of interest',
+    )
+    # @jwt_required()
+    def get(self):
+        places = PlaceOfInterest.query.limit(3).all()
+        if places is None:
+            return {'message': 'No Place found'}, HTTPStatus.NOT_FOUND
+
+        return places, HTTPStatus.OK
+
 
 @search_ns.route('/places')
 class Places(Resource):

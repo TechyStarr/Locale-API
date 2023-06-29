@@ -68,11 +68,12 @@ export default {
       state: '',
       lga: '',
       filteredLocations: []
+      // imageURL: 'https://images.unsplash.com/photo-1560792523-9b3e98060a4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60'
     }
   },
   methods: {
     search () {
-      axios.post('http://127.0.0.1:5000/query/?keyword=' + this.searchQuery)
+      axios.post('http://127.0.0.1:5000/query/regions' + this.searchQuery)
         .then(response => {
           this.searchResults = response.data
         })
