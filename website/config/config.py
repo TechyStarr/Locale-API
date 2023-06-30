@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 db_name = 'localedb'
 
 
-default_uri = "postgres://{}:{}@{}/{}".format('postgres', 'password', 'localhost:5432', db_name)
+default_uri = "postgres://{}:{}@{}/{}".format('postgres', 'starrb15', 'localhost:5432', db_name)
 
 uri = os.getenv('DATABASE_URL', default_uri) # or other relevant config var
 if uri.startswith('postgres://'):
