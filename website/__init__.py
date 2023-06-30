@@ -25,6 +25,8 @@ def create_app(config=config_dict['dev']):
     app = Flask(__name__)
 
     app.config.from_object(config) # config object from config.py file in config folder
+    # postgres://users:0A24jonKbC2TMHVGB2jVzUyc4bG99fnU@dpg-cif1be95rnujc4ta29rg-a.oregon-postgres.render.com/localedb_hgg1
+
     # app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
     # app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
     # app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)

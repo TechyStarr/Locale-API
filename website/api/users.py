@@ -62,13 +62,6 @@ def api_key():
 class GenerateApiKey(Resource):
 	@auth_namespace.marshal_with(api_key_model)
 	def post(self):
-		"""
-		Generate an API key
-		# """
-		# data = request.get_json()
-		# user = User.query.filter_by(email=data.get('email')).first()
-		# if not user:
-		# 	abort(404, message='User not found')
 		key = secrets.token_hex(16)
 		api_key = ApiKey(
 			key=key,
@@ -78,13 +71,6 @@ class GenerateApiKey(Resource):
 		return api_key, HTTPStatus.CREATED, {
 			"message": "Api key generated successfully"
 		}
-
-
-	# def validate_api_key(api_key):
-	# 	key = ApiKey.query.filter_by(key=api_key).first()
-	# 	if not key:
-	# 		abort(404, message='Invalid API Key')
-	# 		return key
 
 
 def validate_api_key(func):

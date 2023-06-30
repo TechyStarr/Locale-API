@@ -62,7 +62,7 @@ export default {
   },
   data () {
     return {
-      searchQuery: '',
+      searchQuery: '', // searchQuery is the variable that holds the search query from the user
       searchResults: [],
       region: '',
       state: '',

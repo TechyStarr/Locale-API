@@ -33,7 +33,7 @@ class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite://' # An SQL memory database is used
 
 class ProdConfig(Config):
-    # SQLALCHEMY_DATABASE_URI = uri
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEBUG = config('DEBUG', False, cast=bool)
 
