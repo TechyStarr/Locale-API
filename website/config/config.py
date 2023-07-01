@@ -10,9 +10,9 @@ db_name = 'localedb'
 
 # default_uri = "postgres://{}:{}@{}/{}".format('postgres', 'starrb15', 'localhost:5432', db_name)
 
-default_uri = "postgresql://users:ARfVJqF9NIQjO3QIrtiXSZhGPkDGPzrf@dpg-cifuuolph6erq6hlbmag-a.oregon-postgres.render.com/localedb_sjat"
+# default_uri = "postgresql://users:ARfVJqF9NIQjO3QIrtiXSZhGPkDGPzrf@dpg-cifuuolph6erq6hlbmag-a.oregon-postgres.render.com/localedb_sjat"
 
-uri = os.getenv('DATABASE_URL', default_uri) # or other relevant config var
+uri = os.getenv('DATABASE_URL', 'default_uri') # or other relevant config var
 if uri.startswith('postgres://'):
     uri = uri.replace('postgres://', 'postgresql://', 1)
 
@@ -27,8 +27,7 @@ class DevConfig(Config):
     DEBUG = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = True
-    SQLALCHEMY_DATABASE_URI = uri
-#     # 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 # class TestConfig(Config):
 #     TESTING = True
