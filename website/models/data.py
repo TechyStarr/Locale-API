@@ -9,7 +9,7 @@ class State(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
-    region = db.relationship('Region', back_populates='states')
+    region = db.relationship('Region', backref='states')
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
     capital = db.Column(db.String(50), nullable=False)
     slogan = db.Column(db.String(50), nullable=False)
@@ -98,7 +98,7 @@ class Region(db.Model):
     __tablename__ = 'regions'
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(45), nullable=False)
-    state = db.relationship('State', back_populates='regions', overlaps='regions, states')
+    state = db.relationship('State', backref='regions', lazy=True)
 
 
     def __repr__(self):
