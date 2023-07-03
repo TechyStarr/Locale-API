@@ -48,14 +48,25 @@ state_model = view_namespace.model(
         'region': fields.String(required=True, description="Region"),
         'region_id': fields.String(required=True, description="Region ID"),
         'capital': fields.String(required=True, description="Capital"),
-        'population': fields.String(required=True, description="Population"),
-        'area': fields.String(required=True, description="Area"),
-        'postal_code': fields.String(required=True, description="Postal Code"),
+        'slogan': fields.String(required=True, description="Slogan"),
         'lgas': fields.Nested((lga_model), description="Local Government Areas"),
+        'landmass': fields.String(required=True, description="Landmass"),
+        'population': fields.String(required=True, description="Population"),
+        'dialect': fields.String(required=True, description="Dialect"),
+        'latitude': fields.String(required=True, description="Latitude"),
+        'longitude': fields.String(required=True, description="Longitude"),
+        'website': fields.String(required=True, description="Website"),
+        'borders': fields.String(required=True, description="Borders"),
         'places_of_interest': fields.String(description="Top Places of Interest"),
     }
 )
 
+#         'dialect': state.dialect,
+#         'latitude': state.latitude,
+#         'longitude': state.longitude,
+#         'website': state.website,
+#         'borders': state.borders,
+#         'places_of_interest': state.places_of_interest  
 
 
 

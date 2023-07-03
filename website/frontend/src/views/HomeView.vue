@@ -14,13 +14,21 @@
       <input type="text" v-model="searchQuery" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="search">
       <button @click="search" class="search-button">Search</button>
       <div v-if="searchResults">
+        <!-- <a href="https://www.google.com/maps?q=what+is+lagos+known+for&source=lmns&entry=mt&bih=663&biw=1366&hl=en&sa=X&ved=2ahUKEwi0l_mlp_L_AhUzmScCHfgOBicQ_AUoA3oECAEQAw">Map of Lagos</a> -->
         <div v-for="result in searchResults" :key="result.id">
           <p>{{ result.name }}</p>
           <p>{{ result.description }}</p>
-          <p>The Local Government Areas in {{ searchQuery }} are {{ result.lgas }}</p>
+          <p v-if="Array.isArray(result.lgas)">
+            The Local Government Areas in searchQuery are {{ result.lgas.join(", ") }}
+          </p>
+          <p v-else>
+            No Local Government Areas found.
+          </p>          <p>The Local Government Areas in {{ searchQuery }} are {{ result.lgas }}</p>
           <p>{{ result.slogan }}</p>
         </div>
       </div>
+      <!-- Add schools -->
+      <!-- food marts, restaurants -->
       <!-- <search-component></search-component> -->
       <!-- <div> -->
         <!-- filter for regions, state and LGA -->
@@ -79,6 +87,7 @@ export default {
         .catch(error => {
           console.log(error)
         })
+      console.log(typeof this.searchResults)
     },
     filterLocations () {
       const url = 'http://127.0.0.1:5000/query/?keyword=' + this.searchQuery

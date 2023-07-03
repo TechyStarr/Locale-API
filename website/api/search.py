@@ -152,8 +152,15 @@ class QueryStates(Resource):
             # Serialize the states
             data = ([serialized_state(state) for state in results])
 
+            response = {
+                'results': data,
+                'count': len(data)
 
-            return results, 200
+            }
+            print(type(response))
+
+
+            return response, 200
         else:
             return {'message': 'Enter a search keyword'}, 400
 

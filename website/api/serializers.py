@@ -32,9 +32,7 @@ def serialized_state(state):
         'longitude': state.longitude,
         'website': state.website,
         'borders': state.borders,
-        'places_of_interest': state.places_of_interest,
-        # 'No_of_LGAs': state.No_of_LGAs,
-        
+        'places_of_interest': state.places_of_interest   
     }
     
 

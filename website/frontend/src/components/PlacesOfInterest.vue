@@ -25,6 +25,29 @@
         <h3>National War museum</h3>
       </div>
     </div>
+
+    <div>
+      <!-- Schools in Lagos -->
+      <div class="header-text">
+      <h3>
+        Schools in Lagos
+      </h3>
+    </div>
+      <div class="image-group">
+        <div>
+          <img class="img" :src="imageURL" alt="Fetched Image" />
+          <h3>National War museum</h3>
+        </div>
+        <div>
+          <img class="img" :src="imageURL" alt="Fetched Image" />
+          <h3>National War museum</h3>
+        </div>
+        <div>
+          <img class="img" :src="imageURL" alt="Fetched Image" />
+          <h3>National War museum</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
