@@ -28,7 +28,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      isLoggedIn: false,
+      // isLoggedIn: false,
       email: '',
       password: '',
       errorMessage: ''
@@ -48,6 +48,12 @@ export default {
         // Successful login, redirect to home page
           console.log('Logged in successfully')
           this.$router.push('/') // Redirect to home page
+
+          // Store the token in the localstorage
+          // localStorage.setItem('token', response.data.access_token)
+
+          // Set the logged in status to true
+          // this.isLoggedIn = true
         })
         .catch(error => {
           if (error.response.status === 401) {
@@ -61,8 +67,6 @@ export default {
           // Handle the error here
           console.log('Error: ', error.message)
         })
-      this.isLoggedIn = true
-      this.email = ''
     }
   }
 }

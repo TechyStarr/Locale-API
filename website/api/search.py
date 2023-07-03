@@ -128,9 +128,7 @@ location_model = search_ns.model(
 class QueryStates(Resource):
     @search_ns.doc('search_query')
     @search_ns.marshal_with(state_model, lga_model, region_model)
-
-    @validate_api_key
-    def post(self):
+    def get(self):
 
         keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
         if keyword:

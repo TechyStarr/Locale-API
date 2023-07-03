@@ -14,13 +14,12 @@
       <input type="text" v-model="searchQuery" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="search">
       <button @click="search" class="search-button">Search</button>
       <div v-if="searchResults">
-        <ul>
-          <li v-for="result in searchResults" :key="result.id">
-            {{ result.name }}
-            {{ result.description }}
-            <!-- {{ result.lgas }} -->
-          </li>
-        </ul>
+        <div v-for="result in searchResults" :key="result.id">
+          <p>{{ result.name }}</p>
+          <p>{{ result.description }}</p>
+          <p>The Local Government Areas in {{ searchQuery }} are {{ result.lgas }}</p>
+          <p>{{ result.slogan }}</p>
+        </div>
       </div>
       <!-- <search-component></search-component> -->
       <!-- <div> -->
@@ -73,7 +72,7 @@ export default {
   },
   methods: {
     search () {
-      axios.post('http://127.0.0.1:5000/query/regions' + this.searchQuery)
+      axios.get('http://127.0.0.1:5000/query/?keyword=' + this.searchQuery)
         .then(response => {
           this.searchResults = response.data
         })
