@@ -3,26 +3,31 @@
       <div class="header-text">
         <h1>Developer content</h1>
       </div>
-      <!-- <input type="text" v-model="apiKey" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="search"> -->
       <button @click="generateApiKey" class="search-button">Generate Api Key</button>
+      <api-key-modal :api-key="generatedApiKey" v-if="generatedApiKey" />
       <div v-if="apiKey">
         <ul>
-          <li v-for="result in apiKey" :key="result.id">
+          <li class="key" v-for="result in apiKey" :key="result.id">
             {{ result.key }}
           </li>
         </ul>
       </div>
     </div>
-  </template>
+</template>
 
 <script>
 import axios from 'axios'
+import ApiKeyModal from '@/components/ApiKeyModal.vue'
 
 export default {
   data () {
     return {
-      apiKey: ''
+      apiKey: [],
+      generatedApiKey: null
     }
+  },
+  components: {
+    ApiKeyModal
   },
 
   methods: {
@@ -30,11 +35,12 @@ export default {
       // Make API call to generate API key
       axios.post('http://127.0.0.1:5000/auth/generate-api-key')
         .then(response => {
-          this.places = response.data
+          this.apiKey = response.data
         })
         .catch(error => {
           console.error('Could not generate api key:', error)
         })
+      console.log(this.apiKey)
     }
   }
 }
@@ -50,5 +56,9 @@ export default {
   align-items: center; */
   /* white-space: ; */
   /* padding-bottom: 2rem; */
+}
+.key {
+  font-size: 1.6rem;
+  font-weight: 300;
 }
 </style>

@@ -28,6 +28,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
+      isLoggedIn: false,
       email: '',
       password: '',
       errorMessage: ''
@@ -60,6 +61,8 @@ export default {
           // Handle the error here
           console.log('Error: ', error.message)
         })
+      this.isLoggedIn = true
+      this.email = ''
     }
   }
 }

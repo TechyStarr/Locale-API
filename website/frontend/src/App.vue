@@ -17,7 +17,7 @@
         <span class="nav-tab">Fun</span>
     </router-link>
     <div>
-      <router-link to="/login">
+      <router-link v-if="!isLoggedIn" to="/login">
         <span class="nav2">Sign In</span>
       </router-link>
     </div>
@@ -25,20 +25,22 @@
   <router-view/>
 </template>
 
-<!-- <script>
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faRocket } from '@fortawesome/free-solid-svg-icons'
+<script>
+// import Login from './views/LoginView.vue'
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// import { faRocket } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faRocket)
+// library.add(faRocket)
 
 export default {
   name: 'App',
   components: {
-    FontAwesomeIcon,
+    // Login
+    // FontAwesomeIcon,
   }
 }
-</script> -->
+</script>
 
 <style>
 #app {
