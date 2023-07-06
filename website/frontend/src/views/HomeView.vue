@@ -14,17 +14,40 @@
       <input type="text" v-model="searchQuery" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="search">
       <button @click="search" class="search-button">Search</button>
       <div v-if="searchResults">
-        <!-- <a href="https://www.google.com/maps?q=what+is+lagos+known+for&source=lmns&entry=mt&bih=663&biw=1366&hl=en&sa=X&ved=2ahUKEwi0l_mlp_L_AhUzmScCHfgOBicQ_AUoA3oECAEQAw">Map of Lagos</a> -->
-        <div v-for="result in searchResults" :key="result.id">
-          <p>{{ result.name }}</p>
-          <p>{{ result.description }}</p>
-          <p v-if="Array.isArray(result.lgas)">
-            The Local Government Areas in searchQuery are {{ result.lgas.join(", ") }}
-          </p>
-          <p v-else>
-            No Local Government Areas found.
-          </p>          <p>The Local Government Areas in {{ searchQuery }} are {{ result.lgas }}</p>
-          <p>{{ result.slogan }}</p>
+
+        <div class="search-result" v-for="result in searchResults" :key="result.id">
+        <p>You searched for {{ searchQuery }} </p>
+
+          <div class="search-item">
+            <p>State</p>
+            <p>{{ result.name }} </p>
+          </div>
+          <hr>
+          <div class="search-item">
+            <p>Region</p>
+            <p> {{ result.region }} </p>
+          </div>
+          <hr>
+          <div class="search-item">
+            <p>Capital</p>
+            <p> {{ result.capital }} </p>
+          </div>
+          <hr>
+          <div class="search-item">
+            <p>Number of LGA</p>
+            <p> {{ result.lgas }} </p>
+          </div>
+          <hr>
+          <div class="search-item">
+            <p>Slogan</p>
+            <p> {{ result.slogan }} </p>
+          </div>
+          <hr>
+          <div class="search-item">
+            <p>Population</p>
+            <p> {{ result.population }} </p>
+          </div>
+
         </div>
       </div>
       <!-- Add schools -->
@@ -41,11 +64,22 @@
       <!-- <button @click="filterLocations">Filter</button> -->
 
         <!-- Display the filtered locations -->
-      <ul>
+      <!-- <ul>
         <li v-for="location in filteredLocations" :key="location.id">
           {{ location.name }}
         </li>
-      </ul>
+      </ul> -->
+    </div>
+    <div class="test-container">
+      <div class="test">
+        <h1>Testing</h1>
+        <p>This is a random text</p>
+      </div>
+      <hr>
+      <div class="test">
+        <h1>Testing</h1>
+        <p>This is another random text</p>
+      </div>
     </div>
     <places-of-interest></places-of-interest>
     <log-out></log-out>
@@ -83,6 +117,11 @@ export default {
       axios.get('http://127.0.0.1:5000/query/?keyword=' + this.searchQuery)
         .then(response => {
           this.searchResults = response.data
+          const formattedResults = this.searchResults.map(function (result) {
+            return result.replace(/"/g, ' ')
+          })
+          this.searchResults = formattedResults
+          console.log(this.searchResults)
         })
         .catch(error => {
           console.log(error)
@@ -114,16 +153,11 @@ export default {
   font-size: 1.6rem;
   font-weight: 300;
   margin-top: 12rem;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* white-space: ; */
-  /* padding-bottom: 2rem; */
 }
 
 h1 {
-  font-size: x; /* Adjust the font size to your desired value */
-  overflow: hidden; /* Hide any overflowing text */
+  font-size: 3rem;
+  overflow: hidden;
 }
 
 .get-started-btn {
@@ -134,7 +168,6 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 4rem;
-
 }
 
 .get-started-btn:hover {
@@ -142,9 +175,9 @@ h1 {
 }
 
 .search-input {
-  padding: 16px 8rem;
+  padding: 15px 72px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 4px 0 0 4px;
 }
 
 .search-input::placeholder {
@@ -152,11 +185,83 @@ h1 {
 }
 
 .search-button {
-  padding: 16px 2rem;
+  padding: 16px 24px;
   background-color: #f44336;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
 }
+
+.search-result {
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 350px;
+  margin-top: 32px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-item {
+  margin-top: 32px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-result p,
+.search-result li {
+  flex: 1;
+  color: #1e1e1e;
+  font-size: 18px;
+  list-style: none;
+}
+
+hr {
+  border-color: #e2e2e2;
+  border-width: 1px;
+  border-style: solid;
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .header-text {
+    font-size: 1.2rem;
+    margin-top: 6rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .get-started-btn {
+    padding: 12px 16px;
+    margin-bottom: 2rem;
+  }
+
+  .search-input {
+    padding: 10px 48px;
+  }
+
+  .search-button {
+    padding: 12px 18px;
+  }
+
+  .search-result {
+    margin: 150px;
+    margin-top: 32px;
+  }
+
+  .search-item {
+    font-size: 14px;
+  }
+
+  .search-result p,
+  .search-result li {
+    font-size: 14px;
+  }
+}
+
 </style>

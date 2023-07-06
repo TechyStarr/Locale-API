@@ -24,7 +24,7 @@ export default {
       const token = localStorage.getItem('token')
       if (token) {
         axios
-          .get('http://127.0.0.1:5000/auth/validate_token', {
+          .get('', {
             headers: {
               Authorization: `Bearer ${token}`
             }

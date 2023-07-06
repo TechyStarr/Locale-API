@@ -1,3 +1,4 @@
+import json
 from website.models.data import State, Region, Lga
 from website.models.users import User, ApiKey
 
@@ -17,6 +18,11 @@ def serialized_region(region):
     }
 
 def serialized_state(state):
+    
+    borders = json.loads(state.borders)
+    for border in borders:
+        border.strip('"', '')
+    places_of_interest = [poi.name for poi in state.places_of_interest]
     return {
         'id': state.id,
         'name': state.name,

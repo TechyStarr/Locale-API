@@ -61,13 +61,6 @@ state_model = view_namespace.model(
     }
 )
 
-#         'dialect': state.dialect,
-#         'latitude': state.latitude,
-#         'longitude': state.longitude,
-#         'website': state.website,
-#         'borders': state.borders,
-#         'places_of_interest': state.places_of_interest  
-
 
 
 region_model= view_namespace.model(
@@ -115,14 +108,16 @@ class RetrieveRegion(Resource):
     @view_namespace.doc(
         description='Get all Regions',
     )
-    # @jwt_required()
+    @jwt_required()
     def get(self):
         regions = Region.query.all()
         if regions is None:
-            return {'message': 'No Region found'}, HTTPStatus.NOT_FOUND
+            abort(404, 'No Region found')
+        try:
+            return regions, HTTPStatus.OK
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
-        return regions, HTTPStatus.OK
-    
 
 @view_namespace.route('/create')
 class CreateRegions(Resource):
@@ -138,14 +133,16 @@ class CreateRegions(Resource):
         data = view_namespace.payload
         region = Region.query.filter_by(name=data['name']).first()
         if region:
-            return {'message': 'Region already exists'}, HTTPStatus.BAD_REQUEST
+            abort(400, 'Region already exists')
         region = Region(
             name=data['name']
-        )   
-        region.save()
-        response = {region: region, 'message': 'Region created successfully'}
-        return response, HTTPStatus.CREATED
-    
+        )  
+        try:
+            region.save()
+            response = {region: region, 'message': 'Region created successfully'}
+            return response, HTTPStatus.CREATED
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 @view_namespace.route('/update-region/<string:region_id>')
@@ -159,9 +156,11 @@ class UpdateRegion(Resource):
     def patch(self, region_id):
         region = Region.query.filter_by(id=region_id).first()
         if not region:
-            return {'message': 'Region not found'}, HTTPStatus.NOT_FOUND
-        return region, HTTPStatus.OK
-
+            abort(404, 'Region not found')
+        try:
+            return region, HTTPStatus.OK
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 # retrieve data under a region
@@ -179,8 +178,10 @@ class RetrieveStatesUnderRegion(Resource):
         if states is None:
             return {'message': 'No State found'}, HTTPStatus.NOT_FOUND
 
-        return states, HTTPStatus.OK
-    
+        try:
+            return states, HTTPStatus.OK
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 
@@ -198,9 +199,12 @@ class SearchResource(Resource):
     )
     def get(self):
         states = State.query.all()
-
-        return states, HTTPStatus.OK
-    
+        if states is None:
+            abort(404, 'No State found')
+        try:
+            return states, HTTPStatus.OK
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 
@@ -216,9 +220,12 @@ class RetrieveResource(Resource):
     )
     def get(self):
         lga = Lga.query.all()
-
-        return lga, HTTPStatus.OK
-    
+        if lga is None:
+            abort(404, 'No LGA found')
+        try:
+            return lga, HTTPStatus.OK
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 @view_namespace.route('/lgas/<string:lga_id>')
 class Retrieve(Resource):
@@ -229,18 +236,21 @@ class Retrieve(Resource):
     def get(self, lga_id):
         lga = Lga.query.filter_by(id=lga_id).first()
         if lga is None:
-            return {"message": "LGA not found"}, HTTPStatus.NOT_FOUND
-        
-        return lga, HTTPStatus.FOUND
-    
+            abort(404, 'LGA not found')
+        try:
+            return lga, HTTPStatus.FOUND
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
     def patch(self, lga_id):
         data = view_namespace.payload
         lga = Lga.query.filter_by(id=lga_id).first()
         if not lga:
-            return {'message': 'LGA not found'}, HTTPStatus.NOT_FOUND
-        
-        lga.name = data['name']
-        lga.state_id = data['state_id']
-        return lga, HTTPStatus.OK
+            abort(404, 'LGA not found')
+        try:
+            lga.name = data['name']
+            lga.state_id = data['state_id']
+            return lga, HTTPStatus.OK
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
