@@ -14,9 +14,8 @@
       <input type="text" v-model="searchQuery" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="search">
       <button @click="search" class="search-button">Search</button>
       <div v-if="searchResults">
-
-        <div class="search-result" v-for="result in searchResults" :key="result.id">
         <p>You searched for {{ searchQuery }} </p>
+        <div class="search-result" v-for="result in searchResults" :key="result.id">
 
           <div class="search-item">
             <p>State</p>
@@ -213,7 +212,7 @@ h1 {
 
 .search-result p,
 .search-result li {
-  flex: 1;
+  flex: 24%;
   color: #1e1e1e;
   font-size: 18px;
   list-style: none;

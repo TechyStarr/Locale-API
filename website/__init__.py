@@ -71,7 +71,7 @@ def create_app(config=config_dict['dev']):
             '4. Use the token to access the endpoints',
         version="1.0",
         # prefix="/api/v1",
-        authorization = authorizations,
+        authorizations = authorizations,
         security = "Bearer Auth"
     )
 
