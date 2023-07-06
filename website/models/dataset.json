@@ -185,14 +185,30 @@
                     ],
                     "description": "The National Museum of Colonial History located in Ikot Ekpene Road, Aba was opened in 1985. The museum’s building, which is also a national monument, was said to have been brought in from Britain in the 1890s and assembled at Akwete to serve as a trade station. Its collection consists of objects relating to the colonial period in Nigeria and the country’s path to nationhood, old Nigerian money and relics of the slave trade era."
                 }
-            ]
-
+            ],
+            "universities": [
+                "Abia State University, Uturu",
+                "Michael Okpara University of Agriculture, Umudike",
+                "Rhema University, Aba",
+                "Gregory University, Uturu",
+                "Abia State Polytechnic, Aba",
+                "Abia State College of Education (Technical), Arochukwu",
+                "Abia State College of Health Sciences and Management Technology, Aba",
+                "Abia State College of Health Technology, Aba",
+                "Abia State College of Education (Technical), Arochukwu",
+                "Abia State College of Health Sciences and Management Technology, Aba",
+                "Abia State College of Health Technology, Aba",
+                "Abia State College of Education (Technical), Arochukwu",
+                "Abia State College of Health Sciences and Management Technology, Aba",
+                "Abia State College of Health Technology, Aba"
+            ],
+            "postal_code": "440001"
         },
 
         {
             
             "id": "2",
-            "state": "Adamawa",
+            "state": "Adamawa State",
             "region": "North East",
             "region_id": "5",
             "capital": "Yola",
@@ -280,13 +296,27 @@
                         "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2019/11/Hot-spring.jpg?w=650&ssl=1"
                     ]
                 }
-            ]
+            ],
+            "universities": [
+                "American University of Nigeria, Yola",
+                "Modibbo Adama University of Technology, Yola",
+                "Adamawa State University, Mubi",
+                "Adamawa State Polytechnic, Yola",
+                "Federal Polytechnic, Mubi",
+                "Adamawa State College of Nursing and Midwifery, Yola",
+                "Adamawa State College of Agriculture, Ganye",
+                "Adamawa State College of Legal and Islamic Studies, Numan",
+                "Adamawa State College of Education, Hong",
+                "Adamawa State College of Basic and Remedial Studies, Yola",
+                "Adamawa State College of Arts and Science, Numan"
+            ],
+            "postal_code": "640001"
         },
 
 
         {
             "id": "3",
-            "state": "Akwa Ibom",
+            "state": "Akwa Ibom State",
             "region": "South South",
             "region_id": "2",
             "capital": "Uyo",
@@ -376,12 +406,36 @@
                         "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Unity-Park-Uyo.jpg?resize=768%2C576&ssl=1"
                     ]
                 }
-            ]
+            ],
+            "universities": [
+                "University of Uyo",
+                "Akwa Ibom State University",
+                "Akwa Ibom State Polytechnic",
+                "Akwa Ibom State College of Education",
+                "Obong University",
+                "Heritage Polytechnic",
+                "Sure Foundation Polytechnic",
+                "School of Nursing, Anua-Uyo",
+                "School of Nursing, Eket",
+                "School of Nursing, Ikot-Ekpene",
+                "School of Nursing, Oron",
+                "School of Nursing, Etinan",
+                "School of Nursing, Ikot-Abasi",
+                "School of Nursing, Ituk-Mbang",
+                "School of Nursing, Oron",
+                "School of Nursing, Uyo",
+                "School of Nursing, Urua-Akpan",
+                "School of Nursing, Urua-Edet-Obo",
+                "School of Nursing, Urua-Inyang",
+                "School of Nursing, Urua-Offiong",
+                "School of Nursing, Urua-Uko"
+            ],
+            "postal_code": "520001"
         },
 
         {
             "id": "4",
-            "state": "Anambra",
+            "state": "Anambra State",
             "region": "South East",
             "region_id": "1",
             "capital": "Awka",
@@ -460,13 +514,25 @@
                     ],
                     "description": "This is a long and still lake at the outskirts of the town.  The far end of the lake is in Oko town where the Federal Polytechnic is located.  The lake is as quiet as the Dead Sea and no aquatic life has been recorded in it.  The mystery behind the lake is that till date no case of drowning of an indigene of the community has been recorded. Mrs. Rose Ezeh, wife of the present Town Union Chairman once fell into the lake and it was about one hour later that rescuers were able to reach her.  Clearly expecting the worst, the locals were however mystified to discover that she had not taken in one single gulp of water.  As soon as she was rescued, she woke up and went home."
                 }
-            ]
+            ],
+            "universities": [
+                "Nnamdi Azikiwe University",
+                "Chukwuemeka Odumegwu Ojukwu University",
+                "Paul University",
+                "Tansian University",
+                "Legacy University",
+                "St. Paul's University College",
+                "School of Nursing, Iyi-Enu",
+                "School of Nursing, Obosi",
+                "School of Nursing, Ihiala"
+            ],
+            "postal_code": "420001"
         },
 
 
         {
             "id": "5",
-            "state": "Bauchi",
+            "state": "Bauchi State",
             "region": "North East",
             "region_id": "5",
             "capital": "Bauchi",
@@ -553,14 +619,84 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Abubakar Tafawa Balewa University",
+                "Abubakar Tatari Ali Polytechnic",
+                "Bauchi State College of Agriculture",
+                "Bauchi State University",
+                "Federal College of Education, Azare",
+                "Federal Polytechnic, Bauchi",
+                "Federal College of Forestry, Bauchi"
+            ],
+            "postal_code": "740001"
+        },
+
+
+
+
+
+        {
+            "id": 8,
+            "state": "Bayelsa State",
+            "region": "South South",
+            "region_id": "2",
+            "capital": "Yenagoa",
+            "slogan": "Glory of all Lands",
+            "lgas": [
+                "Adagbabiri",
+                "Brass",
+                "Ekeremor",
+                "Kembe",
+                "Kolokuma",
+                "Kolokuma/Opkuma",
+                "Nembe",
+                "Ogbia",
+                "Sagbama",
+                "Southern-Ijaw",
+                "Toru-Abubo",
+                "Yenegoa"
+            ],
+            "landmass": "10,773 km2 (4,158 sq mi)",
+            "population": "1,704,515",
+            "dialect": "Ijaw",
+            "latitude": "4.9267",
+            "longitude": "6.2676",
+            "website": "http://www.bayelsa.gov.ng/",
+            "borders": ["Rivers", "Delta"],
+            "places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ],
+            "universities": [
+                "Federal University, Otuoke",
+                "Niger Delta University",
+                "University of Africa, Toru-Orua"
+            ],
+            "postal_code": "560001"
         },
 
 
 
         {
-            "id": "6",
-            "state": "Benue",
+            "id": "7",
+            "state": "Benue State",
             "region": "North Central",
             "region_id": "4",
             "capital": "Makurdi",
@@ -606,14 +742,24 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Benue State University",
+                "Federal University of Agriculture",
+                "Benue State Polytechnic",
+                "College of Education",
+                "Benue State University Teaching Hospital",
+                "Federal Medical Center"
+            ],
+            "postal_code": "970001"
         },
 
 
 
+        
         {
-            "id": 7,
-            "state": "Borno",
+            "id": 8,
+            "state": "Borno State",
             "region": "North East",
             "region_id": "5",
             "capital": "Maiduguri",
@@ -681,65 +827,21 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
-
-        },
-
-
-        {
-            "id": 8,
-            "state": "Bayelsa",
-            "region": "South South",
-            "region_id": "2",
-            "capital": "Yenagoa",
-            "slogan": "Glory of all Lands",
-            "lgas": [
-                "Adagbabiri",
-                "Brass",
-                "Ekeremor",
-                "Kembe",
-                "Kolokuma",
-                "Kolokuma/Opkuma",
-                "Nembe",
-                "Ogbia",
-                "Sagbama",
-                "Southern-Ijaw",
-                "Toru-Abubo",
-                "Yenegoa"
             ],
-            "landmass": "10,773 km2 (4,158 sq mi)",
-            "population": "1,704,515",
-            "dialect": "Ijaw",
-            "latitude": "4.9267",
-            "longitude": "6.2676",
-            "website": "http://www.bayelsa.gov.ng/",
-            "borders": ["Rivers", "Delta"],
-            "places_of_interest": [
-                {
-                    "name": "Gubi Lake",
-                    "location": "Bauchi State",
-                    "images": [
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
-                    ],
-                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
-                },
-                {
-                    "name": "Gubi Lake",
-                    "location": "Bauchi State",
-                    "images": [
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
-                    ],
-                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
-                }
-            ]
+            "universities": [
+                "University of Maiduguri",
+                "Ramat Polytechnic",
+                "College of Education",
+                "College of Agriculture"
+            ],
+            "postal_code": "600001"
+
         },
 
 
         {
             "id": 9,
-            "state": "Cross River",
+            "state": "Cross River State",
             "region": "South South",
             "region_id": "2",
             "capital": "Calabar",
@@ -799,13 +901,22 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Cross River University of Technology",
+                "University of Calabar",
+                "Federal College of Education",
+                "Cross River State College of Education",
+                "Cross River State College of Health Technology",
+                "Cross River State College of Agriculture"
+            ],
+            "postal_code": "540001"
         },
 
 
         {
             "id": 10,
-            "state": "Delta",
+            "state": "Delta State",
             "region": "South South",
             "region_id": "2",
             "capital": "Asaba",
@@ -883,13 +994,24 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Delta State University",
+                "Delta State Polytechnic",
+                "Federal College of Education",
+                "College of Education",
+                "College of Health Technology",
+                "College of Physical Education",
+                "College of Agriculture",
+                "College of Nursing and Midwifery"
+            ],
+            "postal_code": "320001"
         },
 
 
         {
             "id": 11,
-            "state": "Ebonyi",
+            "state": "Ebonyi State",
             "region": "South East",
             "region_id": "1",
             "capital": "Abakaliki",
@@ -937,13 +1059,22 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Ebonyi State University",
+                "Akanu Ibiam Federal Polytechnic",
+                "Federal College of Agriculture",
+                "College of Education",
+                "College of Health Technology",
+                "College of Nursing and Midwifery"
+            ],
+            "postal_code": "840001"
         },
 
 
         {
             "id": 12,
-            "state": "Edo",
+            "state": "Edo State",
             "region": "South South",
             "region_id": "2",
             "capital": "Benin City",
@@ -1005,13 +1136,21 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Ambrose Alli University",
+                "Benson Idahosa University",
+                "Igbinedion University",
+                "University of Benin",
+                "Wellspring University"
+            ],
+            "postal_code": "300001"
         },
 
 
         {
-            "id": 12,
-            "state": "Ekiti",
+            "id": 13,
+            "state": "Ekiti State",
             "region": "South West",
             "region_id": "3",
             "capital": "Ado-Ekiti",
@@ -1062,13 +1201,22 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Afe Babalola University",
+                "Crown Polytechnic",
+                "Ekiti State University",
+                "Federal Polytechnic, Ado-Ekiti",
+                "Federal University, Oye-Ekiti",
+                "University of Education, Ikere-Ekiti"
+            ],
+            "postal_code": "360001"
         },
 
 
         {
-            "id": 13,
-            "state": "Enugu",
+            "id": 14,
+            "state": "Enugu State",
             "region": "South East",
             "region_id": "1",
             "capital": "Enugu",
@@ -1119,14 +1267,23 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Caritas University",
+                "Enugu State University of Science and Technology",
+                "Federal College of Education, Eha-Amufu",
+                "Institute of Management and Technology",
+                "Renaissance University",
+                "University of Nigeria, Nsukka"
+            ],
+            "postal_code": "400001"
         },
 
 
         
         {
-            "id": 14,
-            "state": "Gombe",
+            "id": 15,
+            "state": "Gombe State",
             "region": "North East",
             "region_id": "5",
             "capital": "Gombe",
@@ -1170,13 +1327,20 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Federal University, Kashere",
+                "Gombe State University of Science and Technology",
+                "Gombe State University",
+                "Modibbo Adama University of Technology"
+            ],
+            "postal_code": "760001"
         },
 
 
         {
-            "id": 15,
-            "state": "Imo",
+            "id": 16,
+            "state": "Imo State",
             "region": "South East",
             "region_id": "1",
             "capital": "Owerri",
@@ -1245,13 +1409,23 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Alvan Ikoku Federal College of Education",
+                "Federal Polytechnic, Nekede",
+                "Federal University of Technology, Owerri",
+                "Imo State Polytechnic",
+                "Imo State University",
+                "National Open University of Nigeria, Owerri Study Centre",
+                "Owerri City Polytechnic"
+            ],
+            "postal_code": "460001"
         },
 
 
         {
-            "id": 16,
-            "state": "Jigawa",
+            "id": 17,
+            "state": "Jigawa State",
             "region": "North West",
             "region_id": "6",
             "capital": "Dutse",
@@ -1318,74 +1492,26 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
-        },
-
-
-        {
-            "id": 17,
-            "state": "Kebbi",
-            "region": "North West",
-            "region_id": "6",
-            "capital": "Birnin Kebbi",
-            "slogan": "Land of Equity",
-            "lgas": [
-                "Aleiro",
-                "Arewa-Dandi",
-                "Argungu",
-                "Augie",
-                "Bagudo",
-                "Birnin-Kebbi",
-                "Bumza",
-                "Dandi",
-                "Danko",
-                "Fakai",
-                "Gwandu",
-                "Jega",
-                "Kalgo",
-                "Koko-Besse",
-                "Maiyama",
-                "Ngaski",
-                "Sakaba",
-                "Shanga",
-                "Suru",
-                "Wasagu",
-                "Yauri",
-                "Zuru"
             ],
-            "landmass": "36,800 km2 (14,200 sq mi)",
-            "population": "3,238,628",
-            "dialect": "Hausa",
-            "latitude": "12.4500",
-            "longitude": "4.1994",
-            "website": "http://www.kebbistate.gov.ng/",
-            "borders": ["Niger", "Zamfara", "Katsina", "Sokoto"],
-            "places_of_interest": [
-                {
-                    "name": "Gubi Lake",
-                    "location": "Bauchi State",
-                    "images": [
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
-                    ],
-                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
-                },
-                {
-                    "name": "Gubi Lake",
-                    "location": "Bauchi State",
-                    "images": [
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
-                    ],
-                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
-                }
-            ]
+            "universities": [
+                "Federal University Dutse",
+                "Sule Lamido University",
+                "Jigawa State Polytechnic",
+                "Jigawa State College of Education",
+                "Jigawa State Institute of Information Technology",
+                "Jigawa State College of Nursing and Midwifery"
+            ],
+            "postal_code": "720001"
+
         },
+
+
+
 
 
         {
             "id": 18,
-            "state": "Kaduna",
+            "state": "Kaduna State",
             "region": "North West",
             "region_id": "6",
             "capital": "Kaduna",
@@ -1456,13 +1582,32 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Ahmadu Bello University",
+                "Kaduna State University",
+                "Nigerian Defence Academy",
+                "National Open University of Nigeria",
+                "Nuhu Bamalli Polytechnic",
+                "Kaduna Polytechnic",
+                "Kaduna State College of Education",
+                "Kaduna State College of Nursing and Midwifery",
+                "Kaduna State College of Health Sciences",
+                "Kaduna State College of Agriculture",
+                "Kaduna State College of Business and Management Studies",
+                "Kaduna State College of Legal Studies",
+                "Kaduna State College of Environmental Studies",
+                "Kaduna State College of Science and Technology",
+                "Kaduna State College of Arts, Science and Remedial Studies",
+                "Kaduna State College of Aviation Technology"
+            ],
+            "postal_code": "800001"
         },
 
 
         {
             "id": 19,
-            "state": "Kano",
+            "state": "Kano State",
             "region": "North West",
             "region_id": "6",
             "capital": "Kano",
@@ -1546,87 +1691,21 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Bayero University Kano",
+                "Kano University of Science and Technology",
+                "Federal College of Education"
+            ],
+            "postal_code": "700001"
         },
 
 
-        {
-            "state": "Kogi",
-            "region": "North Central",
-            "region_id": "4",
-            "capital": "Lokoja",
-            "slogan": "The Confluence State",
-            "lgas": [
-                "Adavi",
-                "Ajaokuta",
-                "Ankpa",
-                "Dekina",
-                "Ibaji",
-                "Idah",
-                "Igalamela",
-                "Ijumu",
-                "Ikoyi-Ijumu",
-                "Kabba/Bunu",
-                "Kogi",
-                "Lokoja",
-                "Mopa-Muro-Mopi",
-                "Obaji",
-                "Ofu",
-                "Ogori/Magongo",
-                "Okehi",
-                "Okene",
-                "Olamaboro",
-                "Omala",
-                "Oru",
-                "Oyi",
-                "Yagba-East",
-                "Yagba-West"
-            ],
-            "landmass": "29,833 km2 (11,515 sq mi)",
-            "population": "3,314,043",
-            "dialect": "Igala",
-            "latitude": "7.8000",
-            "longitude": "6.7333",
-            "website": "http://www.kogistate.gov.ng/",
-            "borders": [
-                "Nasarawa",
-                "Benue",
-                "Enugu",
-                "Anambra",
-                "Ekiti",
-                "Ondo",
-                "Edo",
-                "Delta",
-                "Kwara",
-                "Niger",
-                "FCT"
-            ],
-            "places_of_interest": [
-                {
-                    "name": "Gubi Lake",
-                    "location": "Bauchi State",
-                    "images": [
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
-                    ],
-                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
-                },
-                {
-                    "name": "Gubi Lake",
-                    "location": "Bauchi State",
-                    "images": [
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
-                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
-                    ],
-                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
-                }
-            ]
-        },
 
 
         {
             "id": 20,
-            "state": "Katsina",
+            "state": "Katsina State",
             "region": "North West",
             "region_id": "6",
             "capital": "Katsina",
@@ -1699,13 +1778,166 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Umaru Musa Yar'Adua University",
+                "Al-Qalam University",
+                "Federal University Dutsin-Ma"
+            ],
+            "postal_code": "820001"
         },
-
 
         {
             "id": 21,
-            "state": "Kwara",
+            "state": "Kebbi State",
+            "region": "North West",
+            "region_id": "6",
+            "capital": "Birnin Kebbi",
+            "slogan": "Land of Equity",
+            "lgas": [
+                "Aleiro",
+                "Arewa-Dandi",
+                "Argungu",
+                "Augie",
+                "Bagudo",
+                "Birnin-Kebbi",
+                "Bumza",
+                "Dandi",
+                "Danko",
+                "Fakai",
+                "Gwandu",
+                "Jega",
+                "Kalgo",
+                "Koko-Besse",
+                "Maiyama",
+                "Ngaski",
+                "Sakaba",
+                "Shanga",
+                "Suru",
+                "Wasagu",
+                "Yauri",
+                "Zuru"
+            ],
+            "landmass": "36,800 km2 (14,200 sq mi)",
+            "population": "3,238,628",
+            "dialect": "Hausa",
+            "latitude": "12.4500",
+            "longitude": "4.1994",
+            "website": "http://www.kebbistate.gov.ng/",
+            "borders": ["Niger", "Zamfara", "Katsina", "Sokoto"],
+            "places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ],
+            "universities": [
+                "Federal University Birnin Kebbi",
+                "Kebbi State University of Science and Technology"
+            ],
+            "postal_code": "860001"
+        },
+
+        {
+            "id":22,
+            "state": "Kogi State",
+            "region": "North Central",
+            "region_id": "4",
+            "capital": "Lokoja",
+            "slogan": "The Confluence State",
+            "lgas": [
+                "Adavi",
+                "Ajaokuta",
+                "Ankpa",
+                "Dekina",
+                "Ibaji",
+                "Idah",
+                "Igalamela",
+                "Ijumu",
+                "Ikoyi-Ijumu",
+                "Kabba/Bunu",
+                "Kogi",
+                "Lokoja",
+                "Mopa-Muro-Mopi",
+                "Obaji",
+                "Ofu",
+                "Ogori/Magongo",
+                "Okehi",
+                "Okene",
+                "Olamaboro",
+                "Omala",
+                "Oru",
+                "Oyi",
+                "Yagba-East",
+                "Yagba-West"
+            ],
+            "landmass": "29,833 km2 (11,515 sq mi)",
+            "population": "3,314,043",
+            "dialect": "Igala",
+            "latitude": "7.8000",
+            "longitude": "6.7333",
+            "website": "http://www.kogistate.gov.ng/",
+            "borders": [
+                "Nasarawa",
+                "Benue",
+                "Enugu",
+                "Anambra",
+                "Ekiti",
+                "Ondo",
+                "Edo",
+                "Delta",
+                "Kwara",
+                "Niger",
+                "FCT"
+            ],
+            "places_of_interest": [
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                },
+                {
+                    "name": "Gubi Lake",
+                    "location": "Bauchi State",
+                    "images": [
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1",
+                        "https://i0.wp.com/outravelandtour.com/wp-content/uploads/2020/01/Gubi-Lak.jpg?resize=768%2C576&ssl=1"
+                    ],
+                    "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
+                }
+            ],
+            "universities": [
+                "Federal University Lokoja",
+                "Kogi State University",
+                "Salem University",
+                "Prince Abubakar Audu University"
+            ],
+            "postal_code": "260001"
+        },
+
+
+
+        {
+            "id": 23,
+            "state": "Kwara State",
             "region": "North Central",
             "region_id": "4",
             "capital": "Ilorin",
@@ -1763,13 +1995,24 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Kwara State University",
+                "University of Ilorin",
+                "Kwara State Polytechnic",
+                "Kwara State College of Education",
+                "Kwara State College of Arabic and Islamic Legal Studies",
+                "Kwara State College of Education (Technical)",
+                "Kwara State College of Nursing and Midwifery"
+            ],
+            "postal_code": "240001"
+        
         },
 
 
         {
-            "id": 22,
-            "state": "Lagos",
+            "id": 24,
+            "state": "Lagos State",
             "region": "South West",
             "region_id": "3",
             "capital": "Ikeja",
@@ -1823,13 +2066,33 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "University of Lagos",
+                "Lagos State University",
+                "Caleb University",
+                "Pan-Atlantic University",
+                "Lagos State Polytechnic",
+                "Yaba College of Technology",
+                "Lagos State College of Health Technology",
+                "Lagos State College of Nursing",
+                "Lagos State College of Education",
+                "Adeniran Ogunsanya College of Education",
+                "Michael Otedola College of Primary Education",
+                "Lagos State University College of Medicine",
+                "Lagos State School of Nursing",
+                "Lagos State School of Midwifery",
+                "Lagos State University Teaching Hospital",
+                "Lagos State University College of Law",
+                "Lagos State University College of Medicine"
+            ],
+            "postal_code": "100001"
         },
 
 
         {
-            "id": 23,
-            "state": "Nassarawa",
+            "id": 25,
+            "state": "Nassarawa State",
             "region": "North Central",
             "region_id": "4",
             "capital": "Lafia",
@@ -1873,13 +2136,19 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Nasarawa State University",
+                "Federal University, Lafia",
+                "Nasarawa State Polytechnic"
+            ],
+            "postal_code": "962101"
         },
 
 
         {
-            "id": 24,
-            "state": "Niger",
+            "id": 26,
+            "state": "Niger State",
             "region": "North Central",
             "region_id": "4",
             "capital": "Minna",
@@ -1939,13 +2208,19 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Federal University of Technology, Minna",
+                "Ibrahim Badamasi Babangida University, Lapai",
+                "Federal Polytechnic, Bida"
+            ],
+            "postal_code": "920101"
         },
 
 
         {
-            "id": 25,
-            "state": "Ogun",
+            "id": 27,
+            "state": "Ogun State",
             "region": "South West",
             "region_id": "3",
             "capital": "Abeokuta",
@@ -1989,13 +2264,24 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Babcock University",
+                "Covenant University",
+                "Crawford University",
+                "Federal University of Agriculture, Abeokuta",
+                "Moshood Abiola Polytechnic",
+                "Ogun State Institute of Technology",
+                "Olabisi Onabanjo University",
+                "Tai Solarin University of Education"
+            ],
+            "postal_code": "110101"
         },
 
 
         {
-            "id": 26,
-            "state": "Ondo",
+            "id": 28,
+            "state": "Ondo State",
             "region": "South West",
             "region_id": "3",
             "capital": "Akure",
@@ -2045,13 +2331,20 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Adekunle Ajasin University",
+                "Federal University of Technology, Akure",
+                "Ondo State University of Science and Technology",
+                "Wesley University of Science and Technology"
+            ],
+            "postal_code": "340101"
         },
 
 
         {
-            "id": 27,
-            "state": "Osun",
+            "id": 29,
+            "state": "Osun State",
             "region": "South West",
             "region_id": "3",
             "capital": "Osogbo",
@@ -2107,13 +2400,26 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Osun State University",
+                "Obafemi Awolowo University",
+                "Oduduwa University",
+                "Bowen University",
+                "Joseph Ayo Babalola University",
+                "Adeleke University",
+                "Fountain University",
+                "Iree Polytechnic",
+                "Osun State College of Technology",
+                "Osun State College of Education"
+            ],
+            "postal_code": "230101"
         },
 
 
         {
-            "id": 28,
-            "state": "Oyo",
+            "id": 30,
+            "state": "Oyo State",
             "region": "South West",
             "region_id": "3",
             "capital": "Ibadan",
@@ -2171,13 +2477,28 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "University of Ibadan",
+                "Ladoke Akintola University of Technology",
+                "Ajayi Crowther University",
+                "Lead City University",
+                "Kola Daisi University",
+                "Atiba University",
+                "Dominican University",
+                "Oyo State Technical University",
+                "Oyo State College of Agriculture and Technology",
+                "The Polytechnic, Ibadan",
+                "The Ibarapa Polytechnic, Eruwa",
+                "The Oke-Ogun Polytechnic, Saki"
+            ],
+            "postal_code": "200101"
         },
 
 
         {
-            "id": 29,
-            "state": "Plateau",
+            "id": 31,
+            "state": "Plateau State",
             "region": "North Central",
             "region_id": "4",
             "capital": "Jos",
@@ -2218,13 +2539,25 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "University of Jos",
+                "Plateau State University",
+                "Plateau State Polytechnic",
+                "Federal College of Education, Pankshin",
+                "Federal College of Land Resources Technology, Kuru",
+                "National Institute of Policy and Strategic Studies, Kuru",
+                "College of Health Technology, Zawan",
+                "College of Agriculture, Garkawa",
+                "College of Arts, Science and Technology, Kurgwi"
+            ],
+            "postal_code": "930001"
         },
 
         
         {
-            "id": 30,
-            "state": "Rivers",
+            "id": 32,
+            "state": "Rivers State",
             "region": "South South",
             "region_id": "2",
             "capital": "Port Harcourt",
@@ -2283,13 +2616,24 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "University of Port Harcourt",
+                "Rivers State University of Science and Technology",
+                "Ignatius Ajuru University of Education",
+                "Rivers State College of Arts and Science",
+                "Rivers State College of Health Science and Technology",
+                "Rivers State College of Education",
+                "Ken Saro-Wiwa Polytechnic",
+                "Port Harcourt Polytechnic"
+            ],
+            "postal_code": "500001"
         },
 
 
         {
-            "id": 31,
-            "state": "Sokoto",
+            "id": 33,
+            "state": "Sokoto State",
             "region": "North West",
             "region_id": "6",
             "capital": "Sokoto",
@@ -2335,13 +2679,22 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Usmanu Danfodiyo University",
+                "Sokoto State University",
+                "Shehu Shagari College of Education",
+                "Shehu Shagari College of Agriculture",
+                "Sokoto State Polytechnic",
+                "Waziri Umaru Federal Polytechnic"
+            ],
+            "postal_code": "840001"
         },
 
 
         {
-            "id": 32,
-            "state": "Taraba",
+            "id": 34,
+            "state": "Taraba State",
             "region": "North East",
             "region_id": "5",
             "capital": "Jalingo",
@@ -2382,13 +2735,23 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Federal University, Wukari",
+                "Taraba State University",
+                "Taraba State Polytechnic",
+                "College of Agriculture, Jalingo",
+                "College of Education, Zing",
+                "College of Health Technology, Takum",
+                "College of Nursing and Midwifery, Jalingo"
+            ],
+            "postal_code": "660001"
         },
 
 
         {
-            "id": 33,
-            "state": "Yobe",
+            "id": 35,
+            "state": "Yobe State",
             "region": "North East",
             "region_id": "5",
             "capital": "Damaturu",
@@ -2430,13 +2793,22 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "Federal University, Gashua",
+                "Yobe State University of Science and Technology",
+                "College of Agriculture, Gujba",
+                "College of Education, Gashua",
+                "College of Health Science and Technology, Nguru",
+                "College of Nursing and Midwifery, Damaturu"
+            ],
+            "postal_code": "320001"
         },
 
 
         {
-            "id": 34,
-            "state": "Zamfara",
+            "id": 36,
+            "state": "Zamfara State",
             "region": "North West",
             "region_id": "6",
             "capital": "Gusau",
@@ -2520,7 +2892,16 @@
                     ],
                     "description": "Gubi Lake is one of the most popular lake and tourist destination in Bauchi state, The lake attracts tourist from within and outside the state, The Gubi lake is perfect for outdoor fun activities and sports like Picnicking and sunset watching, hiking, Canoeing and others. Within the Gubi Lake is the Gubi lake hills which serves as a hiking destination and camping site."
                 }
-            ]
+            ],
+            "universities": [
+                "African University of Science and Technology",
+                "Baze University",
+                "Nigerian Turkish Nile University",
+                "University of Abuja",
+                "Veritas University"
+            ],
+            "postal_code": "900001"
+        
         }
     ],
     
