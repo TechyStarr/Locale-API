@@ -12,7 +12,7 @@ db_name = 'localedb'
 
 # default_uri = "postgresql://users:ARfVJqF9NIQjO3QIrtiXSZhGPkDGPzrf@dpg-cifuuolph6erq6hlbmag-a.oregon-postgres.render.com/localedb_sjat"
 
-uri = os.getenv('DATABASE_URL', 'default_uri') # or other relevant config var
+uri = os.getenv('DATABASE_URL', 'default_uri')
 if uri.startswith('postgres://'):
     uri = uri.replace('postgres://', 'postgresql://', 1)
 
@@ -29,11 +29,11 @@ class DevConfig(Config):
     SQLALCHEMY_ECHO = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-# class TestConfig(Config):
-#     TESTING = True
-#     SQLALCHEMY_TRACK_MODIFICATIONS = False
-#     SQLALCHEMY_ECHO = True
-#     SQLALCHEMY_DATABASE_URI = 'sqlite://' # An SQL memory database is used
+class TestConfig(Config):
+    TESTING = True
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite://' # An SQL memory database is used
 
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = uri

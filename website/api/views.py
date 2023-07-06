@@ -129,6 +129,7 @@ class CreateRegions(Resource):
     @view_namespace.doc(
         description='Create a new Region',
     )
+    @jwt_required()
     def post(self):
         data = view_namespace.payload
         region = Region.query.filter_by(name=data['name']).first()
@@ -153,6 +154,7 @@ class UpdateRegion(Resource):
     @view_namespace.doc(
         description='Get a Region by ID',
     )
+    @jwt_required()
     def patch(self, region_id):
         region = Region.query.filter_by(id=region_id).first()
         if not region:
@@ -173,6 +175,7 @@ class RetrieveStatesUnderRegion(Resource):
     @view_namespace.doc(
         description='Get all States under a Region',
     )
+    @jwt_required()
     def get(self, region_id):
         states = State.query.filter_by(region_id=region_id).all()
         if states is None:
@@ -197,6 +200,7 @@ class SearchResource(Resource):
     @view_namespace.doc(
         description='Get all States',
     )
+    @jwt_required()
     def get(self):
         states = State.query.all()
         if states is None:
@@ -218,6 +222,7 @@ class RetrieveResource(Resource):
     @view_namespace.doc(
         description='Get all lgas',
     )
+    @jwt_required()
     def get(self):
         lga = Lga.query.all()
         if lga is None:
@@ -227,12 +232,18 @@ class RetrieveResource(Resource):
         except Exception as e:
             return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
+
+
 @view_namespace.route('/lgas/<string:lga_id>')
 class Retrieve(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 
     @view_namespace.marshal_with(lga_model)
+    @view_namespace.doc(
+        description='Get a LGA by ID',
+    )
+    @jwt_required()
     def get(self, lga_id):
         lga = Lga.query.filter_by(id=lga_id).first()
         if lga is None:

@@ -21,10 +21,10 @@ def create_app(config=config_dict['dev']):
     app = Flask(__name__)
 
     app.config.from_object(config) # config object from config.py file in config folder
-    # app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
-    # app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
-    # app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)
-    # app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
+    app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
+    app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
+    app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)
+    app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
     
     cache = Cache(app, config={'CACHE_TYPE': 'simple'})
     cache.init_app(app)
@@ -32,8 +32,6 @@ def create_app(config=config_dict['dev']):
     view_namespace.cache = cache
     search_ns.cache = cache
     auth_namespace.cache = cache
-
-    app.extensions['cache'] = cache
 
     cors = CORS(app)
 
@@ -54,21 +52,28 @@ def create_app(config=config_dict['dev']):
 
     authorizations = {
         "Bearer Auth": {
-            "type": "Bearer",
+            "type": "apiKey",
             "in": "header",
-            "name": "Authorization", 
+            "name": "Authorization",
             "description": "Add a JWT token to the header with ** Bearer &lt;JWT&gt; ** token to authorize user "
         }
     }
 
 
     api = Api(app,
-        doc="/",
         title="Locale API", 
-        description="Find whatever you're looking for using Locale",
+        description='Find Locations in Nigeria.\n'
+            'The API is built with Python, Flask and Flask-RESTX.\n'
+            'Follow the steps below to use the API:\n'
+            '1. Create a user account\n'
+            '2. Login to generate a JWT token\n'
+            '3. Add the token to the Authorization header with the Bearer prefix eg "Bearer JWT-token"\n'
+            '4. Use the token to access the endpoints',
+        version="1.0",
+        # prefix="/api/v1",
         authorization = authorizations,
         security = "Bearer Auth"
-)
+    )
 
 
     # register namespaces for api

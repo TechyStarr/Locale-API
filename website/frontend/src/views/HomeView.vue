@@ -223,7 +223,7 @@ hr {
   border-color: #e2e2e2;
   border-width: 1px;
   border-style: solid;
-  width: 80%;
+  width: 100%;
 }
 
 @media (max-width: 768px) {

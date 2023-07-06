@@ -21,7 +21,11 @@ def serialized_state(state):
     
     borders = json.loads(state.borders)
     for border in borders:
-        border.strip('"', '')
+        border.strip('"')
+
+    lgas = json.loads(state.lgas)
+    for lga in lgas:
+        lga.strip('"')
     places_of_interest = [poi.name for poi in state.places_of_interest]
     return {
         'id': state.id,
