@@ -30,7 +30,7 @@ view_namespace = Namespace('View', description = 'View related operations')
 
 lga_model = view_namespace.model(
     'lga', {
-        'id': fields.String(required=True),
+        # 'id': fields.String(required=True),
         'lga_name': fields.String(required=True, description="LGA Name"),
         'state_id': fields.String(required=True, description="state"),
         'landmass': fields.String(required=True, description="Landmass"),
@@ -39,22 +39,20 @@ lga_model = view_namespace.model(
 )
 
 place_model = view_namespace.model('Place', {
-    'id': fields.Integer(readOnly=True),
     'name': fields.String(required=True),
     'location': fields.String(required=True),
     'image': fields.String(required=True),
     'description': fields.String(required=True),
-    'state_id': fields.Integer(required=True),
     }
 )
 
 
 state_model = view_namespace.model(
     'State', {
-        'id': fields.String(required=True),
+        # 'id': fields.String(required=True),
         'name': fields.String(required=True, description="Course Name"),
         'region': fields.String(required=True, description="Region"),
-        'region_id': fields.String(required=True, description="Region ID"),
+        # 'region_id': fields.String(required=True, description="Region ID"),
         'capital': fields.String(required=True, description="Capital"),
         'slogan': fields.String(required=True, description="Slogan"),
         'lgas': fields.Nested((lga_model), description="Local Government Areas"),
@@ -73,7 +71,7 @@ state_model = view_namespace.model(
 
 region_model= view_namespace.model(
     'Region', {
-        'id': fields.String(required=True),
+        # 'id': fields.String(required=True),
         'name': fields.String(required=True, description="Course Name"),
         'state': fields.Nested((state_model), required=True, description="States"),
     }
