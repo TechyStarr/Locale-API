@@ -3,7 +3,7 @@ from flask_restx import Api, Resource, fields, Namespace, abort
 from website.utils.utils import db
 from website.models.users import User
 from http import HTTPStatus
-from website.models.data import Region, State, Lga, load_dataset
+from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest
 from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -38,7 +38,15 @@ lga_model = view_namespace.model(
     }
 )
 
-
+place_model = view_namespace.model('Place', {
+    'id': fields.Integer(readOnly=True),
+    'name': fields.String(required=True),
+    'location': fields.String(required=True),
+    'image': fields.String(required=True),
+    'description': fields.String(required=True),
+    'state_id': fields.Integer(required=True),
+    }
+)
 
 
 state_model = view_namespace.model(
@@ -57,7 +65,7 @@ state_model = view_namespace.model(
         'longitude': fields.String(required=True, description="Longitude"),
         'website': fields.String(required=True, description="Website"),
         'borders': fields.String(required=True, description="Borders"),
-        'places_of_interest': fields.String(description="Top Places of Interest"),
+        'places_of_interest': fields.Nested((place_model), description="Places of Interest"),
     }
 )
 
@@ -263,5 +271,24 @@ class Retrieve(Resource):
             lga.name = data['name']
             lga.state_id = data['state_id']
             return lga, HTTPStatus.OK
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
+
+
+
+
+@view_namespace.route('/places')
+class RetrievePlaces(Resource):
+    @view_namespace.marshal_with(place_model, as_list=True)
+    @view_namespace.doc(
+        description='Get all places',
+    )
+    @jwt_required()
+    def get(self):
+        places = PlaceOfInterest.query.all()
+        if places is None:
+            abort(404, 'No Place found')
+        try:
+            return places, HTTPStatus.OK
         except Exception as e:
             return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR

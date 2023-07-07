@@ -18,15 +18,6 @@ def serialized_region(region):
     }
 
 def serialized_state(state):
-    
-    borders = json.loads(state.borders)
-    for border in borders:
-        border.strip('"')
-
-    lgas = json.loads(state.lgas)
-    for lga in lgas:
-        lga.strip('"')
-    places_of_interest = [poi.name for poi in state.places_of_interest]
     return {
         'id': state.id,
         'name': state.name,
@@ -42,7 +33,9 @@ def serialized_state(state):
         'longitude': state.longitude,
         'website': state.website,
         'borders': state.borders,
-        'places_of_interest': state.places_of_interest   
+        'places_of_interest': state.places_of_interest,
+        # 'images': state.images,
+        'universities': state.universities,
     }
     
 
@@ -66,6 +59,20 @@ def serialized_place_of_interest(place_of_interest):
         'state_id': place_of_interest.state_id,
     }
 
+def serialized_border(border):
+    return {
+        'id': border.id,
+        'name': border.name,
+        'state_id': border.state_id,
+    }
+
+def serialized_university(university):
+    return {
+        'id': university.id,
+        'name': university.name,
+        # 'location': university.location,
+        'state_id': university.state_id,
+    }
 
 def serialized_key(key):
     return {
