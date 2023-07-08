@@ -290,3 +290,5 @@ class RetrievePlaces(Resource):
             return places, HTTPStatus.OK
         except Exception as e:
             return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
+
+            
