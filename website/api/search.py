@@ -20,12 +20,18 @@ search_params.add_argument('lga', type=str, required=False, help='Filter by lga'
 # search_params.add_argument('sort', type=str, required=false, help='Sort by')
 # search_params.add_argument('keyword', type=str, required=false, help='Search keyword')
 
+auto_complete_model = search_ns.model(
+    'AutoComplete', {
+        'id': fields.String(required=True),
+        'name': fields.String(required=True, description="Name"),
+    }
+)
 
 
 state_model = search_ns.model(
     'State', {
         'id': fields.String(required=True),
-        'name': fields.String(required=True, description="Course Name"),
+        'name': fields.String(required=True, description="Name"),
         'region': fields.String(required=True, description="Region"),
         'region_id': fields.String(required=True, description="Region ID"),
         'capital': fields.String(required=True, description="Capital"),
@@ -72,6 +78,29 @@ location_model = search_ns.model(
     }
 )
 
+@search_ns.route('/autocomplete')
+class AutoComplete(Resource):
+    @search_ns.doc('autocomplete_query')
+    @search_ns.expect(search_params)
+    @search_ns.marshal_with(auto_complete_model)
+    def get(self):
+        keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
+        if not keyword:
+            return {'message': 'Enter a search keyword'}, 400
+
+        results = self.get_auto_complete(keyword) 
+
+        formatted_results = [item for item in results]
+        return formatted_results, 200
+    
+def get_auto_complete(self, keyword):
+    results = State.query.filter(State.name.ilike(f'{keyword}%')).limit(10).all()
+    results += Lga.query.filter(Lga.lga_name.ilike(f'{keyword}%')).limit(10).all()
+    results += Region.query.filter(Region.name.ilike(f'{keyword}%')).limit(10).all()
+
+    return results
+
+
 
 @search_ns.route('/')
 class Query(Resource):
@@ -81,6 +110,7 @@ class Query(Resource):
     def get(self):
 
         keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
+        # get_auto_complete(self, keyword)
         results = []
         if keyword:
             # Perform the search query based on the keyword
@@ -88,9 +118,10 @@ class Query(Resource):
             results = State.query.join(Region).filter(
                 db.or_(
                     Region.name.ilike(f'%{keyword}%'),  # Search by region name
+                    State.slogan.ilike(f'%{keyword}%'),  # Search by state slogan
                     State.name.ilike(f'%{keyword}%'),  # Search by state name
                     State.capital.ilike(f'%{keyword}%'),  # Search by state capital
-                    Lga.lga_name.ilike(f'%{keyword}%'),  # Search by local government areas
+                    # Lga.lga_name.ilike(f'%{keyword}%'),  # Search by local government areas
                     # State.lgas.ilike(f'%{keyword}%')  # Search by local government areas
                 )
             ).all()
@@ -103,9 +134,8 @@ class Query(Resource):
             # Serialize the states
             data = ([serialized_state(state) for state in results])
 
-            formatted_data = [item for item in data]
 
-            return formatted_data, 200
+            return results, 200
         else:
             return {'message': 'Enter a search keyword'}, 400
 

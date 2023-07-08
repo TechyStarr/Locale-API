@@ -13,41 +13,44 @@
 
       <input type="text" v-model="searchQuery" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="search">
       <button @click="search" class="search-button">Search</button>
-      <div v-if="searchResults">
-        <p>You searched for {{ searchQuery }} </p>
-        <div class="search-result" v-for="result in searchResults" :key="result.id">{{ result.name }}
+        <div v-if="searchResults !== Null">
+          <p v-if="searchResults.length === 0" class="error">No results found.</p>
+          <p v-else-if="searchResults === 'error'">An error occurred during the search. Please try again later.</p>
 
-          <div class="search-item">
-            <p>State</p>
-            <p>{{ result.name }} </p>
-          </div>
-          <hr>
-          <div class="search-item">
-            <p>Region</p>
-            <p> {{ result.region }} </p>
-          </div>
-          <hr>
-          <div class="search-item">
-            <p>Capital</p>
-            <p> {{ result.capital }} </p>
-          </div>
-          <hr>
-          <div class="search-item">
-            <p>Number of LGA</p>
-            <p> {{ result.lgas }} </p>
-          </div>
-          <hr>
-          <div class="search-item">
-            <p>Slogan</p>
-            <p> {{ result.slogan }} </p>
-          </div>
-          <hr>
-          <div class="search-item">
-            <p>Population</p>
-            <p> {{ result.population }} </p>
-          </div>
+          <div class="search-result" v-for="result in searchResults" :key="result.id">
+            You searched for {{ result.name }}
 
-        </div>
+            <div class="search-item">
+              <p>State</p>
+              <p>{{ result.name }} </p>
+            </div>
+            <hr>
+            <div class="search-item">
+              <p>Region</p>
+              <p> {{ result.region }} </p>
+            </div>
+            <hr>
+            <div class="search-item">
+              <p>Capital</p>
+              <p> {{ result.capital }} </p>
+            </div>
+            <hr>
+            <div class="search-item">
+              <p>Number of LGA</p>
+              <p> {{ result.lgas }} </p>
+            </div>
+            <hr>
+            <div class="search-item">
+              <p>Slogan</p>
+              <p> {{ result.slogan }} </p>
+            </div>
+            <hr>
+            <div class="search-item">
+              <p>Population</p>
+              <p> {{ result.population }} </p>
+            </div>
+
+          </div>
       </div>
       <!-- Add schools -->
       <!-- food marts, restaurants -->
@@ -114,15 +117,15 @@ export default {
   methods: {
     handleAutoComplete () {
       if (this.searchQuery.length > 2) {
-        axios.get('http://127.0.0.1:5000/query/?keyword=awka', {
-        params: {
-          query: this.searchQuery
-        }
-      })
+        axios.get('http://127.0.0.1:5000/query/autocomplete', {
+          params: {
+            query: this.searchQuery
+          }
+        })
       }
     },
     search () {
-      axios.get('http://127.0.0.1:5000/query/?keyword=' + this.searchQuery)
+      axios.get('http://127.0.0.1:5000/query?keyword=' + this.searchQuery)
         .then(response => {
           this.searchResults = response.data
           const formattedResults = this.searchResults.map(function (result) {
@@ -225,6 +228,14 @@ h1 {
   color: #1e1e1e;
   font-size: 18px;
   list-style: none;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: rgb(255, 228, 228);
 }
 
 hr {
