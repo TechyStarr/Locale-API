@@ -13,45 +13,47 @@
 
       <input type="text" v-model="searchQuery" placeholder="Search for locations in nigeria" class="search-input" @keyup.enter="search">
       <button @click="search" class="search-button">Search</button>
+      <div v-if="searchResults !== ''">
         <div v-if="searchResults !== Null">
           <p v-if="searchResults.length === 0" class="error">No results found.</p>
           <p v-else-if="searchResults === 'error'">An error occurred during the search. Please try again later.</p>
+          <div v-else>
+            <div class="search-result" v-for="result in searchResults" :key="result.id">
+              <p>You searched for {{ result.name }}</p>
+              <div class="search-item">
+                <p>State</p>
+                <p>{{ result.name }} </p>
+              </div>
+              <hr>
+              <div class="search-item">
+                <p>Region</p>
+                <p> {{ result.region }} </p>
+              </div>
+              <hr>
+              <div class="search-item">
+                <p>Capital</p>
+                <p> {{ result.capital }} </p>
+              </div>
+              <hr>
+              <div class="search-item">
+                <p>Number of LGA</p>
+                <p> {{ result.lgas }} </p>
+              </div>
+              <hr>
+              <div class="search-item">
+                <p>Slogan</p>
+                <p> {{ result.slogan }} </p>
+              </div>
+              <hr>
+              <div class="search-item">
+                <p>Population</p>
+                <p> {{ result.population }} </p>
+              </div>
 
-          <div class="search-result" v-for="result in searchResults" :key="result.id">
-            You searched for {{ result.name }}
-
-            <div class="search-item">
-              <p>State</p>
-              <p>{{ result.name }} </p>
             </div>
-            <hr>
-            <div class="search-item">
-              <p>Region</p>
-              <p> {{ result.region }} </p>
-            </div>
-            <hr>
-            <div class="search-item">
-              <p>Capital</p>
-              <p> {{ result.capital }} </p>
-            </div>
-            <hr>
-            <div class="search-item">
-              <p>Number of LGA</p>
-              <p> {{ result.lgas }} </p>
-            </div>
-            <hr>
-            <div class="search-item">
-              <p>Slogan</p>
-              <p> {{ result.slogan }} </p>
-            </div>
-            <hr>
-            <div class="search-item">
-              <p>Population</p>
-              <p> {{ result.population }} </p>
-            </div>
-
           </div>
       </div>
+    </div>
       <!-- Add schools -->
       <!-- food marts, restaurants -->
       <!-- <search-component></search-component> -->
@@ -71,17 +73,6 @@
           {{ location.name }}
         </li>
       </ul> -->
-    </div>
-    <div class="test-container">
-      <div class="test">
-        <h1>Testing</h1>
-        <p>This is a random text</p>
-      </div>
-      <hr>
-      <div class="test">
-        <h1>Testing</h1>
-        <p>This is another random text</p>
-      </div>
     </div>
     <places-of-interest></places-of-interest>
     <log-out></log-out>
@@ -127,11 +118,13 @@ export default {
     search () {
       axios.get('http://127.0.0.1:5000/query?keyword=' + this.searchQuery)
         .then(response => {
+          if (Array.isArray(response.data) && response.data.length > 0) {
+            // Search results found
+            this.searchResults = response.data
+            // No search results found
+            this.searchResults = 'error'
+          }
           this.searchResults = response.data
-          const formattedResults = this.searchResults.map(function (result) {
-            return result.replace(/"/g, ' ')
-          })
-          this.searchResults = formattedResults
           console.log(this.searchResults)
         })
         .catch(error => {
@@ -233,9 +226,14 @@ h1 {
 .error {
   color: red;
   font-size: 14px;
-  margin-top: 8px;
+  margin-top: 24px;
   margin-bottom: 8px;
+  margin-left: 400px;
+  margin-right: 400px;
   background-color: rgb(255, 228, 228);
+  padding: 15px 72px;
+  /* border: 1px solid red; */
+  border-radius: 4px 0 0 4px;
 }
 
 hr {

@@ -6,11 +6,9 @@
       <button @click="generateApiKey" class="search-button">Generate Api Key</button>
       <api-key-modal :api-key="generatedApiKey" v-if="generatedApiKey" />
       <div v-if="apiKey">
-        <ul>
-          <li class="key" v-for="result in apiKey" :key="result.id">
-            {{ result.key }}
-          </li>
-        </ul>
+          <p class="key" v-for="result in apiKey" :key="result.id">
+            {{ apiKey }}
+          </p>
       </div>
     </div>
 </template>
