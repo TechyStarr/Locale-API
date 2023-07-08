@@ -6,7 +6,7 @@ from website.models.users import User
 from http import HTTPStatus
 from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest
 from .serializers import serialized_state, serialized_lga, serialized_region
-from ..api.users import validate_api_key
+from .auth import validate_api_key
 
 search_ns = Namespace('Query', description='Search operations')
 

@@ -8,7 +8,7 @@ from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
-from ..api.users import validate_api_key
+from .auth import validate_api_key
 
 app = Flask(__name__)
 
@@ -126,50 +126,6 @@ class RetrieveRegion(Resource):
             return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
-@view_namespace.route('/create')
-class CreateRegions(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
-    @view_namespace.expect(region_model)
-    @view_namespace.marshal_with(region_model)
-    @view_namespace.doc(
-        description='Create a new Region',
-    )
-    @jwt_required()
-    def post(self):
-        data = view_namespace.payload
-        region = Region.query.filter_by(name=data['name']).first()
-        if region:
-            abort(400, 'Region already exists')
-        region = Region(
-            name=data['name']
-        )  
-        try:
-            region.save()
-            response = {region: region, 'message': 'Region created successfully'}
-            return response, HTTPStatus.CREATED
-        except Exception as e:
-            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
-
-
-@view_namespace.route('/update-region/<string:region_id>')
-class UpdateRegion(Resource): 
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-    @view_namespace.marshal_with(region_model)
-    @view_namespace.doc(
-        description='Get a Region by ID',
-    )
-    @jwt_required()
-    def patch(self, region_id):
-        region = Region.query.filter_by(id=region_id).first()
-        if not region:
-            abort(404, 'Region not found')
-        try:
-            return region, HTTPStatus.OK
-        except Exception as e:
-            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 # retrieve data under a region
@@ -261,20 +217,6 @@ class Retrieve(Resource):
             return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
 
-    def patch(self, lga_id):
-        data = view_namespace.payload
-        lga = Lga.query.filter_by(id=lga_id).first()
-        if not lga:
-            abort(404, 'LGA not found')
-        try:
-            lga.name = data['name']
-            lga.state_id = data['state_id']
-            return lga, HTTPStatus.OK
-        except Exception as e:
-            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
-
-
-
 
 @view_namespace.route('/places')
 class RetrievePlaces(Resource):
@@ -292,4 +234,3 @@ class RetrievePlaces(Resource):
         except Exception as e:
             return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
 
-            
