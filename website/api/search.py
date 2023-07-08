@@ -73,64 +73,15 @@ location_model = search_ns.model(
 )
 
 
-
-# @search_ns.route('/')
-# class QueryStates(Resource):
-#     @search_ns.doc('search_state')
-#     # @search_ns.marshal_with(state_model, lga_model, region_model)
-
-#     def get(self):
-
-#         keyword = request.args.get('keyword')
-#         if keyword:
-#             # Perform the search query based on the keyword
-#             results = State.query\
-#             .join(Region)\
-#             .join(Lga)\
-#             .filter(
-#                 db.or_(
-#                     State.name.ilike(f'%{keyword}%'),
-#                     State.capital.ilike(f'%{keyword}%'),
-#                     # State.lgas.ilike(f'%{keyword}%'),
-#                     Lga.lga_name.ilike(f'%{keyword}%'),
-#                     Region.name.ilike(f'%{keyword}%')  # Include region name in the search
-#                 )
-#             ).all()
-#             print(results)
-
-#             # Serialize the search results
-#             data = []
-#             for state in results:
-#                 serialized_state_data = serialized_state(state)
-#                 serialized_region_data = serialized_region(state.region)
-#                 serialized_lga_data = serialized_lga(state.lgas)
-#                 data.append({
-#                     'state': serialized_state_data,
-#                     'region': serialized_region_data,
-#                     'lga': serialized_lga_data
-#                 })
-
-
-#             return {'results': data}, 200
-
-#         abort(HTTPStatus.BAD_REQUEST, 'No search keyword provided')
-
-
-
-
-
-
-
-
-
-
 @search_ns.route('/')
-class QueryStates(Resource):
+class Query(Resource):
     @search_ns.doc('search_query')
     @search_ns.marshal_with(state_model, lga_model, region_model)
+    
     def get(self):
 
         keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
+        results = []
         if keyword:
             # Perform the search query based on the keyword
             # You can customize the search logic based on your requirements
@@ -152,8 +103,9 @@ class QueryStates(Resource):
             # Serialize the states
             data = ([serialized_state(state) for state in results])
 
+            formatted_data = [item for item in data]
 
-            return results, 200
+            return formatted_data, 200
         else:
             return {'message': 'Enter a search keyword'}, 400
 

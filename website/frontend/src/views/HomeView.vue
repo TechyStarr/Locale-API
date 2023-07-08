@@ -15,7 +15,7 @@
       <button @click="search" class="search-button">Search</button>
       <div v-if="searchResults">
         <p>You searched for {{ searchQuery }} </p>
-        <div class="search-result" v-for="result in searchResults" :key="result.id">
+        <div class="search-result" v-for="result in searchResults" :key="result.id">{{ result.name }}
 
           <div class="search-item">
             <p>State</p>
@@ -112,6 +112,15 @@ export default {
     }
   },
   methods: {
+    handleAutoComplete () {
+      if (this.searchQuery.length > 2) {
+        axios.get('http://127.0.0.1:5000/query/?keyword=awka', {
+        params: {
+          query: this.searchQuery
+        }
+      })
+      }
+    },
     search () {
       axios.get('http://127.0.0.1:5000/query/?keyword=' + this.searchQuery)
         .then(response => {
