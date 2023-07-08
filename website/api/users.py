@@ -13,6 +13,7 @@ from flask_jwt_extended.exceptions import NoAuthorizationError
 from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest, clear_dataset
 
 
 auth_namespace = Namespace('Auth', description='Authentication Endpoints')
@@ -146,8 +147,11 @@ class UserLogin(Resource):
 			access_token = create_access_token(identity=user.username)
 			refresh_token = create_refresh_token(identity=user.username)
 
+			clear_dataset()
+			load_dataset()
 			response = {
 				'message': 'Logged in as {}'.format(user.username),
+				'message': 'Dataset loaded successfully',
 				'access_token': access_token,
 				'refresh_token': refresh_token
 			}

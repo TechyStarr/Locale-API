@@ -1,8 +1,0 @@
-env:
-  NODE_VERSION: 14
-
-buildCommand: npm run build
-
-staticSites:
-  - name: locale
-    dir: dist

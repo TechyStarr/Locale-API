@@ -527,3 +527,12 @@ def load_dataset():
         db.session.add(lga)
 
     db.session.commit()
+
+
+
+def clear_dataset():
+    db.session.query(Region).delete()
+    db.session.query(State).delete()
+    db.session.query(Lga).delete()
+    db.session.query(PlaceOfInterest).delete()
+    db.session.commit()
