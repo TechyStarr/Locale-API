@@ -44,13 +44,13 @@ export default {
       this.errorMessage = ''
 
       // Make API request to Register
-      axios.post('http://127.0.0.1:5000/auth/signup', {
+      axios.post('https://locale-lkbw.onrender.com/auth/signup', {
         username: this.username,
         email: this.email,
         password: this.password
       })
         .then(response => {
-        // Successful login, redirect to home page
+        // Successful registration, redirect to home page
           console.log('Registered successfully')
           this.$router.push('/') // Redirect to home page
         })

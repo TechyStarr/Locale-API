@@ -34,6 +34,7 @@ def create_app(config=config_dict['dev']):
     auth_namespace.cache = cache
 
     cors = CORS(app, resources={r"/*": {"origins": "https://locale-fe-fgze.onrender.com"}})
+    # cors = CORS(app)
 
     limiter = Limiter(
     get_remote_address,
