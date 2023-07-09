@@ -17,7 +17,7 @@ from flask_cors import CORS
 
 
 
-def create_app(config=config_dict['test']):
+def create_app(config=config_dict['dev']):
     app = Flask(__name__)
 
     app.config.from_object(config) # config object from config.py file in config folder
@@ -33,7 +33,7 @@ def create_app(config=config_dict['test']):
     search_ns.cache = cache
     auth_namespace.cache = cache
 
-    cors = CORS(app)
+    cors = CORS(app, origins=['https://locale-fe-fgze.onrender.com/'], allow_headers=['Content-Type'], supports_credentials=True)
 
     limiter = Limiter(
     get_remote_address,

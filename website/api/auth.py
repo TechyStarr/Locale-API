@@ -151,7 +151,7 @@ class UserLogin(Resource):
 			load_dataset()
 			response = {
 				'message': 'Logged in as {}'.format(user.username),
-				'message': 'Dataset loaded successfully',
+				# 'message': 'Dataset loaded successfully',
 				'access_token': access_token,
 				'refresh_token': refresh_token
 			}
