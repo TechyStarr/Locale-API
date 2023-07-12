@@ -9,7 +9,7 @@ class User(db.Model):
     email = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.Text(), nullable=False)
     is_active = db.Column(db.Boolean(), default=True)
-    api_keys = db.relationship('ApiKey', back_populates='user', overlaps='users')
+    api_keys = db.relationship('ApiKey', backref='users', lazy=True)
 
     def __repr__(self):
         return f"<User {self.username}>"
@@ -26,11 +26,11 @@ class ApiKey(db.Model):
     __tablename__ = 'api_keys'
     id = db.Column(db.Integer, primary_key=True)
     key = db.Column(db.String(64), unique=True, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = db.relationship('User', back_populates='api_keys', overlaps='api_key')
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
+    # user = db.relationship('User', backref='api_key', lazy=True)
 
-    # def __repr__(self):
-    #     return f"<ApiKey {self.user_id}>"
+    def __repr__(self):
+        return f"<ApiKey {self.id}>"
 
     def save(self):
         db.session.add(self)

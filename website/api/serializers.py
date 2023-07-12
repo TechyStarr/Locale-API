@@ -1,6 +1,6 @@
 import json
 from website.models.data import State, Region, Lga
-from website.models.users import User, ApiKey
+from website.models.auth import User, ApiKey
 
 # user serializer
 
@@ -74,8 +74,8 @@ def serialized_university(university):
         'state_id': university.state_id,
     }
 
-def serialized_key(key):
+def serialized_key(api_key):
     return {
-        'id': key.id,
-        'key': key.key,
+        'key': api_key.key,
+        # 'user_id': api_key.user.id if api_key.user else None,
     }

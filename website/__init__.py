@@ -5,7 +5,7 @@ from .api.auth import auth_namespace
 from .api.views import view_namespace
 from .api.search import search_ns
 from website.config.config import config_dict
-from website.models.users import User, ApiKey
+from website.models.auth import User, ApiKey
 from website.models.data import Region, State, Lga, load_dataset
 from flask_migrate import Migrate
 from flask_caching import Cache
@@ -33,8 +33,8 @@ def create_app(config=config_dict['dev']):
     search_ns.cache = cache
     auth_namespace.cache = cache
 
-    cors = CORS(app, resources={r"/*": {"origins": "https://locale-fe-fgze.onrender.com"}})
-    # cors = CORS(app)
+    # cors = CORS(app, resources={r"/*": {"origins": "https://locale-fe-fgze.onrender.com"}})
+    cors = CORS(app)
 
     limiter = Limiter(
     get_remote_address,

@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask_restx import Api, Resource, fields, Namespace, abort
 from website.utils.utils import db
 
-from website.models.users import User
+from website.models.auth import User
 from http import HTTPStatus
 from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest
 from .serializers import serialized_state, serialized_lga, serialized_region
