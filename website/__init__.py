@@ -11,7 +11,7 @@ from flask_migrate import Migrate
 from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager, get_jwt
 from flask_cors import CORS
 
 
@@ -48,6 +48,27 @@ def create_app(config=config_dict['dev']):
     db.init_app(app)
 
     jwt = JWTManager(app)
+
+    blacklist = set()
+
+    def check_token_in_blacklist(decrypted_token):
+        jti = decrypted_token['jti']
+        return jti in blacklist
+
+    # @jwt.expired_token_loader
+    # def expired_token_callback(expired_token):
+    #     claims = get_jwt()['user_claims']
+    #     return ({'message': 'The token has expired'}), 401
+
+    @jwt.invalid_token_loader
+    def invalid_token_callback(error):
+        return {'message': 'Invalid token'}, 401
+
+    @jwt.unauthorized_loader
+    def unauthorized_callback(error):
+        return {'message': 'Missing or Invalid authorization'}, 401
+
+
 
     migrate = Migrate(app, db)
 

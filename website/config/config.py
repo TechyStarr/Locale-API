@@ -44,7 +44,7 @@ class ProdConfig(Config):
 config_dict = {
     'dev': DevConfig,
     'prod': ProdConfig,
-    # 'test': TestConfig
+    'test': TestConfig
 }
 
 # postgres://users:BB8ud8VkKOiX62lpH2DlmluD6xyS8z0K@dpg-cifd9ap5rnujc4rvos50-a.oregon-postgres.render.com/localedb_wa4b

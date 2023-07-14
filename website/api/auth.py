@@ -215,3 +215,41 @@ class Refresh(Resource):
 		}
 		return response, HTTPStatus.OK
 
+
+blacklist = set()
+
+# def check_token_blacklist(decrypted_token):
+# 	jti = decrypted_token['jti']
+# 	return jti in blacklist
+
+# @jwt.expired_token_loader
+# def my_expired_token_callback():
+# 	return {
+# 		'message': 'The token has expired.',
+# 		'error': 'token_expired'
+# 	}, HTTPStatus.UNAUTHORIZED
+
+# @jwt.invalid_token_loader
+# def invalid_token_callback(error):
+# 	return {'message': 'Invalid token'}, 401
+
+# @jwt.unauthorized_loader
+# def unauthorized_callback(error):
+# 	return {'message': 'Missing or Invalid authorization'}, 401
+
+
+	
+@auth_namespace.route('/logout')
+class Logout(Resource):
+	@cache.cached(timeout=60) # Cache the response for 60 seconds
+	@jwt_required()
+	def post(self):
+		"""
+			Logout user
+		"""
+		jti = get_jwt()['jti']
+		blacklist.add(jti)
+		response = {
+			'message': 'Successfully logged out'
+		}
+		return response, HTTPStatus.OK

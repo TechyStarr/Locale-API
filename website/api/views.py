@@ -84,6 +84,9 @@ class LoadDatasetResource(Resource):
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 
     def post(self):
+        """
+            Manually Load dataset
+        """
         if Region.query.first() or State.query.first() or Lga.query.first():
             abort (400, 'Dataset already loaded')
         load_dataset()
@@ -97,7 +100,9 @@ class readData(Resource):
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 
     def get(self):
-        # load_dataset()
+        """
+            Read dataset
+        """
         f = open('website/models/dataset.json', 'r', encoding='utf-8')
         print(f.read())
         return {'message': 'Dataset loaded successfully'}
@@ -117,6 +122,9 @@ class RetrieveRegion(Resource):
     )
     @jwt_required()
     def get(self):
+        """
+            Get all Regions with their States metadata 
+        """
         regions = Region.query.all()
         if regions is None:
             abort(404, 'No Region found')
@@ -140,6 +148,9 @@ class RetrieveStatesUnderRegion(Resource):
     )
     @jwt_required()
     def get(self, region_id):
+        """
+            Get all States under a Region
+        """
         states = State.query.filter_by(region_id=region_id).all()
         if states is None:
             return {'message': 'No State found'}, HTTPStatus.NOT_FOUND
@@ -165,6 +176,9 @@ class SearchResource(Resource):
     )
     @jwt_required()
     def get(self):
+        """
+            Get all States
+        """
         states = State.query.all()
         if states is None:
             abort(404, 'No State found')
@@ -187,6 +201,9 @@ class RetrieveResource(Resource):
     )
     @jwt_required()
     def get(self):
+        """
+            Get all lgas
+        """
         lga = Lga.query.all()
         if lga is None:
             abort(404, 'No LGA found')
@@ -197,8 +214,32 @@ class RetrieveResource(Resource):
 
 
 
-@view_namespace.route('/lgas/<string:lga_id>')
-class Retrieve(Resource):
+@view_namespace.route('/state/<string:state_id>')
+class RetrieveState(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+
+    @view_namespace.marshal_with(state_model)
+    @view_namespace.doc(
+        description='Get a state by ID',
+    )
+    @jwt_required()
+    def get(self, state_id):
+        """
+            Get a state by ID
+        """
+        state = State.query.filter_by(id=state_id).first()
+        if state is None:
+            abort(404, 'State not found')
+        try:
+            return state, HTTPStatus.FOUND
+        except Exception as e:
+            return {'message': str(e)}, HTTPStatus.INTERNAL_SERVER_ERROR
+
+
+
+@view_namespace.route('/lga/<string:lga_id>')
+class RetrieveLGA(Resource):
     @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 
@@ -208,6 +249,9 @@ class Retrieve(Resource):
     )
     @jwt_required()
     def get(self, lga_id):
+        """
+            Get a LGA by ID
+        """
         lga = Lga.query.filter_by(id=lga_id).first()
         if lga is None:
             abort(404, 'LGA not found')
@@ -226,6 +270,9 @@ class RetrievePlaces(Resource):
     )
     @jwt_required()
     def get(self):
+        """
+            Get all places of interest
+        """
         places = PlaceOfInterest.query.all()
         if places is None:
             abort(404, 'No Place found')

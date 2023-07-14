@@ -1,33 +1,127 @@
 import json
-import pytest
+import unittest
+from website.utils.utils import db
 from website import create_app
 from .. import create_app
 from website.config.config import config_dict
 from website.models.auth import User, ApiKey
 
 
-@pytest.fixture(scope='module') # scope='module' means that the fixture is available to all tests in the module
-def test_client():
-    app = create_app()
-    app.config['TESTING'] = True
-    test_client = app.test_client()
-    yield test_client
 
-def test_login(test_client):
-    data = {
-        'email': 'test@gmail.com',
-        'password': 'test'
-    }
+
+class UserTestCase(unittest.TestCase):
+    
+    def setUp(self):
+        self.app = create_app(config=config_dict['test'])
+        self.appctx = self.app.app_context() # Creates the db
+
+        self.appctx.push()
+        self.client = self.app.test_client()
+
+        db.create_all()
+
+
+    def tearDown(self): # teardown resets existing tables in the database
+        db.drop_all()
+
+        self.appctx.pop()
+
+        self.app = None
+
+        self.client = None
+
+    def test_user_registration(self):
+        
+        data = {
+            "username": "testuser",
+            "email": "testuser@gmail.com",
+            "password_hash": "password"
+        }
+        response = self.client.post('/auth/signup', json=data)
+
+        user = User.query.filter_by(email="testuser@gmail.com").first()
+        
+        assert user.username == "testuser"
+
+        assert response.status_code == 201
+
+
+    def test_user_login(self):
+        data = {
+            "email": "testuser@gmail.com",
+            "password": "password"
+        }
+
+        response = self.client.post('/auth/login', json=data)
+
+        assert response.status_code == 200
 
     
-    response = test_client.post('http://127.0.0.1:5000/auth/login', data=json.dumps(data), content_type='application/json')
-    assert response.status_code == 200
-    assert 'access_token' in response.json
-    access_token = response.json['access_token']
 
-    headers = {
-        'Authorization': f'Bearer {access_token}',
-        'Content-Type': 'application/json'
-    }
+    
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class UserTest(unittest.TestCase):
+#     def setUp(self):
+#         self.app = create_app(config=config_dict['test'])
+#         self.appcontext = self.app.app_context # creates the test client 
+
+#         self.appcontext.push() # pushes the app context to the test client
+#         self.client = self.app.test_client() # creates the test client
+
+#         db.create_all() # creates all the tables in the database
+
+
+#     def tearDown(self):
+#         db.drop_all() # drops all the tables in the database
+#         self.appcontext.pop() # pops the app context from the test client
+#         self.app = None # sets the app to None
+#         self.client = None # sets the client to None
+
+#     def test_user_registration(self):
+#         """
+#             Test User Registration
+#         """
+
+#         data = {
+#             'username': 'testuser',
+#             'email': 'testuser@gmail.com',
+#             'password': 'testpassword'
+#         }
+#         response = self.client.post('auth/signup', json=data)
+#         user = User.query.filter_by(email=data['email']).first()
+#         assert user.username == data['username']
+#         assert response.status_code == 201
+
+
+#     def test_user_login(self):
+        
+#         data = {
+#             'email': 'testuser@gmail.com',
+#             'password': 'testpassword'
+#         }
+#         response = self.client.post('auth/login', json=data)    
+#         assert response.status_code == 202
