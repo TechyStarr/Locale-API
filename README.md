@@ -11,15 +11,18 @@ Locale was built using Python
 - [Locale](#Locale)
   - [Table of Contents](#table-of-contents)
   - [Live ( deployed version )](#live--deployed-version-)
-  - [Technologies Used](#technologies-used-)
-  - [Libraries Used](#libraries-used-)
+  - [Implementations](#implementations)
+  - [Technologies Used](#technologies-used)
+  - [Libraries Used](#libraries-used)
   - [Usage ( deployed version )](#usage--deployed-version-)
   - [Testing Locally](#testing-locally)
-  - [Available Endpoints](#available-endpoint)
-    - [Authorization Endpoints](#authorization-endpoint)
-    - [View Endpoints](#view-endpoint)
-    - [Search Endpoints](#search-endpoint)
-    - [User Endpoints](#user-endpoint)
+  - [Available Endpoints](#available-endpoints)
+     - [Authorization Endpoints](#authorization-endpoints)
+     - [Testing View Endpoints](#view-endpoints)
+     -  [Search Endpoints Locally](#search-endpoints)
+     - [User Endpoints](#user-endpoints)
+    
+  
 
 ## Live ( deployed version )
 ### [Website](https://locale-lkbw.onrender.com)
@@ -34,18 +37,20 @@ Locale was built using Python
 - Flask
 - PostgreSQL
 
-## Libraries Used
-- Flask restx - a framework for creating REST API
-- Flask migrate - a framework for tracking database modifications
-- Flask SQLAlchemy - object-relational mapper
-- Flask JWT extended - authentication and authorization
-- Flask Mail - sending emails
-- Flask Caching - Database Cache layering
-- Flask Limiter - Rate limiting
-- Flask CORS - Handle Cross-Origin Resource Sharing
+<p align="right"><a href="#readme-top">back to top</a></p>
 
+## Libraries Used
+- [Flask restx](https://flask-restx.readthedocs.io/en/latest/) - a framework for creating REST API
+- [Flask migrate](https://flask-migrate.readthedocs.io/) - a framework for tracking database modifications
+- [Flask SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/) - object-relational mapper
+- [Flask JWT extended](https://flask-jwt-extended.readthedocs.io/en/stable/) - authentication and authorization
+- [Flask Mail](https://pythonhosted.org/Flask-Mail/) - sending emails
+- [Flask Caching](https://flask-caching.readthedocs.io/en/latest/) - Database Cache layering
+- [Flask Limiter](https://flask-limiter.readthedocs.io/en/stable/) - Rate limiting
+- [Flask CORS](https://flask-cors.readthedocs.io/en/latest/) - Handle Cross-Origin Resource Sharing
+<p align="right"><a href="#readme-top">back to top</a></p>
   
-### Usage
+### Usage (deployed version)
 1. Visit [website](https://locale-lkbw.onrender.com) on your web browser
 
 
@@ -125,14 +130,14 @@ or
 ```console
 py runserver.py
 ```
-
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 
 
 
 ## Available Endpoints
 
-### Auth Endpoints
+### Authorization Endpoints
 | ROUTE | METHOD | DESCRIPTION | AUTHORIZATION  | USER TYPE |  PLACEHOLDER | 
 | ------- | ----- | ------------ | ------|------- | ----- |
 |  `/auth/signup` | _POST_ | It allows an admin to create an account  | Any | Any |  ---- | 
