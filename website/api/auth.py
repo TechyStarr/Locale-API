@@ -5,29 +5,29 @@ from uuid import uuid4
 from flask import Flask, request
 from flask_restx import Resource, fields, Namespace, abort
 from website.models.auth import User, ApiKey
-from website.utils.utils import db
+from website.utils.utils import db, cache, limiter
 from werkzeug.security import generate_password_hash, check_password_hash
 from http import HTTPStatus
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
 from flask_jwt_extended.exceptions import NoAuthorizationError
-from flask_caching import Cache
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
-from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest, clear_dataset
+# from flask_caching import Cache
+# from flask_limiter import Limiter
+# from flask_limiter.util import get_remote_address
+from website.models.data import load_dataset, clear_dataset
 
 
 auth_namespace = Namespace('Auth', description='Authentication Endpoints')
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+# cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
-limiter = Limiter(
-    get_remote_address,
-    app=app,
-    default_limits=["200 per day", "50 per hour"],
-    storage_uri="memory://",
-    )
+# limiter = Limiter(
+#     get_remote_address,
+#     app=app,
+#     default_limits=["200 per day", "50 per hour"],
+#     storage_uri="memory://",
+#     )
 
 
 

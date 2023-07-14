@@ -8,9 +8,7 @@ from website.config.config import config_dict
 from website.models.auth import User, ApiKey
 from website.models.data import Region, State, Lga, load_dataset
 from flask_migrate import Migrate
-from flask_caching import Cache
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
+from website.utils.utils import db, cache, limiter
 from flask_jwt_extended import JWTManager, get_jwt
 from flask_cors import CORS
 
@@ -21,27 +19,21 @@ def create_app(config=config_dict['dev']):
     app = Flask(__name__)
 
     app.config.from_object(config) # config object from config.py file in config folder
-    app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
-    app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
-    app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)
-    app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
+    # app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
+    # app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
+    # app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)
+    # app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
     
-    cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+    # cache = Cache(app, config={'CACHE_TYPE': 'simple'})
     cache.init_app(app)
 
-    view_namespace.cache = cache
-    search_ns.cache = cache
-    auth_namespace.cache = cache
+    # view_namespace.cache = cache
+    # search_ns.cache = cache
+    # auth_namespace.cache = cache
 
     # cors = CORS(app, resources={r"/*": {"origins": "https://locale-fe-fgze.onrender.com"}})
     cors = CORS(app)
 
-    limiter = Limiter(
-    get_remote_address,
-    app=app,
-    default_limits=["200 per day", "50 per hour"],
-    storage_uri="memory://",
-    )
     limiter.init_app(app) # initialize limiter with app instance to enable rate limiting
 
 

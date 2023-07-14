@@ -21,6 +21,9 @@ class Config:
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(minutes=90)
     JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=30)
     JWT_SECRET_KEY = config('JWT_SECRET_KEY')
+    JWT_BLACKLIST_ENABLED = True
+    JWT_BLACKLIST_TOKEN_CHECKS = ['access', 'refresh']
+    CACHE_TYPE = 'simple'
     
 
 class DevConfig(Config):

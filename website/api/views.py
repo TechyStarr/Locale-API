@@ -1,28 +1,11 @@
 from flask import Flask, request
 from flask_restx import Api, Resource, fields, Namespace, abort
-from website.utils.utils import db
+from website.utils.utils import db, cache, limiter
 from website.models.auth import User
 from http import HTTPStatus
 from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest
-from flask_caching import Cache
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 from .auth import validate_api_key
-
-app = Flask(__name__)
-
-# cache response for 60 seconds
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
-
-# rate limit of 100 requests per minute
-limiter = Limiter(
-    get_remote_address,
-    app=app,
-    default_limits=["200 per day", "50 per hour"],
-    storage_uri="memory://",
-    )
-
 
 
 

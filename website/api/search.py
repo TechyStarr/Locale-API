@@ -1,12 +1,31 @@
 from flask import Flask, request
 from flask_restx import Api, Resource, fields, Namespace, abort
-from website.utils.utils import db
-
+from website.utils.utils import db, cache, limiter
 from website.models.auth import User
 from http import HTTPStatus
 from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest
 from .serializers import serialized_state, serialized_lga, serialized_region
+# from flask_caching import Cache
+# from flask_limiter import Limiter
+# from flask_limiter.util import get_remote_address
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 from .auth import validate_api_key
+
+
+# app = Flask(__name__)
+
+# # cache response for 60 seconds
+# cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+
+# # rate limit of 100 requests per minute
+# limiter = Limiter(
+#     get_remote_address,
+#     app=app,
+#     default_limits=["200 per day", "50 per hour"],
+#     storage_uri="memory://",
+#     )
+
+
 
 search_ns = Namespace('Query', description='Search operations')
 
@@ -26,6 +45,7 @@ auto_complete_model = search_ns.model(
         'name': fields.String(required=True, description="Name"),
     }
 )
+
 
 
 state_model = search_ns.model(
@@ -49,7 +69,6 @@ state_model = search_ns.model(
     }
 )
 
-
 lga_model = search_ns.model(
     'lga', {
         'id': fields.String(required=True),
@@ -60,12 +79,20 @@ lga_model = search_ns.model(
     }
 )
 
-
 region_model= search_ns.model(
     'Region', {
         'id': fields.String(required=True),
         'name': fields.String(required=True, description="Course Name"),
         'states': fields.Nested((state_model), required=True, description="States"),
+    }
+)
+
+place_of_interest_model = search_ns.model(
+    'PlaceOfInterest', {
+        'name': fields.String(required=True, description="Name"),
+        'image': fields.String(required=True, description="Image"),
+        'location': fields.String(required=True, description="Location"),
+        'description': fields.String(required=True, description="Description")
     }
 )
 
@@ -78,43 +105,22 @@ location_model = search_ns.model(
     }
 )
 
-@search_ns.route('/autocomplete')
-class AutoComplete(Resource):
-    @search_ns.doc('autocomplete_query')
-    @search_ns.expect(search_params)
-    @search_ns.marshal_with(auto_complete_model)
-    def get(self):
-        keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
-        if not keyword:
-            return {'message': 'Enter a search keyword'}, 400
-
-        results = self.get_auto_complete(keyword) 
-
-        formatted_results = [item for item in results]
-        return formatted_results, 200
-    
-def get_auto_complete(self, keyword):
-    results = State.query.filter(State.name.ilike(f'{keyword}%')).limit(10).all()
-    results += Lga.query.filter(Lga.lga_name.ilike(f'{keyword}%')).limit(10).all()
-    results += Region.query.filter(Region.name.ilike(f'{keyword}%')).limit(10).all()
-
-    return results
-
-
 
 @search_ns.route('/')
 class Query(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @search_ns.doc('search_query')
     @search_ns.marshal_with(state_model, lga_model, region_model)
-    
+    @jwt_required(optional=True)
     def get(self):
-
+        """
+        Search for states, regions and local government areas"""
         keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
         # get_auto_complete(self, keyword)
         results = []
         if keyword:
             # Perform the search query based on the keyword
-            # You can customize the search logic based on your requirements
             results = State.query.join(Region).filter(
                 db.or_(
                     Region.name.ilike(f'%{keyword}%'),  # Search by region name
@@ -142,9 +148,12 @@ class Query(Resource):
 
 @search_ns.route('/filter')
 class Filter(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @search_ns.doc('filter_query')
     @search_ns.expect(search_params)
     @search_ns.marshal_with(state_model, lga_model, region_model)
+    @jwt_required(optional=True)
     def get(self):
         args = search_params.parse_args() 
         region = request.args.get('region')
@@ -165,28 +174,57 @@ class Filter(Resource):
         return results, 200
     
 
-@search_ns.route('/place')
+@search_ns.route('/places')
 class RetrieveRegion(Resource):
-    # @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    # @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-    @search_ns.marshal_with(region_model, as_list=True)
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+    @search_ns.marshal_with(place_of_interest_model, as_list=True)
     @search_ns.doc(
         description='Get all Places of interest',
     )
-    # @jwt_required()
+    @jwt_required()
     def get(self):
-        places = PlaceOfInterest.query.limit(3).all()
+        """
+            Get all places of interest
+        """
+        # places = PlaceOfInterest.query.limit(3).all()
+        places = PlaceOfInterest.query.all()
         if places is None:
             return {'message': 'No Place found'}, HTTPStatus.NOT_FOUND
 
         return places, HTTPStatus.OK
 
 
+@search_ns.route('/place/state/<int:state_id>')
+class PlacesPerState(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+    @search_ns.doc('regions_query')
+    @search_ns.marshal_with(place_of_interest_model, as_list=True)
+    @jwt_required(optional=True)
+    def get(self, state_id):
+        """
+            Get all places of interest in a state
+        """
+        state = State.query.get_or_404(state_id)
+        if state:
+            places = PlaceOfInterest.query.filter_by(state_id=state_id).all()
+            return places, 200
+        else:
+            return {'message': 'No Place found'}, 404
+
+
 @search_ns.route('/places')
 class Places(Resource):
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @search_ns.doc('places_query')
     @search_ns.marshal_with(state_model, lga_model, region_model)
+    @jwt_required(optional=True)
     def get(self):
+        """
+            Search for places of interest
+        """
         keyword = request.args.get('keyword')
         if keyword:
             results = PlaceOfInterest.query.filter(
