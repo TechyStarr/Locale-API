@@ -18,8 +18,8 @@ Locale was built using Python
   - [Testing Locally](#testing-locally)
   - [Available Endpoints](#available-endpoints)
      - [Authorization Endpoints](#authorization-endpoints)
-     - [Testing View Endpoints](#view-endpoints)
-     -  [Search Endpoints Locally](#search-endpoints)
+     - [View Endpoints](#view-endpoints)
+     -  [Search Endpoints](#search-endpoints)
      - [User Endpoints](#user-endpoints)
     
   
