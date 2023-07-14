@@ -1,14 +1,14 @@
-import json
+from datetime import datetime, timezone
 import secrets
 from functools import wraps
-from uuid import uuid4
 from flask import Flask, request
 from flask_restx import Resource, fields, Namespace, abort
 from website.models.auth import User, ApiKey
+from website.models.blocklist import TokenBlocklist
 from website.utils.utils import db, cache, limiter
 from werkzeug.security import generate_password_hash, check_password_hash
 from http import HTTPStatus
-from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
+from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt, JWTManager
 from flask_jwt_extended.exceptions import NoAuthorizationError, InvalidHeaderError, WrongTokenError, RevokedTokenError, FreshTokenRequired
 from website.models.data import load_dataset, clear_dataset
 
@@ -201,27 +201,6 @@ class Refresh(Resource):
 		return response, HTTPStatus.OK
 
 
-blacklist = set()
-
-# def check_token_blacklist(decrypted_token):
-# 	jti = decrypted_token['jti']
-# 	return jti in blacklist
-
-# @jwt.expired_token_loader
-# def my_expired_token_callback():
-# 	return {
-# 		'message': 'The token has expired.',
-# 		'error': 'token_expired'
-# 	}, HTTPStatus.UNAUTHORIZED
-
-# @jwt.invalid_token_loader
-# def invalid_token_callback(error):
-# 	return {'message': 'Invalid token'}, 401
-
-# @jwt.unauthorized_loader
-# def unauthorized_callback(error):
-# 	return {'message': 'Missing or Invalid authorization'}, 401
-
 
 	
 @auth_namespace.route('/logout')
@@ -233,8 +212,14 @@ class Logout(Resource):
 			Logout user
 		"""
 		jti = get_jwt()['jti']
-		blacklist.add(jti)
+		# user = User.get_by_id(get_jwt_identity())
+		token = TokenBlocklist(jti=jti, created_at=datetime.now(timezone.utc))
+		db.session.add(token)
+		db.session.commit()
 		response = {
+			# 'logged_out_as': user.username,
+			'logged_out_as': get_jwt_identity(),
+			'token': jti,
 			'message': 'Successfully logged out'
 		}
 		return response, HTTPStatus.OK

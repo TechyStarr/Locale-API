@@ -6,6 +6,7 @@ from .api.views import view_namespace
 from .api.search import search_ns
 from website.config.config import config_dict
 from website.models.auth import User, ApiKey
+from website.models.blocklist import TokenBlocklist
 from website.models.data import Region, State, Lga, load_dataset
 from flask_migrate import Migrate
 from website.utils.utils import db, cache, limiter
@@ -41,7 +42,7 @@ def create_app(config=config_dict['dev']):
 
     jwt = JWTManager(app)
 
-    blacklist = set()
+    blacklist = TokenBlocklist()
 
     def check_token_in_blacklist(decrypted_token):
         jti = decrypted_token['jti']
