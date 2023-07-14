@@ -25,7 +25,7 @@ Locale was built using Python
   
 
 ## Live ( deployed version )
-### [Website](https://locale-lkbw.onrender.com)
+Visit [Website](https://locale-lkbw.onrender.com)
 
 ## Implementations
 1. Search functions
