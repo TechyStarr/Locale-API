@@ -9,26 +9,11 @@ from website.utils.utils import db, cache, limiter
 from werkzeug.security import generate_password_hash, check_password_hash
 from http import HTTPStatus
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
-from flask_jwt_extended.exceptions import NoAuthorizationError
-# from flask_caching import Cache
-# from flask_limiter import Limiter
-# from flask_limiter.util import get_remote_address
+from flask_jwt_extended.exceptions import NoAuthorizationError, InvalidHeaderError, WrongTokenError, RevokedTokenError, FreshTokenRequired
 from website.models.data import load_dataset, clear_dataset
 
 
 auth_namespace = Namespace('Auth', description='Authentication Endpoints')
-
-# app = Flask(__name__)
-
-# cache = Cache(app, config={'CACHE_TYPE': 'simple'})
-
-# limiter = Limiter(
-#     get_remote_address,
-#     app=app,
-#     default_limits=["200 per day", "50 per hour"],
-#     storage_uri="memory://",
-#     )
-
 
 
 signup_model = auth_namespace.model(
@@ -38,7 +23,6 @@ signup_model = auth_namespace.model(
 		'password': fields.String(required=True, description='User Password')
 	}
 )
-
 
 
 login_model = auth_namespace.model(
@@ -59,6 +43,7 @@ api_key_model = auth_namespace.model(
 class GenerateApiKey(Resource):
 	@auth_namespace.marshal_with(api_key_model)
 	@jwt_required()
+	@limiter.limit("10/hour")
 	def post(self):
 		"""
 			Generate API Key
@@ -108,12 +93,12 @@ class UserApiKeys(Resource):
 
 @auth_namespace.route('/signup')
 class SignUp(Resource):
-	@cache.cached(timeout=60) # Cache the response for 60 seconds
 	@limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 	@auth_namespace.expect(signup_model)
 	@auth_namespace.marshal_with(signup_model)
 	# @validate_api_key
 	@auth_namespace.doc(security='apikey')
+	@cache.cached(timeout=60)  # Cache the response for 60 seconds
 	def post(self):
 		"""
 			Register a user
@@ -147,8 +132,8 @@ class SignUp(Resource):
 
 @auth_namespace.route('/login')
 class UserLogin(Resource):
-	@cache.cached(timeout=60) # Cache the response for 60 seconds
 	@auth_namespace.expect(login_model)
+	@cache.cached(timeout=60)  # Cache the response for 60 seconds
 	def post(self):
 		"""
 			Generate JWT Token for user

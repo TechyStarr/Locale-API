@@ -5,26 +5,8 @@ from website.models.auth import User
 from http import HTTPStatus
 from website.models.data import Region, State, Lga, load_dataset, PlaceOfInterest
 from .serializers import serialized_state, serialized_lga, serialized_region
-# from flask_caching import Cache
-# from flask_limiter import Limiter
-# from flask_limiter.util import get_remote_address
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 from .auth import validate_api_key
-
-
-# app = Flask(__name__)
-
-# # cache response for 60 seconds
-# cache = Cache(app, config={'CACHE_TYPE': 'simple'})
-
-# # rate limit of 100 requests per minute
-# limiter = Limiter(
-#     get_remote_address,
-#     app=app,
-#     default_limits=["200 per day", "50 per hour"],
-#     storage_uri="memory://",
-#     )
-
 
 
 search_ns = Namespace('Query', description='Search operations')
@@ -64,7 +46,6 @@ state_model = search_ns.model(
         'website': fields.String(required=True, description="Website"),
         'borders': fields.String(required=True, description="Borders"),
         'places_of_interest': fields.String(required=True, description="Known For"),
-        # 'No_of_LGAs': fields.String(required=True, description="No of LGAs"),
         'lgas': fields.String(required=True, description="Local Government Areas"),
     }
 )
@@ -108,11 +89,10 @@ location_model = search_ns.model(
 
 @search_ns.route('/')
 class Query(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @search_ns.doc('search_query')
     @search_ns.marshal_with(state_model, lga_model, region_model)
     @jwt_required(optional=True)
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         """
         Search for states, regions and local government areas"""
@@ -148,12 +128,11 @@ class Query(Resource):
 
 @search_ns.route('/filter')
 class Filter(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @search_ns.doc('filter_query')
     @search_ns.expect(search_params)
     @search_ns.marshal_with(state_model, lga_model, region_model)
     @jwt_required(optional=True)
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         args = search_params.parse_args() 
         region = request.args.get('region')
@@ -176,13 +155,12 @@ class Filter(Resource):
 
 @search_ns.route('/places')
 class RetrieveRegion(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @search_ns.marshal_with(place_of_interest_model, as_list=True)
     @search_ns.doc(
         description='Get all Places of interest',
     )
     @jwt_required()
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         """
             Get all places of interest
@@ -197,11 +175,10 @@ class RetrieveRegion(Resource):
 
 @search_ns.route('/place/state/<int:state_id>')
 class PlacesPerState(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @search_ns.doc('regions_query')
     @search_ns.marshal_with(place_of_interest_model, as_list=True)
     @jwt_required(optional=True)
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self, state_id):
         """
             Get all places of interest in a state
@@ -216,11 +193,10 @@ class PlacesPerState(Resource):
 
 @search_ns.route('/places')
 class Places(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @search_ns.doc('places_query')
     @search_ns.marshal_with(state_model, lga_model, region_model)
     @jwt_required(optional=True)
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         """
             Search for places of interest
@@ -239,5 +215,6 @@ class Places(Resource):
             return {'message': 'Enter a search keyword'}, 400
     
 
+# route for filtering
 # /api/locations?region=<region_name>&state=<state_name>&lga=<lga_name>
 # http://127.0.0.1:5000/query/filter?region=South&state=Abia&lga=Umuahia%20North

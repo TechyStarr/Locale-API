@@ -63,9 +63,8 @@ region_model= view_namespace.model(
 
 @view_namespace.route('/load-dataset')
 class LoadDatasetResource(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def post(self):
         """
             Manually Load dataset
@@ -79,16 +78,15 @@ class LoadDatasetResource(Resource):
 
 @view_namespace.route('/read-dataset')
 class readData(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         """
             Read dataset
         """
         f = open('website/models/dataset.json', 'r', encoding='utf-8')
         print(f.read())
-        return {'message': 'Dataset loaded successfully'}
+        return {'message': 'Dataset read successfully'}
     
 
 
@@ -97,13 +95,13 @@ class readData(Resource):
 # Regions
 @view_namespace.route('/regions')
 class RetrieveRegion(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+    @limiter.limit("1/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @view_namespace.marshal_with(region_model, as_list=True)
     @view_namespace.doc(
         description='Get all Regions',
     )
     @jwt_required()
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         """
             Get all Regions with their States metadata 
@@ -122,14 +120,13 @@ class RetrieveRegion(Resource):
 # retrieve data under a region
 @view_namespace.route('/regions/<string:region_id>/states')
 class RetrieveStatesUnderRegion(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
     @view_namespace.marshal_with(state_model, as_list=True)
     @view_namespace.doc(
         description='Get all States under a Region',
     )
     @jwt_required()
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self, region_id):
         """
             Get all States under a Region
@@ -150,14 +147,13 @@ class RetrieveStatesUnderRegion(Resource):
 # States
 @view_namespace.route('/states')
 class SearchResource(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
     @view_namespace.marshal_with(state_model, as_list=True)
     @view_namespace.doc(
         description='Get all States',
     )
     @jwt_required()
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         """
             Get all States
@@ -175,14 +171,13 @@ class SearchResource(Resource):
 # LGA
 @view_namespace.route('/lgas')
 class RetrieveResource(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
     @view_namespace.marshal_with(lga_model, as_list=True)
     @view_namespace.doc(
         description='Get all lgas',
     )
     @jwt_required()
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         """
             Get all lgas
@@ -199,14 +194,13 @@ class RetrieveResource(Resource):
 
 @view_namespace.route('/state/<string:state_id>')
 class RetrieveState(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
     @view_namespace.marshal_with(state_model)
     @view_namespace.doc(
         description='Get a state by ID',
     )
     @jwt_required()
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self, state_id):
         """
             Get a state by ID
@@ -223,14 +217,13 @@ class RetrieveState(Resource):
 
 @view_namespace.route('/lga/<string:lga_id>')
 class RetrieveLGA(Resource):
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
-    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute
     @view_namespace.marshal_with(lga_model)
     @view_namespace.doc(
         description='Get a LGA by ID',
     )
     @jwt_required()
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self, lga_id):
         """
             Get a LGA by ID
@@ -247,11 +240,14 @@ class RetrieveLGA(Resource):
 
 @view_namespace.route('/places')
 class RetrievePlaces(Resource):
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute
+
     @view_namespace.marshal_with(place_model, as_list=True)
     @view_namespace.doc(
         description='Get all places',
     )
     @jwt_required()
+    @cache.cached(timeout=60)  # Cache the response for 60 seconds
     def get(self):
         """
             Get all places of interest
