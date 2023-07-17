@@ -3,6 +3,7 @@ from flask_restx import Api
 from website.utils.utils import db
 from .api.auth import auth_namespace
 from .api.views import view_namespace
+from .api.users import user_ns
 from .api.search import search_ns
 from website.config.config import config_dict
 from website.models.auth import User, ApiKey
@@ -48,11 +49,6 @@ def create_app(config=config_dict['dev']):
         jti = decrypted_token['jti']
         return jti in blacklist
 
-    # @jwt.expired_token_loader
-    # def expired_token_callback(expired_token):
-    #     claims = get_jwt()['user_claims']
-    #     return ({'message': 'The token has expired'}), 401
-
     @jwt.invalid_token_loader
     def invalid_token_callback(error):
         return {'message': 'Invalid token'}, 401
@@ -95,6 +91,7 @@ def create_app(config=config_dict['dev']):
     api.add_namespace(auth_namespace, path='/auth')
     api.add_namespace(view_namespace, path='/view')
     api.add_namespace(search_ns, path='/query')
+    api.add_namespace(user_ns, path='/user')
 
 
 
