@@ -12,54 +12,71 @@ user_model = user_ns.model(
     'User', {
         'username': fields.String(required=True, description="Username"),
         'email': fields.String(required=True, description="Email"),
-        'password': fields.String(required=True, description="Password"),
     }
 )
 
 
 @user_ns.route('/users')
 class UserList(Resource):
-    @jwt_required
+    # @jwt_required
+    @user_ns.marshal_with(user_model)
 
     def get(self):
         """
             Get all users
         """
-        users = User.get_all_users()
+        users = User.query.all()
+        if users is None:
+            abort(404, message="No users found")
 
-        return {
-            'users': users
-        }, HTTPStatus.OK
+        return users, HTTPStatus.OK
 
 
-@user_ns.route('/update')
-class UpdateUser(Resource):
-    @jwt_required
+@user_ns.route('/user/<int:id>')
+class GetUser(Resource):
+    # @jwt_required
+    @user_ns.expect(user_model)
+
+    @user_ns.marshal_with(user_model)
+
     @validate_api_key
+
+    def get(self, user_id):
+        """
+            Get user by id
+        """
+        user = User.query.filter_by(id=user_id).first()
+        if not user:
+            abort(404, message="User not found")
+
+        try:
+            return user, HTTPStatus.OK
+        except Exception as e:
+            return {
+                'message': 'User not found'
+            }, HTTPStatus.NOT_FOUND
+
+
     def patch(self):
         """
             Update user
         """
-        data = request.get_json()
+        data = user_ns.payload
+        user = User.query.filter_by(id=id).first()
 
-        username = data.get('username')
-        email = data.get('email')
-        password = data.get('password')
-
-        user = User.query.filter_by(username=username).first()
-
-        if user:
-            user.email = email
-            user.password_hash = password
-            user.save()
+        if not user:
+            abort(404, message="User not found")
+        user.username = data['username']
+        user.email = data['email']
+        
+        try:
+            user.update()
+            return user, HTTPStatus.OK
+        except Exception as e:
             return {
-                'message': 'User updated successfully'
-            }, HTTPStatus.OK
-
-        else:
-            return {
-                'message': 'User does not exist'
+                'message': 'User not found'
             }, HTTPStatus.NOT_FOUND
+
 
 
 # @auth_namespace.route('/reset-password')

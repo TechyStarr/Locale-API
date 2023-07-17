@@ -96,7 +96,6 @@ class SignUp(Resource):
 	@limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 	@auth_namespace.expect(signup_model)
 	@auth_namespace.marshal_with(signup_model)
-	# @validate_api_key
 	@auth_namespace.doc(security='apikey')
 	@cache.cached(timeout=60)  # Cache the response for 60 seconds
 	def post(self):
@@ -119,8 +118,11 @@ class SignUp(Resource):
 		)
 		try:
 			new_user.save()
+			clear_dataset()
+			load_dataset()
 			return new_user, HTTPStatus.CREATED, {
-				'message': f'User {new_user.username} created successfully'
+				'message': f'User {new_user.username} created successfully',
+				'message': 'Dataset loaded successfully',
 			}
 		except Exception as e:
 			# db.session.rollback()

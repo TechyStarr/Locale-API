@@ -79,3 +79,11 @@ def serialized_key(api_key):
         'key': api_key.key,
         # 'user_id': api_key.user.id if api_key.user else None,
     }
+
+def serialized_user(user):
+    return {
+        'id': user.id,
+        'username': user.username,
+        'email': user.email,
+        'api_key': user.api_key.key if user.api_key else None,
+    }
