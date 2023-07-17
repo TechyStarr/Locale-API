@@ -35,7 +35,7 @@ class UserTestCase(unittest.TestCase):
         data = {
             "username": "testuser",
             "email": "testuser@gmail.com",
-            "password_hash": "password"
+            "password": "password"
         }
         response = self.client.post('/auth/signup', json=data)
 

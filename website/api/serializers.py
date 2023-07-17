@@ -1,12 +1,6 @@
 import json
 from website.models.data import State, Region, Lga
-from website.models.auth import User, ApiKey
-
-# user serializer
-
-
-
-
+from website.models.auth import User, ApiKey, ResetToken
 
 
 # data serializer
@@ -86,4 +80,11 @@ def serialized_user(user):
         'username': user.username,
         'email': user.email,
         'api_key': user.api_key.key if user.api_key else None,
+    }
+
+def serialized_reset_token(reset_token):
+    return {
+        'id': reset_token.id,
+        'token': reset_token.token,
+        'user_id': reset_token.user_id,
     }

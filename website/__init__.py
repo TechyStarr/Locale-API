@@ -13,6 +13,8 @@ from flask_migrate import Migrate
 from website.utils.utils import db, cache, limiter
 from flask_jwt_extended import JWTManager, get_jwt
 from flask_cors import CORS
+from datetime import datetime, timedelta
+from flask_mail import Mail, Message
 
 
 
@@ -21,17 +23,9 @@ def create_app(config=config_dict['dev']):
     app = Flask(__name__)
 
     app.config.from_object(config) # config object from config.py file in config folder
-    # app.config['CACHE_DEFAULT_TIMEOUT'] = 300 # Specify the default cache timeout in seconds (e.g., 300 seconds = 5 minutes)
-    # app.config['CACHE_TYPE'] = 'SimpleCache' # Flask-Caching related configs 
-    # app.config['CACHE_KEY_PREFIX'] = 'locale' # Specify a prefix for cache keys (optional)
-    # app.config['CACHE_THRESHOLD'] = 300 # Specify the maximum number of items to be cached (optional)
-    
-    # cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+
     cache.init_app(app)
 
-    # view_namespace.cache = cache
-    # search_ns.cache = cache
-    # auth_namespace.cache = cache
 
     # cors = CORS(app, resources={r"/*": {"origins": "https://locale-fe-fgze.onrender.com"}})
     cors = CORS(app)
@@ -42,6 +36,19 @@ def create_app(config=config_dict['dev']):
     db.init_app(app)
 
     jwt = JWTManager(app)
+
+    app.config['MAIL_SERVER'] = 'your-mail-server'
+    app.config['MAIL_PORT'] = 587
+    app.config['MAIL_USE_TLS'] = True
+    app.config['MAIL_USERNAME'] = 'your-username'
+    app.config['MAIL_PASSWORD'] = 'your-password'
+    mail = Mail(app)
+
+    def generate_reset_token(user_id):
+        expiration = datetime.utcnow() + timedelta(minutes=30)
+        payload = {'reset_password': user_id, 'exp': expiration}
+        token = jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256') #algorithm to encode the token with 
+        return token.decode('utf-8')
 
     blacklist = TokenBlocklist()
 

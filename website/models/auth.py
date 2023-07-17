@@ -1,4 +1,5 @@
 from website.utils.utils import db
+from datetime import datetime, timedelta
 
 
 
@@ -39,3 +40,28 @@ class ApiKey(db.Model):
     @classmethod
     def get_by_id(cls, id):
         return cls.query.get_or_404(id)
+
+
+class ResetToken(db.Model):
+    token = db.Column(db.String(64), primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    def __repr__(self):
+        return f"<ResetToken {self.token}>"
+    
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_by_id(cls, id):
+        return cls.query.get_or_404(id)
+    
+    @classmethod
+    def get_by_token(cls, token):
+        return cls.query.filter_by(token=token).first()
+    
+    @classmethod
+    def delete_by_token(cls, token):
+        cls.query.filter_by(token=token).delete()
+        db.session.commit()
