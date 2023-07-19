@@ -95,13 +95,13 @@ class readData(Resource):
 # Regions
 @view_namespace.route('/regions')
 class RetrieveRegion(Resource):
-    @limiter.limit("1/minute")  # Rate limit of 100 requests per minute (adjust as needed)
+    @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
     @view_namespace.marshal_with(region_model, as_list=True)
     @view_namespace.doc(
         description='Get all Regions',
     )
     @jwt_required()
-    @cache.cached(timeout=60)  # Cache the response for 60 seconds
+    @cache.cached(timeout=6000)  # Cache the response for 60 seconds
     def get(self):
         """
             Get all Regions with their States metadata 
