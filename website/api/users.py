@@ -47,7 +47,10 @@ reset_token_model = user_ns.model(
 class UserList(Resource):
     # @jwt_required
     @user_ns.marshal_with(user_model)
-
+    @user_ns.doc(
+        description='Get all users',
+    )
+    @jwt_required()
     def get(self):
         """
             Get all users
@@ -61,12 +64,11 @@ class UserList(Resource):
 
 @user_ns.route('/user/<int:user_id>')
 class GetUser(Resource):
-    # @jwt_required
     @user_ns.marshal_with(user_model)
     @user_ns.doc(
         description='Get a User by id',
     )
-    # @jwt_required()
+    @jwt_required()
     def get(self, user_id):
         """
             Get a User by id
@@ -84,12 +86,18 @@ class GetUser(Resource):
                 'message': 'An error occured while retrieving user'
             }, HTTPStatus.BAD_REQUEST
 
-
+    @user_ns.expect(user_model, validate=True)
+    # @user_ns.marshal_with(user_model)
+    @user_ns.doc(
+        description='Update a User by id',
+    )
+    @jwt_required()
     def patch(self, user_id):
         """
             Update a student by id
         """
         data = user_ns.payload
+
         update_user = User.query.filter_by(id=user_id).first()
 
         if not update_user:
@@ -109,11 +117,16 @@ class GetUser(Resource):
                 'message': 'An error occured while updating user information'
             }, HTTPStatus.BAD_REQUEST
 
-    def delete(self):
+
+    @user_ns.doc(
+        description='Delete a User by id',
+    )
+    @jwt_required()
+    def delete(self, user_id):
         """
             Delete user
         """
-        user = User.query.filter_by(email='email').first()
+        user = User.query.filter_by(id=user_id).first()
         if not user:
             abort(404, message="User not found")
 
