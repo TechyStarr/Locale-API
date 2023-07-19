@@ -114,37 +114,37 @@ class TestRetrieveRegion(unittest.TestCase):
 
 
     def test_get_states_under_region(self):
-        with self.app.test_client() as client:
+        # with self.app.test_client() as client:
 
-            sign_up_data = {
-            "email": "testuser@gmail.com",
-            "username": "testuser",
-            "password": "password"
-            }
+        sign_up_data = {
+        "email": "testuser@gmail.com",
+        "username": "testuser",
+        "password": "password"
+        }
 
-            self.client.post('/auth/signup', json=sign_up_data)
+        self.client.post('/auth/signup', json=sign_up_data)
 
-            token = create_access_token(identity="testuser")
+        token = create_access_token(identity="testuser")
 
-            headers = {
-                "Authorization": f"Bearer {token}"
-            }
+        headers = {
+            "Authorization": f"Bearer {token}"
+        }
 
-            test_region = Region(name="South East")
-            db.session.add(test_region)
-            db.session.commit()
+        test_region = Region(name="South East")
+        db.session.add(test_region)
+        db.session.commit()
 
-            region_id = test_region.id
+        region_id = test_region.id
 
-            response = self.client.get('/views/regions/1/states')
+        response = self.client.get('/views/regions/1/states')
+        assert response.status_code == 200
 
-            states = State.query.filter_by(region_id=region_id).all()
-            # assert response.status_code == 200
+        states = State.query.filter_by(region_id=region_id).all()
 
-            # assert len(states) == 37 # 36 states + FCT
+        # assert len(states) == 37 # 36 states + FCT
 
-            assert states[0].name == "Abia State"
-            assert states[1].name == "Anambra State"
+        assert states[0].name == "Abia State"
+        assert states[1].name == "Anambra State"
 
 
 
