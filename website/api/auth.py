@@ -6,11 +6,13 @@ from flask_restx import Resource, fields, Namespace, abort
 from website.models.auth import User, ApiKey
 from website.models.blocklist import TokenBlocklist
 from website.utils.utils import db, cache, limiter
+from website.utils.mail import send_async
 from werkzeug.security import generate_password_hash, check_password_hash
 from http import HTTPStatus
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt, JWTManager
 from flask_jwt_extended.exceptions import NoAuthorizationError, InvalidHeaderError, WrongTokenError, RevokedTokenError, FreshTokenRequired
 from website.models.data import load_dataset, clear_dataset
+from flask_mail import Mail, Message
 
 
 auth_namespace = Namespace('Auth', description='Authentication Endpoints')
@@ -38,6 +40,7 @@ api_key_model = auth_namespace.model(
 		# 'user_id': fields.Integer(required=True, description='User id')
 	}
 )
+
 
 @auth_namespace.route('/generate-api-key')
 class GenerateApiKey(Resource):

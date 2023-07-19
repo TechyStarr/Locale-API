@@ -24,6 +24,11 @@ class Config:
     JWT_BLACKLIST_ENABLED = True
     JWT_BLACKLIST_TOKEN_CHECKS = ['access', 'refresh']
     CACHE_TYPE = 'simple'
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = config('MAIL_USERNAME', ' ')
+    MAIL_PASSWORD = config('MAIL_PASSWORD', ' ')
     
 
 class DevConfig(Config):

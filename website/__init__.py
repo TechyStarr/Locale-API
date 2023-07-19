@@ -15,6 +15,7 @@ from flask_jwt_extended import JWTManager, get_jwt
 from flask_cors import CORS
 from datetime import datetime, timedelta
 from flask_mail import Mail, Message
+import smtplib
 
 
 
@@ -37,12 +38,27 @@ def create_app(config=config_dict['dev']):
 
     jwt = JWTManager(app)
 
-    app.config['MAIL_SERVER'] = 'your-mail-server'
-    app.config['MAIL_PORT'] = 587
-    app.config['MAIL_USE_TLS'] = True
-    app.config['MAIL_USERNAME'] = 'your-username'
-    app.config['MAIL_PASSWORD'] = 'your-password'
     mail = Mail(app)
+
+    import smtplib
+
+    def test_mail_connection():
+        mail_server = 'smtp.gmail.com'
+        mail_port = 587
+        mail_username = 'calistaifenkwe@gmail.com'
+        mail_password = '08165355715'
+
+        try:
+            with smtplib.SMTP(mail_server, mail_port) as server:
+                server.starttls()
+                server.login(mail_username, mail_password)
+                print("Connection to the mail server succeeded.")
+        except Exception as e:
+            print(f"Error connecting to the mail server: {e}")
+
+    # Call the function to test the mail server connection
+    test_mail_connection()
+
 
     def generate_reset_token(user_id):
         expiration = datetime.utcnow() + timedelta(minutes=30)

@@ -48,13 +48,21 @@ class UserTestCase(unittest.TestCase):
 
     def test_user_login(self):
         data = {
+            "username": "testuser",
             "email": "testuser@gmail.com",
             "password": "password"
         }
 
-        response = self.client.post('/auth/login', json=data)
+        self.client.post('/auth/signup', json=data)
 
-        assert response.status_code == 200
+        login_data = {
+            "email": "testuser@gmail.com",
+            "password": "password"
+        }
+
+        response = self.client.post('/auth/login', json=login_data)
+
+        assert response.status_code == 202
 
     
 

@@ -1,13 +1,15 @@
 from flask_sqlalchemy import SQLAlchemy
 from .cache import cache
 from flask import Flask
-app = Flask(__name__)
+import secrets
 from flask_jwt_extended import JWTManager, create_access_token
 from datetime import datetime, timedelta
 import datetime
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
+
+app = Flask(__name__)
 
 db = SQLAlchemy()
 jwt = JWTManager(app)
@@ -26,5 +28,5 @@ limiter = Limiter(
 
 def generate_reset_token(user_id):
     # expiration = datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
-    token = create_access_token(identity=user_id)
+    token = secrets.token_hex(16)
     return token

@@ -45,6 +45,11 @@ class ApiKey(db.Model):
 class ResetToken(db.Model):
     token = db.Column(db.String(64), primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), nullable=False)
+    reset_code = db.Column(db.String(6), nullable=True)
+    reset_code_expiration = db.Column(db.DateTime, nullable=True)
+
 
     def __repr__(self):
         return f"<ResetToken {self.token}>"
