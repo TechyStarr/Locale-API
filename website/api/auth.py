@@ -45,7 +45,6 @@ api_key_model = auth_namespace.model(
 @auth_namespace.route('/generate-api-key')
 class GenerateApiKey(Resource):
 	@auth_namespace.marshal_with(api_key_model)
-	@jwt_required()
 	@limiter.limit("10/hour")
 	def post(self):
 		"""
